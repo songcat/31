@@ -22,19 +22,24 @@ class Family
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyONe\MemberBundle\Entity\Gdparent", mappedBy="famiy")
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Gdparent", mappedBy="famiy")
      */
     private $gdparents;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyONe\MemberBundle\Entity\Parents", mappedBy="family")
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Parents", mappedBy="family")
      */
     private $parents;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyONe\MemberBundle\Entity\Child", mappedBy="family")
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Child", mappedBy="family")
      */
     private $child;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Event", mappedBy="famiy")
+     */
+    private $event;
 
     /**
      * @var string
@@ -158,7 +163,7 @@ class Family
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -303,5 +308,21 @@ class Family
     public function getParents()
     {
         return $this->parents;
+    }
+
+    /**
+     * @param mixed $event
+     */
+    public function setEvent($event)
+    {
+        $this->event = $event;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }

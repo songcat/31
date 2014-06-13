@@ -22,6 +22,23 @@ class Event
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Family", inversedBy="event")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $family;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ThirtyONe\MemberBundle\Entity\EventComment", mappedBy="comment")
+     */
+    private $comment;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ThirtyONe\MemberBundle\Entity\EventSuggest", mappedBy="suggest")
+     */
+    private $suggest;
+
+
+    /**
      * @var string
      *
      * @ORM\Column(name="pack", type="string", length=255)
@@ -52,9 +69,9 @@ class Event
     /**
      * @var array
      *
-     * @ORM\Column(name="family", type="array")
+     * @ORM\Column(name="guest", type="array")
      */
-    private $family;
+    private $guest;
 
     /**
      * @var string
@@ -174,26 +191,26 @@ class Event
     }
 
     /**
-     * Set family
+     * Set guest
      *
-     * @param array $family
+     * @param array $guest
      * @return Event
      */
-    public function setFamily($family)
+    public function setGuest($guest)
     {
-        $this->family = $family;
+        $this->guest = $guest;
 
         return $this;
     }
 
     /**
-     * Get family
+     * Get guest
      *
      * @return array 
      */
-    public function getFamily()
+    public function getGuest()
     {
-        return $this->family;
+        return $this->guest;
     }
 
     /**
@@ -240,5 +257,53 @@ class Event
     public function getTheme()
     {
         return $this->theme;
+    }
+
+    /**
+     * @param mixed $comment
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * @param array $family
+     */
+    public function setFamily($family)
+    {
+        $this->family = $family;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFamily()
+    {
+        return $this->family;
+    }
+
+    /**
+     * @param mixed $suggest
+     */
+    public function setSuggest($suggest)
+    {
+        $this->suggest = $suggest;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSuggest()
+    {
+        return $this->suggest;
     }
 }

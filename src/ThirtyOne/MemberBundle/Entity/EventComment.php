@@ -22,6 +22,12 @@ class EventComment
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Event", inversedBy="event")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $event;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="family", type="string", length=255)
@@ -90,5 +96,21 @@ class EventComment
     public function getComment()
     {
         return $this->comment;
+    }
+
+    /**
+     * @param mixed $event
+     */
+    public function setEvent($event)
+    {
+        $this->event = $event;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }
