@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ThirtyOne{% endblock %}</title>
+
+</head>
+
+<body class="{% block bclass %}{% endblock %}">
+<header>
+    <a href='#'><h1>logo</h1></a>
+    {% block navigation %}
+    {% endblock %}
+</header>
+
+{% block content %}
+{% endblock %}
+</body>
+
+<footer>
+    ©footer
+</footer>
+</body>
+</html>

@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <!--
     <parameters>
@@ -17,4 +17,19 @@
         </service>
     </services>
     -->
+
+    <services>
+
+        <service id="thirtyone_member.registration.form.type" class="ThirtyOne\MemberBundle\Form\Type\RegistrationFormType">
+            <tag name="form.type" alias="thirtyone_member_registration" />
+            <argument>%fos_user.model.user.class%</argument>
+        </service>
+
+        <service id="thirtyone_member.registration_completed" class="ThirtyOne\MemberBundle\EventListener\RegistrationCompletedListener">
+            <tag name="kernel.event_subscriber"/>
+            <argument type="service" id="router"/>
+        </service>
+
+    </services>
+
 </container>

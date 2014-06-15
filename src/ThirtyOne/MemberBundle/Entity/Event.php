@@ -28,12 +28,12 @@ class Event
     private $family;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyONe\MemberBundle\Entity\EventComment", mappedBy="comment")
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\EventComment", mappedBy="comment")
      */
     private $comment;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyONe\MemberBundle\Entity\EventSuggest", mappedBy="suggest")
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\EventSuggest", mappedBy="suggest")
      */
     private $suggest;
 

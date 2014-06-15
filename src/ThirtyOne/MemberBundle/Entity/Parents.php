@@ -28,6 +28,11 @@ class Parents
     private $family;
 
     /**
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Gdparent", mappedBy="parents")
+     */
+    private $gdparent;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="firstname", type="string", length=255)
@@ -37,14 +42,14 @@ class Parents
     /**
      * @var string
      *
-     * @ORM\Column(name="birthname", type="string", length=255)
+     * @ORM\Column(name="birthname", type="string", length=255, nullable=true)
      */
     private $birthname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="job", type="string", length=255)
+     * @ORM\Column(name="job", type="string", length=255, nullable=true)
      */
     private $job;
 
@@ -172,5 +177,21 @@ class Parents
     public function getFamily()
     {
         return $this->family;
+    }
+
+    /**
+     * @param mixed $gdparent
+     */
+    public function setGdparent($gdparent)
+    {
+        $this->gdparent = $gdparent;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGdparent()
+    {
+        return $this->gdparent;
     }
 }

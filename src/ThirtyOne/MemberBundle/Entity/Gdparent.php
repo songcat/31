@@ -22,10 +22,10 @@ class Gdparent
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Family", inversedBy="gdparents")
+     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Parents", inversedBy="gdparent")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $family;
+    private $parents;
 
     /**
      * @var string
@@ -37,7 +37,7 @@ class Gdparent
     /**
      * @var string
      *
-     * @ORM\Column(name="birthname", type="string", length=255)
+     * @ORM\Column(name="birthname", type="string", length=255, nullable=true)
      */
     private $birthname;
 

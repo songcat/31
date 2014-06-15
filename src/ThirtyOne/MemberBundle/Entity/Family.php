@@ -1,30 +1,30 @@
 <?php
-
 namespace ThirtyOne\MemberBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Family
  *
- * @ORM\Table()
  * @ORM\Entity
+ * @ORM\Table(name="family")
  */
-class Family
+class Family extends BaseUser
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
-    /**
-     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Gdparent", mappedBy="famiy")
-     */
-    private $gdparents;
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
 
     /**
      * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Parents", mappedBy="family")
@@ -44,27 +44,6 @@ class Family
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="mail", type="string", length=255)
-     */
-    private $mail;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255)
-     */
-    private $password;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="city", type="string", length=255)
      */
     private $city;
@@ -79,14 +58,14 @@ class Family
     /**
      * @var string
      *
-     * @ORM\Column(name="history", type="string", length=1000)
+     * @ORM\Column(name="history", type="string", length=1000, nullable=true)
      */
     private $history;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="activities", type="string", length=255)
+     * @ORM\Column(name="activities", type="string", length=255, nullable=true)
      */
     private $activities;
 
@@ -94,80 +73,11 @@ class Family
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Family
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set mail
-     *
-     * @param string $mail
-     * @return Family
-     */
-    public function setMail($mail)
-    {
-        $this->mail = $mail;
-
-        return $this;
-    }
-
-    /**
-     * Get mail
-     *
-     * @return string 
-     */
-    public function getMail()
-    {
-        return $this->mail;
-    }
-
-    /**
-     * Set password
-     *
-     * @param string $password
-     * @return Family
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     /**
@@ -186,7 +96,7 @@ class Family
     /**
      * Get city
      *
-     * @return string 
+     * @return string
      */
     public function getCity()
     {
@@ -209,7 +119,7 @@ class Family
     /**
      * Get photo
      *
-     * @return string 
+     * @return string
      */
     public function getPhoto()
     {
@@ -232,7 +142,7 @@ class Family
     /**
      * Get history
      *
-     * @return string 
+     * @return string
      */
     public function getHistory()
     {
@@ -255,27 +165,11 @@ class Family
     /**
      * Get activities
      *
-     * @return string 
+     * @return string
      */
     public function getActivities()
     {
         return $this->activities;
-    }
-
-    /**
-     * @param mixed $gdparents
-     */
-    public function setGdparents($gdparents)
-    {
-        $this->gdparents = $gdparents;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getGdparents()
-    {
-        return $this->gdparents;
     }
 
     /**

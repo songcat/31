@@ -65,77 +65,77 @@ class Child
     /**
      * @var string
      *
-     * @ORM\Column(name="passion", type="string", length=255)
+     * @ORM\Column(name="passion", type="string", length=255, nullable=true)
      */
     private $passion;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sport", type="string", length=255)
+     * @ORM\Column(name="sport", type="string", length=255, nullable=true)
      */
     private $sport;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="travel", type="string", length=255)
+     * @ORM\Column(name="travel", type="string", length=255, nullable=true)
      */
     private $travel;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="music", type="string", length=255)
+     * @ORM\Column(name="music", type="string", length=255, nullable=true)
      */
     private $music;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cinema", type="string", length=255)
+     * @ORM\Column(name="cinema", type="string", length=255, nullable=true)
      */
     private $cinema;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="culture", type="string", length=255)
+     * @ORM\Column(name="culture", type="string", length=255, nullable=true)
      */
     private $culture;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="string", length=255)
+     * @ORM\Column(name="price", type="string", length=255, nullable=true)
      */
     private $price;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="proambition", type="string", length=255)
+     * @ORM\Column(name="proambition", type="string", length=255, nullable=true)
      */
     private $proambition;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="talentoday", type="string", length=255)
+     * @ORM\Column(name="talentoday", type="string", length=255, nullable=true)
      */
     private $talentoday;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="language", type="string", length=255)
+     * @ORM\Column(name="language", type="string", length=255, nullable=true)
      */
     private $language;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="place", type="string", length=255)
+     * @ORM\Column(name="place", type="string", length=255, nullable=true)
      */
     private $place;
 
