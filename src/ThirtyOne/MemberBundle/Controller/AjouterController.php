@@ -27,7 +27,6 @@ class AjouterController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($famId);
 
-
         $child = new Child;
         $formChild = $this->createForm(new ChildFormType(), $child);
 
@@ -50,10 +49,10 @@ class AjouterController extends Controller {
         if ($request->getMethod() == 'POST') {
             $formParent->handleRequest($request);
 
-            if ($formChild->isValid()) {
+            if ($formParent->isValid()) {
                 $parent->setFamily($fam);
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($child);
+                $em->persist($parent);
                 $em->flush();
             }
         }

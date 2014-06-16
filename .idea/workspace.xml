@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b75587af-0014-4250-b8a4-30c743296745" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -33,7 +30,7 @@
       <file leaf-file-name="AjouterController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="13" selection-start="1873" selection-end="1873" vertical-scroll-proportion="1.0109141" vertical-offset="0" max-vertical-offset="975">
+            <state line="51" column="28" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.70941335" vertical-offset="143" max-vertical-offset="962">
               <folding>
                 <element signature="e#53#110#0" expanded="true" />
               </folding>
@@ -44,7 +41,7 @@
       <file leaf-file-name="ChildFormType.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="14" selection-start="609" selection-end="609" vertical-scroll-proportion="18.333334" vertical-offset="632" max-vertical-offset="1365">
+            <state line="62" column="39" selection-start="2071" selection-end="2071" vertical-scroll-proportion="-8.285714" vertical-offset="632" max-vertical-offset="1365">
               <folding>
                 <element signature="e#52#100#0" expanded="true" />
               </folding>
@@ -776,7 +773,11 @@
       <created>1402956823642</created>
       <updated>1402956823642</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child.">
+      <created>1402959397358</created>
+      <updated>1402959397358</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -842,7 +843,8 @@
     <MESSAGE value="commit before killing the projet with fosuser" />
     <MESSAGE value="beginning of the registration" />
     <MESSAGE value="can add a child to a family" />
-    <option name="LAST_COMMIT_MESSAGE" value="can add a child to a family" />
+    <MESSAGE value="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child." />
+    <option name="LAST_COMMIT_MESSAGE" value="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1054,7 +1056,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="14" selection-start="609" selection-end="609" vertical-scroll-proportion="18.333334" vertical-offset="632" max-vertical-offset="1365">
+        <state line="62" column="39" selection-start="2071" selection-end="2071" vertical-scroll-proportion="-8.285714" vertical-offset="632" max-vertical-offset="1365">
           <folding>
             <element signature="e#52#100#0" expanded="true" />
           </folding>
@@ -1063,7 +1065,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="13" selection-start="1873" selection-end="1873" vertical-scroll-proportion="1.0109141" vertical-offset="0" max-vertical-offset="975">
+        <state line="51" column="28" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.70941335" vertical-offset="143" max-vertical-offset="962">
           <folding>
             <element signature="e#53#110#0" expanded="true" />
           </folding>
