@@ -58,9 +58,23 @@ class Child
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="array")
+     * @ORM\Column(name="photo", type="string", length=255)
      */
     private $photo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo1", type="string", length=255, nullable=true)
+     */
+    private $photo1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo2", type="string", length=255, nullable=true)
+     */
+    private $photo2;
 
     /**
      * @var string
@@ -263,6 +277,38 @@ class Child
     public function getPhoto()
     {
         return $this->photo;
+    }
+
+    /**
+     * @param string $photo1
+     */
+    public function setPhoto1($photo1)
+    {
+        $this->photo1 = $photo1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto1()
+    {
+        return $this->photo1;
+    }
+
+    /**
+     * @param string $photo2
+     */
+    public function setPhoto2($photo2)
+    {
+        $this->photo2 = $photo2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto2()
+    {
+        return $this->photo2;
     }
 
     /**

@@ -1,0 +1,24 @@
+{% extends "::layout.html.twig" %}
+
+{% block content %}
+
+    <h2 class="nameForm">{{ formChildName }}</h2>
+
+    {{ form_start(formChild)}}
+    {{ form_errors(formChild) }}
+    <div id="formChild">
+
+        {% for champs in formChild  %}
+            {% if champs.errors is defined %}
+                {{ form_label(champs) }}
+                {% if champs.errors is defined %}
+                    {{ form_errors(champs) }}
+                {% endif %}
+                {{ form_widget(champs) }}
+            {% endif %}
+        {% endfor  %}
+
+        {{ form_end(formChild) }}
+    </div>
+
+{% endblock %}
