@@ -6,7 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use ThirtyOne\MemberBundle\Entity\Child;
+use ThirtyOne\MemberBundle\Entity\Parents;
 use ThirtyOne\MemberBundle\Form\Type\ChildFormType;
+use ThirtyOne\MemberBundle\Form\Type\ParentFormType;
 
 class AjouterController extends Controller {
 
@@ -20,9 +22,12 @@ class AjouterController extends Controller {
             throw new AccessDeniedHttpException();
         }
 
+        // TO DO it must be a service
         $famId = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
         $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($famId);
+
+
         $child = new Child;
         $formChild = $this->createForm(new ChildFormType(), $child);
 
@@ -38,9 +43,26 @@ class AjouterController extends Controller {
             }
         }
 
+        $parent = new Parents;
+        $formParent = $this->createForm(new ParentFormType(), $parent);
+
+        $request = $this->get('request');
+        if ($request->getMethod() == 'POST') {
+            $formParent->handleRequest($request);
+
+            if ($formChild->isValid()) {
+                $parent->setFamily($fam);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($child);
+                $em->flush();
+            }
+        }
+
         return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
             'formChild' => $formChild->createView(),
-            'formChildName' => 'Saisir un enfant'
+            'formChildName' => 'Saisir un enfant',
+            'formParent' => $formParent->createView(),
+            'formParentName' => 'Saisir vos informations'
         ));
     }
 

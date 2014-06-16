@@ -2,6 +2,25 @@
 
 {% block content %}
 
+    <h2 class="nameForm">{{ formParentName }}</h2>
+
+    {{ form_start(formParent)}}
+    {{ form_errors(formParent) }}
+    <div id="formParent">
+
+        {% for champs in formParent %}
+            {% if champs.errors is defined %}
+                {{ form_label(champs) }}
+                {% if champs.errors is defined %}
+                    {{ form_errors(champs) }}
+                {% endif %}
+                {{ form_widget(champs) }}
+            {% endif %}
+        {% endfor  %}
+
+        {{ form_end(formParent) }}
+    </div>
+
     <h2 class="nameForm">{{ formChildName }}</h2>
 
     {{ form_start(formChild)}}
