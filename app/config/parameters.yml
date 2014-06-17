@@ -15,3 +15,5 @@ parameters:
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
+    ruby.bin: /usr/bin/ruby
+    compass.bin: /usr/bin/compass

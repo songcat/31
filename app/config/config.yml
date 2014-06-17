@@ -33,10 +33,13 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ ThirtyOneMemberBundle, ThirtyOneFrontBundle ]
     #java: /usr/bin/java
+    ruby: %ruby.bin%
     filters:
         cssrewrite: ~
+        compass:
+            bin: %compass.bin%
         #closure:
         #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
         #yui_css:

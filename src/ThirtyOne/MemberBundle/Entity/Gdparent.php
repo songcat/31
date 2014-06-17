@@ -43,6 +43,13 @@ class Gdparent
 
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="string", length=255)
+     */
+    private $photo;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -99,18 +106,42 @@ class Gdparent
     }
 
     /**
-     * @param mixed $family
+     * Set photo
+     *
+     * @param string $photo
+     * @return parents
      */
-    public function setFamily($family)
+    public function setPhoto($photo)
     {
-        $this->family = $family;
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param mixed $parents
+     */
+    public function setParents($parents)
+    {
+        $this->parents = $parents;
     }
 
     /**
      * @return mixed
      */
-    public function getFamily()
+    public function getParents()
     {
-        return $this->family;
+        return $this->parents;
     }
+
 }

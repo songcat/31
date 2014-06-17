@@ -41,6 +41,8 @@
     <parameter key="debug_toolbar">true</parameter>
     <parameter key="debug_redirects">false</parameter>
     <parameter key="use_assetic_controller">true</parameter>
+    <parameter key="ruby.bin">/usr/bin/ruby</parameter>
+    <parameter key="compass.bin">/usr/bin/compass</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -427,7 +429,10 @@
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
     <parameter key="assetic.cache_dir">/Applications/MAMP/htdocs/ThirtyOne/app/cache/dev/assetic</parameter>
-    <parameter key="assetic.bundles" type="collection"/>
+    <parameter key="assetic.bundles" type="collection">
+      <parameter>ThirtyOneMemberBundle</parameter>
+      <parameter>ThirtyOneFrontBundle</parameter>
+    </parameter>
     <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
     <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
     <parameter key="assetic.helper.dynamic.class">Symfony\Bundle\AsseticBundle\Templating\DynamicAsseticHelper</parameter>
@@ -444,6 +449,24 @@
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
+    <parameter key="assetic.filter.compass.class">Assetic\Filter\CompassFilter</parameter>
+    <parameter key="assetic.filter.compass.bin">/usr/bin/compass</parameter>
+    <parameter key="assetic.filter.compass.timeout">null</parameter>
+    <parameter key="assetic.filter.compass.debug">false</parameter>
+    <parameter key="assetic.filter.compass.no_line_comments">false</parameter>
+    <parameter key="assetic.filter.compass.style">null</parameter>
+    <parameter key="assetic.filter.compass.images_dir">null</parameter>
+    <parameter key="assetic.filter.compass.fonts_dir">null</parameter>
+    <parameter key="assetic.filter.compass.javascripts_dir">null</parameter>
+    <parameter key="assetic.filter.compass.http_path">null</parameter>
+    <parameter key="assetic.filter.compass.http_images_path">null</parameter>
+    <parameter key="assetic.filter.compass.http_fonts_path">null</parameter>
+    <parameter key="assetic.filter.compass.http_generated_images_path">null</parameter>
+    <parameter key="assetic.filter.compass.generated_images_path">null</parameter>
+    <parameter key="assetic.filter.compass.http_javascripts_path">null</parameter>
+    <parameter key="assetic.filter.compass.plugins" type="collection"/>
+    <parameter key="assetic.filter.compass.load_paths" type="collection"/>
+    <parameter key="assetic.filter.compass.home_env">true</parameter>
     <parameter key="assetic.twig_extension.functions" type="collection"/>
     <parameter key="assetic.controller.class">Symfony\Bundle\AsseticBundle\Controller\AsseticController</parameter>
     <parameter key="assetic.routing_loader.class">Symfony\Bundle\AsseticBundle\Routing\AsseticLoader</parameter>
@@ -2902,7 +2925,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>539df22a3cb5f</argument>
+            <argument>53a08f1b06eb1</argument>
           </service>
         </argument>
       </argument>
@@ -3253,7 +3276,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>539df22a3cb5f</argument>
+            <argument>53a08f1b06eb1</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -3480,7 +3503,10 @@
             <argument type="service" id="templating.name_parser"/>
             <argument>true</argument>
             <argument type="collection"/>
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument>ThirtyOneMemberBundle</argument>
+              <argument>ThirtyOneFrontBundle</argument>
+            </argument>
             <argument type="service" id="assetic.value_supplier.default" on-invalid="null"/>
           </service>
         </argument>
@@ -3550,6 +3576,7 @@
       <argument type="service" id="service_container"/>
       <argument type="collection">
         <argument key="cssrewrite">assetic.filter.cssrewrite</argument>
+        <argument key="compass">assetic.filter.compass</argument>
       </argument>
     </service>
     <service id="assetic.asset_manager" class="Assetic\Factory\LazyAssetManager">
@@ -3574,6 +3601,60 @@
           </service>
         </argument>
       </argument>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>ThirtyOneMemberBundle</argument>
+                  <argument>/Applications/MAMP/htdocs/ThirtyOne/app/Resources/ThirtyOneMemberBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>ThirtyOneMemberBundle</argument>
+                  <argument>/Applications/MAMP/htdocs/ThirtyOne/src/ThirtyOne/MemberBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>ThirtyOneFrontBundle</argument>
+                  <argument>/Applications/MAMP/htdocs/ThirtyOne/app/Resources/ThirtyOneFrontBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>ThirtyOneFrontBundle</argument>
+                  <argument>/Applications/MAMP/htdocs/ThirtyOne/src/ThirtyOne/FrontBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
       <call method="addResource">
         <argument type="service">
           <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
@@ -3609,6 +3690,59 @@
     </service>
     <service id="assetic.filter.cssrewrite" class="Assetic\Filter\CssRewriteFilter">
       <tag name="assetic.filter" alias="cssrewrite"/>
+    </service>
+    <service id="assetic.filter.compass" class="Assetic\Filter\CompassFilter">
+      <tag name="assetic.filter" alias="compass"/>
+      <argument>/usr/bin/compass</argument>
+      <argument>/usr/bin/ruby</argument>
+      <call method="setTimeout">
+        <argument>null</argument>
+      </call>
+      <call method="setDebugInfo">
+        <argument>false</argument>
+      </call>
+      <call method="setNoLineComments">
+        <argument>false</argument>
+      </call>
+      <call method="setStyle">
+        <argument>null</argument>
+      </call>
+      <call method="setImagesDir">
+        <argument>null</argument>
+      </call>
+      <call method="setFontsDir">
+        <argument>null</argument>
+      </call>
+      <call method="setJavascriptsDir">
+        <argument>null</argument>
+      </call>
+      <call method="setHttpPath">
+        <argument>null</argument>
+      </call>
+      <call method="setHttpImagesPath">
+        <argument>null</argument>
+      </call>
+      <call method="setHttpFontsPath">
+        <argument>null</argument>
+      </call>
+      <call method="setHttpGeneratedImagesPath">
+        <argument>null</argument>
+      </call>
+      <call method="setGeneratedImagesPath">
+        <argument>null</argument>
+      </call>
+      <call method="setHttpJavascriptsPath">
+        <argument>null</argument>
+      </call>
+      <call method="setPlugins">
+        <argument type="collection"/>
+      </call>
+      <call method="setLoadPaths">
+        <argument type="collection"/>
+      </call>
+      <call method="setHomeEnv">
+        <argument>true</argument>
+      </call>
     </service>
     <service id="assetic.controller" class="Symfony\Bundle\AsseticBundle\Controller\AsseticController" scope="prototype">
       <argument type="service" id="request"/>

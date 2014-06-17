@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b75587af-0014-4250-b8a4-30c743296745" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Security/login.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Security/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ThirtyOne.iws" />
@@ -30,7 +45,7 @@
       <file leaf-file-name="AjouterController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="28" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.70941335" vertical-offset="143" max-vertical-offset="962">
+            <state line="33" column="36" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.71190476" vertical-offset="130" max-vertical-offset="1443">
               <folding>
                 <element signature="e#53#110#0" expanded="true" />
               </folding>
@@ -38,24 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChildFormType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php">
+      <file leaf-file-name="getAjax.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="39" selection-start="2071" selection-end="2071" vertical-scroll-proportion="-8.285714" vertical-offset="632" max-vertical-offset="1365">
-              <folding>
-                <element signature="e#52#100#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParentFormType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="892" selection-end="892" vertical-scroll-proportion="-19.190475" vertical-offset="0" max-vertical-offset="663">
-              <folding>
-                <element signature="e#52#100#0" expanded="true" />
-              </folding>
+            <state line="19" column="20" selection-start="504" selection-end="504" vertical-scroll-proportion="-11.761905" vertical-offset="0" max-vertical-offset="416">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,7 +65,45 @@
       <file leaf-file-name="ajouter.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="8" selection-start="959" selection-end="959" vertical-scroll-proportion="-21.047619" vertical-offset="0" max-vertical-offset="624">
+            <state line="13" column="10" selection-start="329" selection-end="329" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="273">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="member.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="29" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="208">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GdParentFormType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="49" selection-start="1153" selection-end="1153" vertical-scroll-proportion="-21.666666" vertical-offset="0" max-vertical-offset="793">
+              <folding>
+                <element signature="e#52#100#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parents.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Parents.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="18" selection-start="488" selection-end="488" vertical-scroll-proportion="-16.666666" vertical-offset="1" max-vertical-offset="2639">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gdparent.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="5" selection-start="1858" selection-end="1858" vertical-scroll-proportion="-63.47619" vertical-offset="136" max-vertical-offset="1989">
               <folding />
             </state>
           </provider>
@@ -87,21 +127,14 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Event.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Security/login.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Registration/register_content.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationListener.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/config/services.xml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationConfirmListener.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/config/security.yml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Parents.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EditionController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Child.php" />
@@ -109,7 +142,20 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Security/login.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/Public/js/jquery.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/public/js/jquery.js" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
       </list>
     </option>
@@ -147,6 +193,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,198 +222,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -420,40 +275,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MemberBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Registration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -543,7 +364,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MemberBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -599,32 +454,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EventListener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MemberBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -646,86 +475,9 @@
               <option name="myItemId" value="ThirtyOne" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MemberBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThirtyOne" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -777,14 +529,18 @@
       <created>1402959397358</created>
       <updated>1402959397358</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child.&#10;-&gt; now, it seems to work">
+      <created>1402959760158</created>
+      <updated>1402959760158</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -795,15 +551,15 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27109975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25681493" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26040173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23979592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23979592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -823,9 +579,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25322813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -844,19 +600,47 @@
     <MESSAGE value="beginning of the registration" />
     <MESSAGE value="can add a child to a family" />
     <MESSAGE value="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child." />
-    <option name="LAST_COMMIT_MESSAGE" value="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child." />
+    <MESSAGE value="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child.&#10;-&gt; now, it seems to work" />
+    <MESSAGE value="advanced process to add a new member with his family" />
+    <option name="LAST_COMMIT_MESSAGE" value="advanced process to add a new member with his family" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php">
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="5" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="559">
+        <state line="51" column="28" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="962">
           <folding>
-            <element signature="e#56#89#0" expanded="false" />
+            <element signature="e#53#110#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="39" selection-start="2071" selection-end="2071" vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="892" selection-end="892" vertical-scroll-proportion="0.0" vertical-offset="403" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="8" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="624">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="5" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="559" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -888,9 +672,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/ThirtyOneMemberBundle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="545">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="545" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/EventListener/AuthenticationListener.php">
@@ -903,11 +685,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="545" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="36" selection-start="709" selection-end="709" vertical-scroll-proportion="0.44656488" vertical-offset="0" max-vertical-offset="524" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/config/services.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="127" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.6597744" vertical-offset="0" max-vertical-offset="532">
@@ -915,90 +692,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Parents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="7" selection-start="499" selection-end="499" vertical-scroll-proportion="-0.16432585" vertical-offset="494" max-vertical-offset="2639">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Registration/register_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="7" selection-start="313" selection-end="313" vertical-scroll-proportion="0.12603877" vertical-offset="0" max-vertical-offset="722" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="10" selection-start="280" selection-end="280" vertical-scroll-proportion="0.1414966" vertical-offset="0" max-vertical-offset="735" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="30" selection-start="388" selection-end="388" vertical-scroll-proportion="0.24761905" vertical-offset="0" max-vertical-offset="735" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="7" selection-start="375" selection-end="375" vertical-scroll-proportion="0.6294737" vertical-offset="0" max-vertical-offset="475" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="20" selection-start="782" selection-end="782" vertical-scroll-proportion="0.733871" vertical-offset="0" max-vertical-offset="496" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="7" selection-start="635" selection-end="635" vertical-scroll-proportion="0.65052634" vertical-offset="159" max-vertical-offset="1586" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Profile/edit_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="733">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="733" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Profile/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Controller/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1575" selection-end="1575" vertical-scroll-proportion="-1.1246537" vertical-offset="1124" max-vertical-offset="1846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="78" selection-start="1403" selection-end="1403" vertical-scroll-proportion="0.71207863" vertical-offset="338" max-vertical-offset="2938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="15" selection-start="422" selection-end="422" vertical-scroll-proportion="0.21282402" vertical-offset="0" max-vertical-offset="733">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="33" selection-start="2225" selection-end="2225" vertical-scroll-proportion="1.3656207" vertical-offset="0" max-vertical-offset="1092">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="517" selection-end="517" vertical-scroll-proportion="0.33697134" vertical-offset="0" max-vertical-offset="733">
-          <folding />
-        </state>
+        <state line="41" column="0" selection-start="1575" selection-end="1575" vertical-scroll-proportion="-1.1246537" vertical-offset="1124" max-vertical-offset="1846" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Child.php">
@@ -1010,62 +716,178 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/RegistrationFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="20" selection-start="931" selection-end="931" vertical-scroll-proportion="0.4943662" vertical-offset="0" max-vertical-offset="710">
-          <folding />
-        </state>
+        <state line="28" column="20" selection-start="931" selection-end="931" vertical-scroll-proportion="0.4943662" vertical-offset="0" max-vertical-offset="710" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Controller/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.37302727" vertical-offset="260" max-vertical-offset="1157">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.37302727" vertical-offset="260" max-vertical-offset="1157" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="337" selection-end="337" vertical-scroll-proportion="0.21282402" vertical-offset="0" max-vertical-offset="733">
-          <folding>
-            <element signature="e#53#110#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="12" column="18" selection-start="337" selection-end="337" vertical-scroll-proportion="0.21282402" vertical-offset="0" max-vertical-offset="733" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="7" selection-start="578" selection-end="578" vertical-scroll-proportion="0.319236" vertical-offset="0" max-vertical-offset="733">
+        <state line="21" column="7" selection-start="578" selection-end="578" vertical-scroll-proportion="0.319236" vertical-offset="0" max-vertical-offset="733" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="66" selection-start="988" selection-end="988" vertical-scroll-proportion="0.260582" vertical-offset="258" max-vertical-offset="1131">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="8" selection-start="959" selection-end="959" vertical-scroll-proportion="-21.047619" vertical-offset="0" max-vertical-offset="624">
+        <state line="18" column="33" selection-start="540" selection-end="540" vertical-scroll-proportion="0.30952382" vertical-offset="0" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="36" selection-start="517" selection-end="517" vertical-scroll-proportion="0.33697134" vertical-offset="0" max-vertical-offset="733">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="70" selection-start="469" selection-end="469" vertical-scroll-proportion="0.29680365" vertical-offset="0" max-vertical-offset="657">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Registration/register_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="7" selection-start="313" selection-end="313" vertical-scroll-proportion="0.13018598" vertical-offset="0" max-vertical-offset="699">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="25" selection-start="232" selection-end="232" vertical-scroll-proportion="0.15476191" vertical-offset="0" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="15" selection-start="471" selection-end="471" vertical-scroll-proportion="0.32671958" vertical-offset="0" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/routing/security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="73" selection-start="391" selection-end="391" vertical-scroll-proportion="0.12037037" vertical-offset="0" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="3" selection-start="668" selection-end="898" vertical-scroll-proportion="0.51123595" vertical-offset="0" max-vertical-offset="712">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="0" selection-end="386" vertical-scroll-proportion="0.23735955" vertical-offset="0" max-vertical-offset="712">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/public/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="31446" selection-start="95686" selection-end="95686" vertical-scroll-proportion="0.054166667" vertical-offset="0" max-vertical-offset="720">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="10" selection-start="922" selection-end="922" vertical-scroll-proportion="0.49297753" vertical-offset="0" max-vertical-offset="712">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="892" selection-end="892" vertical-scroll-proportion="-19.190475" vertical-offset="0" max-vertical-offset="663">
+        <state line="24" column="30" selection-start="0" selection-end="1199" vertical-scroll-proportion="0.4016854" vertical-offset="0" max-vertical-offset="712">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="0" selection-start="1024" selection-end="1146" vertical-scroll-proportion="0.2186589" vertical-offset="461" max-vertical-offset="2938">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="29" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="208">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="5" selection-start="1858" selection-end="1858" vertical-scroll-proportion="-63.47619" vertical-offset="136" max-vertical-offset="1989">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="49" selection-start="1153" selection-end="1153" vertical-scroll-proportion="-21.666666" vertical-offset="0" max-vertical-offset="793">
           <folding>
             <element signature="e#52#100#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Parents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="18" selection-start="488" selection-end="488" vertical-scroll-proportion="-16.666666" vertical-offset="1" max-vertical-offset="2639">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="39" selection-start="2071" selection-end="2071" vertical-scroll-proportion="-8.285714" vertical-offset="632" max-vertical-offset="1365">
-          <folding>
-            <element signature="e#52#100#0" expanded="true" />
-          </folding>
+        <state line="62" column="39" selection-start="2071" selection-end="2071" vertical-scroll-proportion="1.0955056" vertical-offset="0" max-vertical-offset="1339">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="10" selection-start="329" selection-end="329" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="273">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="20" selection-start="504" selection-end="504" vertical-scroll-proportion="-11.761905" vertical-offset="0" max-vertical-offset="416">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="28" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.70941335" vertical-offset="143" max-vertical-offset="962">
+        <state line="33" column="36" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.71190476" vertical-offset="130" max-vertical-offset="1443">
           <folding>
             <element signature="e#53#110#0" expanded="true" />
           </folding>

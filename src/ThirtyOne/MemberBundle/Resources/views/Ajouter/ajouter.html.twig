@@ -1,43 +1,16 @@
-{% extends "::layout.html.twig" %}
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
 {% block content %}
 
-    <h2 class="nameForm">{{ formParentName }}</h2>
 
-    {{ form_start(formParent)}}
-    {{ form_errors(formParent) }}
-    <div id="formParent">
-
-        {% for champs in formParent %}
-            {% if champs.errors is defined %}
-                {{ form_label(champs) }}
-                {% if champs.errors is defined %}
-                    {{ form_errors(champs) }}
-                {% endif %}
-                {{ form_widget(champs) }}
-            {% endif %}
-        {% endfor  %}
-
-        {{ form_end(formParent) }}
+    <div class="addForm">
+        <a href="#" class="Parent">Ajouter un parent</a>
+        <a href="#" class="Child">Ajouter un enfant</a>
+        <a href="#" class="GdParent">Ajouter un grand parent</a>
     </div>
 
-    <h2 class="nameForm">{{ formChildName }}</h2>
+    <div class="form">
 
-    {{ form_start(formChild)}}
-    {{ form_errors(formChild) }}
-    <div id="formChild">
-
-        {% for champs in formChild  %}
-            {% if champs.errors is defined %}
-                {{ form_label(champs) }}
-                {% if champs.errors is defined %}
-                    {{ form_errors(champs) }}
-                {% endif %}
-                {{ form_widget(champs) }}
-            {% endif %}
-        {% endfor  %}
-
-        {{ form_end(formChild) }}
     </div>
 
 {% endblock %}

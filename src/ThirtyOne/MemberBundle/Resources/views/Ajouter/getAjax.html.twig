@@ -1,0 +1,26 @@
+<h2 class="nameForm">Ajouter un {{ formType }}</h2>
+
+{% if error is defined %}
+    {{ error }}
+
+
+{% else %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div>
+
+        {% for champs in form %}
+            {% if champs.errors is defined %}
+                {{ form_label(champs) }}
+                {% if champs.errors is defined %}
+                    {{ form_errors(champs) }}
+                {% endif %}
+                {{ form_widget(champs) }}
+            {% endif %}
+        {% endfor %}
+        <input type="hidden" name="formType" value="{{ formType }}">
+
+        {{ form_end(form) }}
+
+    </div>
+{% endif %}

@@ -1,24 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}ThirtyOne{% endblock %}</title>
-
+    <meta charset="UTF-8" />
+    <title>{% block title %}31{% endblock %}</title>
+    {% block stylesheets %}
+        {% stylesheets filter="compass" output="css/vendor.css" "../app/Resources/public/css/*.scss" %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 
-<body class="{% block bclass %}{% endblock %}">
-<header>
-    <a href='#'><h1>logo</h1></a>
-    {% block navigation %}
+<body>
+
+    <header>
+        <a href='#'><h1>logo</h1></a>
+        {% block navigation %}
+        {% endblock %}
+    </header>
+
+    {% block content %}
     {% endblock %}
-</header>
 
-{% block content %}
-{% endblock %}
+    <footer>
+        ©footer
+    </footer>
+
+    {% block javascripts %}
+        {% javascripts '../app/Resources/public/js/*.js'  output="js/vendor.js" %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
 </body>
 
-<footer>
-    ©footer
-</footer>
-</body>
 </html>

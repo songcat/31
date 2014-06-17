@@ -27,3 +27,9 @@
         {% endblock fos_user_content %}
     </div>
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@ThirtyOneMemberBundle/Resources/public/js/*.js'  output="js/vendor.js" %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
