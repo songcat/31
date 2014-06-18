@@ -14,6 +14,12 @@ class ChildFormType extends AbstractType
             ->add('firstname', 'text', array(
                 'label' => 'Prénom'
             ))
+            ->add('gender', 'choice', array(
+                'choices'   => array('m' => 'male', 'f' => 'female'),
+                'multiple'  => false,
+                'expanded'  => true,
+                'label'     => 'sexe'
+            ))
             ->add('age', 'date', array(
                 'years' => range(date('Y') - 25, date('Y')),
                 'label' => 'Date de naissance'

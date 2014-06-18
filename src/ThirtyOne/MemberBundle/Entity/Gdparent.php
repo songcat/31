@@ -30,6 +30,13 @@ class Gdparent
     /**
      * @var string
      *
+     * @ORM\Column(name="gender", type="string", length=255)
+     */
+    private $gender;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="firstname", type="string", length=255)
      */
     private $firstname;
@@ -142,6 +149,22 @@ class Gdparent
     public function getParents()
     {
         return $this->parents;
+    }
+
+    /**
+     * @param string $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 
 }

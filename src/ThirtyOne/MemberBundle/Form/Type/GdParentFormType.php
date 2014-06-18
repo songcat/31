@@ -21,6 +21,12 @@ class GdParentFormType extends AbstractType
             ->add('firstname', 'text', array(
                 'label' => 'Prénom'
             ))
+            ->add('gender', 'choice', array(
+                'choices'   => array('m' => 'homme', 'f' => 'femme'),
+                'multiple'  => false,
+                'expanded'  => true,
+                'label'     => 'sexe'
+            ))
             ->add('birthname', 'text', array(
                 'required' => false,
                 'label' => 'Nom de jeune fille'
@@ -29,8 +35,8 @@ class GdParentFormType extends AbstractType
                 'label' => 'photo'
             ))
             ->add('parents', 'entity', array(
-                'class' => 'ThirtyOneMemberBundle:Parents',
-                'property' => 'firstname',
+                'class'         => 'ThirtyOneMemberBundle:Parents',
+                'property'      => 'firstname',
                 'query_builder' => function(EntityRepository $er) {
                         return $er->createQueryBuilder('p')
                             ->where('p.family ='. $this->famId);

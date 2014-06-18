@@ -35,13 +35,13 @@ class AjouterController extends Controller
     }
 
     /**
-     * @Route("/inscription/ajouter")
+     * @Route("/profile/famille")
      * @Template()
      */
     public function ajouterAction()
     {
         if (!$this->get('security.context')->isGranted('ROLE_USER')) {
-            throw new AccessDeniedHttpExceptionc();
+            throw new AccessDeniedHttpException();
         }
 
         $request = $this->get('request');
@@ -58,6 +58,17 @@ class AjouterController extends Controller
                 if ($formType != 'GdParent') {
                     $switch[0]->setFamily($fam);
                 }
+                else {
+                    $selectParent = $switch[1]->getData();
+                    $parentId = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($selectParent->getParents());
+                    $nbGdparent = count($em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parentId));
+                    if ($nbGdparent >= '2') {
+                        return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
+                            'formType' => $formType,
+                            'error' => 'Vous ne pouvez saisir plus de deux grand parents pour ce parent.',
+                        ));
+                    }
+                }
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($switch[0]);
                 $em->flush();
@@ -68,7 +79,7 @@ class AjouterController extends Controller
     }
 
     /**
-     * @Route("/inscription/getAjax")
+     * @Route("/profile/getAjax")
      * @Template()
      */
     public function getAjaxAction()
@@ -80,17 +91,21 @@ class AjouterController extends Controller
 
         if ($formType == 'Parent' || $formType == 'GdParent') {
             $nbParent = count($em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId));
-            if ($nbParent == 2 && $formType == 'Parent') {
-                return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
-                    'formType' => $formType,
-                    'error' => 'WTF ? deja deux parents...',
-                ));
+            if ($formType == 'Parent') {
+                if ($nbParent >= 2) {
+                    return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
+                        'formType' => $formType,
+                        'error' => 'WTF ? deja deux parents...',
+                    ));
+                }
             }
-            else if (!$nbParent && $formType == 'GdParent'){
-                return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
-                    'formType' => $formType,
-                    'error' => 'Merci de saisir un parent',
-                ));
+            else {
+                if (!$nbParent){
+                    return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
+                        'formType' => $formType,
+                        'error' => 'Vous ne pouvez saisir de grand parent sans parent. Merci d\'en saisir un.',
+                    ));
+                }
             }
         }
 
@@ -101,6 +116,5 @@ class AjouterController extends Controller
             'formType' => $formType,
         ));
     }
-
 
 }

@@ -30,6 +30,13 @@ class Child
     /**
      * @var string
      *
+     * @ORM\Column(name="gender", type="string", length=255)
+     */
+    private $gender;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="firstname", type="string", length=255)
      */
     private $firstname;
@@ -578,5 +585,21 @@ class Child
     public function getFamily()
     {
         return $this->family;
+    }
+
+    /**
+     * @param string $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 }

@@ -37,9 +37,45 @@ class Family extends BaseUser
     private $child;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Event", mappedBy="famiy")
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Event", mappedBy="family")
      */
     private $event;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="civilite", type="string", length=255)
+     */
+    private $civilite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="firstname", type="string", length=255)
+     */
+    private $firstname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbChildren", type="integer")
+     */
+    private $nbChildren;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="region", type="string", length=255)
+     */
+    private $region;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phonenumber", type="text", length=15)
+     */
+    private $phonenumber;
+
 
     /**
      * @var string
@@ -51,7 +87,7 @@ class Family extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=255)
+     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
      */
     private $photo;
 
@@ -218,5 +254,85 @@ class Family extends BaseUser
     public function getEvent()
     {
         return $this->event;
+    }
+
+    /**
+     * @param string $civilite
+     */
+    public function setCivilite($civilite)
+    {
+        $this->civilite = $civilite;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
+    }
+
+    /**
+     * @param string $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param string $nbChildren
+     */
+    public function setNbChildren($nbChildren)
+    {
+        $this->nbChildren = $nbChildren;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNbChildren()
+    {
+        return $this->nbChildren;
+    }
+
+    /**
+     * @param string $region
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * @param string $phonenumber
+     */
+    public function setPhonenumber($phonenumber)
+    {
+        $this->phonenumber = $phonenumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhonenumber()
+    {
+        return $this->phonenumber;
     }
 }
