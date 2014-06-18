@@ -33,9 +33,16 @@ class AjouterController extends Controller
         }
         return array($entity, $form);
     }
+    /**
+     * @Route("/inscription/confirmation")
+     * @Template()
+     */
+    public function confirmationAction() {
+        return array();
+    }
 
     /**
-     * @Route("/profile/famille")
+     * @Route("/profil/famille")
      * @Template()
      */
     public function ajouterAction()
@@ -79,7 +86,7 @@ class AjouterController extends Controller
     }
 
     /**
-     * @Route("/profile/getAjax")
+     * @Route("/profil/getAjax")
      * @Template()
      */
     public function getAjaxAction()

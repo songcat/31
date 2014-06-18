@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b75587af-0014-4250-b8a4-30c743296745" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/confirmation.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Child.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Child.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Parents.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Parents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/RegistrationFormType.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/RegistrationFormType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Registration/register_content.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Registration/register_content.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ThirtyOne.iws" />
@@ -37,10 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AjouterController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AjouterController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="17" selection-start="4154" selection-end="4154" vertical-scroll-proportion="-22.957447" vertical-offset="312" max-vertical-offset="1625">
+            <state line="100" column="25" selection-start="3627" selection-end="3627" vertical-scroll-proportion="0.5677966" vertical-offset="1032" max-vertical-offset="1716">
               <folding>
                 <element signature="e#53#110#0" expanded="true" />
               </folding>
@@ -62,6 +56,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="21" column="27" selection-start="708" selection-end="708" vertical-scroll-proportion="-3.5921052" vertical-offset="0" max-vertical-offset="364">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationCompletedListener.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="77" selection-start="914" selection-end="914" vertical-scroll-proportion="-18.571428" vertical-offset="0" max-vertical-offset="520">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirmation.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/confirmation.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="30" selection-start="116" selection-end="116" vertical-scroll-proportion="-3.0952382" vertical-offset="0" max-vertical-offset="195">
+              <folding>
+                <marker date="1403103672000" expanded="true" signature="57:228" placeholder="{% block content ...%}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +103,7 @@
       <file leaf-file-name="GdParentFormType.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="44" selection-start="617" selection-end="633" vertical-scroll-proportion="-9.952381" vertical-offset="51" max-vertical-offset="832">
+            <state line="31" column="38" selection-start="953" selection-end="953" vertical-scroll-proportion="-14.904762" vertical-offset="51" max-vertical-offset="832">
               <folding />
             </state>
           </provider>
@@ -98,16 +112,16 @@
       <file leaf-file-name="ajouter.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="10" selection-start="329" selection-end="329" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="273">
+            <state line="15" column="24" selection-start="355" selection-end="355" vertical-scroll-proportion="-9.285714" vertical-offset="0" max-vertical-offset="403">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="member.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="275" selection-end="275" vertical-scroll-proportion="0.2504817" vertical-offset="0" max-vertical-offset="519">
+            <state line="4" column="47" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="208">
               <folding />
             </state>
           </provider>
@@ -138,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EditionController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
@@ -148,7 +161,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/public/js/jquery.js" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Parents.php" />
@@ -159,8 +171,11 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/RegistrationFormType.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Registration/register_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/confirmation.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" />
       </list>
     </option>
   </component>
@@ -491,6 +506,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="EventListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MemberBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -601,12 +642,16 @@
       <created>1403047782810</created>
       <updated>1403047782810</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modifying inscription process">
+      <created>1403101538624</created>
+      <updated>1403101538624</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="874" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908162" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -617,7 +662,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27109975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27109975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -631,25 +676,25 @@
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908162" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23979592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23979592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32992327" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27109975" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25322813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -671,19 +716,13 @@
     <MESSAGE value="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child.&#10;-&gt; now, it seems to work" />
     <MESSAGE value="advanced process to add a new member with his family" />
     <MESSAGE value="modifying inscription process" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifying inscription process" />
+    <MESSAGE value="before change all AjouterController" />
+    <option name="LAST_COMMIT_MESSAGE" value="before change all AjouterController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="416">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="10" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="273">
@@ -826,11 +865,6 @@
         <state line="12" column="18" selection-start="337" selection-end="337" vertical-scroll-proportion="0.21282402" vertical-offset="0" max-vertical-offset="733" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="7" selection-start="578" selection-end="578" vertical-scroll-proportion="0.319236" vertical-offset="0" max-vertical-offset="733" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="66" selection-start="988" selection-end="988" vertical-scroll-proportion="0.260582" vertical-offset="258" max-vertical-offset="1131" />
@@ -932,23 +966,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="329" selection-end="329" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="273">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="44" selection-start="617" selection-end="633" vertical-scroll-proportion="-9.952381" vertical-offset="51" max-vertical-offset="832">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/RegistrationFormType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="18" selection-start="2752" selection-end="2752" vertical-scroll-proportion="-24.142857" vertical-offset="299" max-vertical-offset="1144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Registration/register_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="27" selection-start="708" selection-end="708" vertical-scroll-proportion="-3.5921052" vertical-offset="0" max-vertical-offset="364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/confirmation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="116" selection-end="116" vertical-scroll-proportion="-3.0952382" vertical-offset="0" max-vertical-offset="195">
+          <folding>
+            <marker date="1403103672000" expanded="true" signature="57:228" placeholder="{% block content ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/EventListener/RegistrationCompletedListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="77" selection-start="914" selection-end="914" vertical-scroll-proportion="-18.571428" vertical-offset="0" max-vertical-offset="520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="47" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="208">
           <folding />
         </state>
       </provider>
@@ -962,22 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Registration/register_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="27" selection-start="708" selection-end="708" vertical-scroll-proportion="-3.5921052" vertical-offset="0" max-vertical-offset="364">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="17" selection-start="4154" selection-end="4154" vertical-scroll-proportion="-22.957447" vertical-offset="312" max-vertical-offset="1625">
-          <folding>
-            <element signature="e#53#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="10" selection-start="585" selection-end="585" vertical-scroll-proportion="-13.619047" vertical-offset="0" max-vertical-offset="416">
@@ -985,10 +1019,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js">
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="275" selection-end="275" vertical-scroll-proportion="0.2504817" vertical-offset="0" max-vertical-offset="519">
+        <state line="31" column="38" selection-start="953" selection-end="953" vertical-scroll-proportion="-14.904762" vertical-offset="51" max-vertical-offset="832">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="24" selection-start="355" selection-end="355" vertical-scroll-proportion="-9.285714" vertical-offset="0" max-vertical-offset="403">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="25" selection-start="3627" selection-end="3627" vertical-scroll-proportion="0.5677966" vertical-offset="1032" max-vertical-offset="1716">
+          <folding>
+            <element signature="e#53#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

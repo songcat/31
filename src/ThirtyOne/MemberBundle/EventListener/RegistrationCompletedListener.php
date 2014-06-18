@@ -31,7 +31,7 @@ class RegistrationCompletedListener implements EventSubscriberInterface
 
     public function onRegistrationCompleted($event)
     {
-        $url = $this->router->generate('thirtyone_member_ajouter_ajouter');
+        $url = $this->router->generate('thirtyone_member_ajouter_confirmation');
 
         $event->setResponse(new RedirectResponse($url));
     }
