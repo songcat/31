@@ -18,20 +18,26 @@ class GdParentFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', 'text', array(
-                'label' => 'Prénom'
-            ))
             ->add('gender', 'choice', array(
                 'choices'   => array('m' => 'homme', 'f' => 'femme'),
                 'multiple'  => false,
                 'expanded'  => true,
                 'label'     => 'sexe'
             ))
+            ->add('firstname', 'text', array(
+                'label' => 'Prénom'
+            ))
             ->add('birthname', 'text', array(
                 'required' => false,
-                'label' => 'Nom de jeune fille'
+                'label' => 'Nom'
+            ))
+            ->add('age', 'date', array(
+                'years' => range(date('Y') - 125, date('Y') - 55),
+                'month' => NULL, 'day' => NULL,
+                'label' => 'Année de naissance'
             ))
             ->add('photo', 'file', array(
+                'required' => false,
                 'label' => 'photo'
             ))
             ->add('parents', 'entity', array(

@@ -54,6 +54,13 @@ class Parents
     private $birthname;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="age", type="datetime")
+     */
+    private $age;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="job", type="string", length=255, nullable=true)
@@ -63,7 +70,7 @@ class Parents
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=255)
+     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
      */
     private $photo;
 
@@ -217,4 +224,22 @@ class Parents
     {
         return $this->gender;
     }
+
+    /**
+     * @param \DateTime $age
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+
 }

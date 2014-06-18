@@ -3,24 +3,66 @@
 {% block content %}
 
 
-    <div class="addForm">
-        <a href="#" class="Parent">Ajouter un parent</a>
-        <a href="#" class="Child">Ajouter un enfant</a>
-        <a href="#" class="GdParent">Ajouter un grand parent</a>
-    </div>
 
-    <div class="form">
 
-    </div>
+
 
     <div class="GdParent">
 
     </div>
     <div class="Parent">
+        <h2>Parents</h2>
+        {% if parent is defined %}
+            {% for p in parent %}
+                <div>{{ p.firstname }} {{ p.birthname }}</div>
+            {% endfor %}
+            {% if parent|length < 2 %}
+                <div class="addForm">
+                    <a href="#" id="Parent" class="2">Ajouter un parent</a>
+                </div>
+                <div class="form"></div>
+            {% endif %}
+
+        {% else %}
+            <div class="addForm">
+                <a href="#" id="Parent" class="1">Ajouter un parent</a>
+            </div>
+            <div class="addForm">
+                <a href="#" id="Parent" class="2">Ajouter un parent</a>
+            </div>
+            <div class="form"></div>
+        {% endif %}
 
     </div>
-    <div class="Childr">
+    <div class="Child">
+        <h2>Enfants</h2>
+        {% if child is defined %}
+            {% for c in child %}
+                <div>{{ c.firstname }}</div>
+            {% endfor %}
+            {% if child|length < nbChildren %}
+                {% for i in child|length+1..nbChildren %}
 
+                    <div class="form {{ i }}">
+                        <div class="addForm">
+                            <a href="#" id="Child" class="{{ i }}">Ajouter les
+                                enfants</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+        {% else %}
+            {% for i in 1..nbChildren %}
+
+                <div class="form {{ i }}">
+                    <div class="addForm">
+                        <a href="#" id="Child" class="{{ i }}">Ajouter les
+                            enfants</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
 
 {% endblock %}

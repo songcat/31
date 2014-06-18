@@ -56,6 +56,11 @@ class AjouterController extends Controller
         $em = $this->getDoctrine()->getManager();
         $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($famId);
 
+        $parent = $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId);
+        $child = $em->getRepository('ThirtyOneMemberBundle:Child')->findByFamily($famId);
+
+        $nbChildren = $fam->getNbChildren();
+
         if ($request->getMethod() == 'POST') {
             $formType = $request->get('formType');
 
@@ -80,6 +85,32 @@ class AjouterController extends Controller
                 $em->persist($switch[0]);
                 $em->flush();
             }
+        }
+        if ($parent) {
+            if ($child)
+                return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
+                    'parent' => $parent,
+                    'nbChildren' => $nbChildren,
+                    'child' => $child,
+                ));
+            else
+                return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
+                    'parent' => $parent,
+                    'nbChildren' => $nbChildren,
+                ));
+        }
+        else if ($child) {
+            if ($parent)
+                return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
+                    'parent' => $parent,
+                    'nbChildren' => $nbChildren,
+                    'child' => $child,
+                ));
+            else
+                return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
+                    'child' => $child,
+                    'nbChildren' => $nbChildren,
+                ));
         }
 
         return array();

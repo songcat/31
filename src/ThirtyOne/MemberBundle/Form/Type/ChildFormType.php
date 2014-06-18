@@ -11,36 +11,29 @@ class ChildFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', 'text', array(
-                'label' => 'Prénom'
-            ))
-            ->add('gender', 'choice', array(
-                'choices'   => array('m' => 'male', 'f' => 'female'),
-                'multiple'  => false,
-                'expanded'  => true,
-                'label'     => 'sexe'
-            ))
             ->add('age', 'date', array(
                 'years' => range(date('Y') - 25, date('Y')),
                 'label' => 'Date de naissance'
             ))
-            ->add('school', 'text', array(
+            ->add('firstname', 'text', array(
+                'label' => 'Prénom'
+            ))
+            ->add('gender', 'choice', array(
+                'choices'   => array('m' => 'homme', 'f' => 'femme'),
+                'multiple'  => false,
+                'expanded'  => true,
+                'label'     => 'sexe'
+            ))
+            /*->add('school', 'text', array(
                 'label' => 'Ecole fréquentée'
             ))
             ->add('city', 'text', array(
                 'label' => 'Ville actuelle'
-            ))
+            ))*/
             ->add('photo', 'file', array(
-                'label' => 'Photo'
-            ))
-            ->add('photo1', 'file', array(
-                'required'    => false,
-                'label' => 'Photo'
-            ))
-            ->add('photo2', 'file', array(
-                'required'    => false,
-                'label' => 'Photo'
-            ))
+                'label' => 'Photo',
+                'required' => false,
+            ))/*
             ->add('passion', 'text', array(
                 'required'    => false,
                 'label' => 'Passions'
@@ -84,7 +77,7 @@ class ChildFormType extends AbstractType
             ->add('place', 'text', array(
                 'required'    => false,
                 'label' => 'Lieux préférés'
-            ))
+            ))*/
 
             ->add('Enregistrer', 'submit')->getForm();
         ;

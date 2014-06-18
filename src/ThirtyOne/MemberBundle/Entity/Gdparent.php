@@ -42,6 +42,13 @@ class Gdparent
     private $firstname;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="birthyear", type="integer")
+     */
+    private $birthyear;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="birthname", type="string", length=255, nullable=true)
@@ -52,7 +59,7 @@ class Gdparent
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=255)
+     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
      */
     private $photo;
 
@@ -165,6 +172,22 @@ class Gdparent
     public function getGender()
     {
         return $this->gender;
+    }
+
+    /**
+     * @param int $birthyear
+     */
+    public function setBirthyear($birthyear)
+    {
+        $this->birthyear = $birthyear;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBirthyear()
+    {
+        return $this->birthyear;
     }
 
 }
