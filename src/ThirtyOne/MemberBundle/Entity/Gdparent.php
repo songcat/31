@@ -42,9 +42,9 @@ class Gdparent
     private $firstname;
 
     /**
-     * @var integer
+     * @var \DateTime
      *
-     * @ORM\Column(name="birthyear", type="integer")
+     * @ORM\Column(name="birthyear", type="datetime")
      */
     private $birthyear;
 

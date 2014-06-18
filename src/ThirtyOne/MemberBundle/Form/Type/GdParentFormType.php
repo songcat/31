@@ -31,9 +31,8 @@ class GdParentFormType extends AbstractType
                 'required' => false,
                 'label' => 'Nom'
             ))
-            ->add('age', 'date', array(
+            ->add('birthyear', 'date', array(
                 'years' => range(date('Y') - 125, date('Y') - 55),
-                'month' => NULL, 'day' => NULL,
                 'label' => 'Année de naissance'
             ))
             ->add('photo', 'file', array(

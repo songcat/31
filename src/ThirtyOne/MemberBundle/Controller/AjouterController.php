@@ -33,11 +33,13 @@ class AjouterController extends Controller
         }
         return array($entity, $form);
     }
+
     /**
      * @Route("/inscription/confirmation")
      * @Template()
      */
-    public function confirmationAction() {
+    public function confirmationAction()
+    {
         return array();
     }
 
@@ -57,6 +59,7 @@ class AjouterController extends Controller
         $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($famId);
 
         $parent = $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId);
+        $gdparent = $em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parent);
         $child = $em->getRepository('ThirtyOneMemberBundle:Child')->findByFamily($famId);
 
         $nbChildren = $fam->getNbChildren();
@@ -69,8 +72,7 @@ class AjouterController extends Controller
             if ($switch[1]->isValid()) {
                 if ($formType != 'GdParent') {
                     $switch[0]->setFamily($fam);
-                }
-                else {
+                } else {
                     $selectParent = $switch[1]->getData();
                     $parentId = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($selectParent->getParents());
                     $nbGdparent = count($em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parentId));
@@ -84,22 +86,34 @@ class AjouterController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($switch[0]);
                 $em->flush();
+                return $this->redirect($this->generateUrl('thirtyone_member_ajouter_ajouter'), 301);
             }
         }
         if ($parent) {
-            if ($child)
+            if ($child && $gdparent)
+                return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
+                    'parent' => $parent,
+                    'nbChildren' => $nbChildren,
+                    'gdparent' => $gdparent,
+                    'child' => $child,
+                ));
+            else if ($child)
                 return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
                     'parent' => $parent,
                     'nbChildren' => $nbChildren,
                     'child' => $child,
                 ));
-            else
+            else if ($gdparent)
                 return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
+                    'parent' => $parent,
+                    'gdparent' => $gdparent,
+                ));
+
+            return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
                     'parent' => $parent,
                     'nbChildren' => $nbChildren,
                 ));
-        }
-        else if ($child) {
+        } else if ($child) {
             if ($parent)
                 return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
                     'parent' => $parent,
@@ -136,9 +150,8 @@ class AjouterController extends Controller
                         'error' => 'WTF ? deja deux parents...',
                     ));
                 }
-            }
-            else {
-                if (!$nbParent){
+            } else {
+                if (!$nbParent) {
                     return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
                         'formType' => $formType,
                         'error' => 'Vous ne pouvez saisir de grand parent sans parent. Merci d\'en saisir un.',
@@ -154,5 +167,4 @@ class AjouterController extends Controller
             'formType' => $formType,
         ));
     }
-
 }

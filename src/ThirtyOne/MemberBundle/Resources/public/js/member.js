@@ -6,6 +6,6 @@ $('.addForm a').click(function () {
         url: '/ThirtyOne/web/app_dev.php/profil/getAjax',
         data: {form: formType}
     }).done(function (data) {
-        $('.form .'+num).replaceWith(data);
+        $('.form .' + num).replaceWith(data);
     });
-})
+});

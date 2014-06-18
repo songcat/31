@@ -4,12 +4,44 @@
 
 
 
-
+    <p>Attention. Ajouter les membres de votre famille individuellement.</p>
 
 
     <div class="GdParent">
+        {% if (parent is defined) and (parent|length == 2) %}
+            {% if gdparent is defined %}
+                {% for gp in gdparent %}
+                    <div>{{ gp.firstname }} {{ gp.birthname }}</div>
+                {% endfor %}
+                {% if gdparent|length < 4 %}
+                    {% for i in gdparent|length+1..4 %}
 
+                        <div class="form {{ i }}">
+                            <div class="addForm">
+                                <a href="#" id="GdParent" class="{{ i }}">Ajouter gd
+                                    parent</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            {% else %}
+                {% for i in 1..4 %}
+
+                    <div class="form {{ i }}">
+                        <div class="addForm">
+                            <a href="#" id="GdParent" class="{{ i }}">Ajouter gd
+                                parent</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+        {% else %}
+            <p>Les parents sont nécessaires afin d'ajouter un grand parent.</p>
+        {% endif %}
     </div>
+
     <div class="Parent">
         <h2>Parents</h2>
         {% if parent is defined %}
@@ -17,20 +49,22 @@
                 <div>{{ p.firstname }} {{ p.birthname }}</div>
             {% endfor %}
             {% if parent|length < 2 %}
-                <div class="addForm">
-                    <a href="#" id="Parent" class="2">Ajouter un parent</a>
+                <div class="form 2">
+                    <div class="addForm">
+                        <a href="#" id="Parent" class="{{ i }}">Ajouter un parent</a>
+                    </div>
                 </div>
-                <div class="form"></div>
             {% endif %}
 
         {% else %}
-            <div class="addForm">
-                <a href="#" id="Parent" class="1">Ajouter un parent</a>
-            </div>
-            <div class="addForm">
-                <a href="#" id="Parent" class="2">Ajouter un parent</a>
-            </div>
-            <div class="form"></div>
+            {% for i in 1..2 %}
+
+                <div class="form {{ i }}">
+                    <div class="addForm">
+                        <a href="#" id="Parent" class="{{ i }}">Ajouter un parent</a>
+                    </div>
+                </div>
+            {% endfor %}
         {% endif %}
 
     </div>
@@ -45,8 +79,8 @@
 
                     <div class="form {{ i }}">
                         <div class="addForm">
-                            <a href="#" id="Child" class="{{ i }}">Ajouter les
-                                enfants</a>
+                            <a href="#" id="Child" class="{{ i }}">Ajouter un
+                                enfant</a>
                         </div>
                     </div>
                 {% endfor %}
@@ -57,8 +91,8 @@
 
                 <div class="form {{ i }}">
                     <div class="addForm">
-                        <a href="#" id="Child" class="{{ i }}">Ajouter les
-                            enfants</a>
+                        <a href="#" id="Child" class="{{ i }}">Ajouter un
+                            enfant</a>
                     </div>
                 </div>
             {% endfor %}
