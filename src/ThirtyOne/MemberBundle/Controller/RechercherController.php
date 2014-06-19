@@ -63,7 +63,6 @@ class RechercherController extends Controller {
      */
     public function getResultAction($params) {
         $tab = explode('_', $params);
-        \Doctrine\Common\Util\Debug::dump($tab);die();
         return $this->render('ThirtyOneMemberBundle:Rechercher:getResult.html.twig', array(
             'family' => $tab[0],
             'region' => $tab[1]

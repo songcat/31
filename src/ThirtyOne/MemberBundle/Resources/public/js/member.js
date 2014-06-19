@@ -15,7 +15,7 @@ $('.recherche form').submit(function () {
     region = $("option:selected").val();
     $.ajax({
         type: "POST",
-        url: '/ThirtyOne/web/app_dev.php/rechercher/getResult/'+family+'_'+region,
+        url: '/ThirtyOne/web/app_dev.php/rechercher/getResult/'+family+'_'+region
     }).done(function (data) {
         $('.results').replaceWith(data);
     });
