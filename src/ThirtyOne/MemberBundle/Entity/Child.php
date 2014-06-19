@@ -3,6 +3,7 @@
 namespace ThirtyOne\MemberBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Child
@@ -65,10 +66,9 @@ class Child
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $photo;
-
+    public $path;
 
     /**
      * @var string
@@ -147,16 +147,86 @@ class Child
      */
     private $place;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
+
+    /**
+     * photo
+     */
+
+    /**
+     * @Assert\File(maxSize="300000")
+     */
+    public $file;
+
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        if (null === $this->file) {
+            return;
+        }
+
+        $extension = $this->file->guessExtension();
+        if (!$extension) {
+            // l'extension n'a pas été trouvée
+            $extension = 'bin';
+        }
+        $fileName = time() . '.' . $extension;
+        $this->file->move($this->getUploadRootDir(), $fileName);
+
+        $this->path = $fileName;
+
+        // « nettoie » la propriété « file » comme vous n'en aurez plus besoin
+        $this->file = null;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->path ? null : $this->getUploadDir() . '/' . $this->path;
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        return 'uploads/documents';
+    }
+
+    /**
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
 
     /**
      * Set firstname
@@ -174,7 +244,7 @@ class Child
     /**
      * Get firstname
      *
-     * @return string 
+     * @return string
      */
     public function getFirstname()
     {
@@ -197,7 +267,7 @@ class Child
     /**
      * Get age
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getAge()
     {
@@ -220,7 +290,7 @@ class Child
     /**
      * Get school
      *
-     * @return string 
+     * @return string
      */
     public function getSchool()
     {
@@ -243,35 +313,13 @@ class Child
     /**
      * Get city
      *
-     * @return string 
+     * @return string
      */
     public function getCity()
     {
         return $this->city;
     }
 
-    /**
-     * Set photo
-     *
-     * @param string $photo
-     * @return Child
-     */
-    public function setPhoto($photo)
-    {
-        $this->photo = $photo;
-
-        return $this;
-    }
-
-    /**
-     * Get photo
-     *
-     * @return string 
-     */
-    public function getPhoto()
-    {
-        return $this->photo;
-    }
 
     /**
      * Set passion
@@ -289,7 +337,7 @@ class Child
     /**
      * Get passion
      *
-     * @return string 
+     * @return string
      */
     public function getPassion()
     {
@@ -312,7 +360,7 @@ class Child
     /**
      * Get sport
      *
-     * @return string 
+     * @return string
      */
     public function getSport()
     {
@@ -335,7 +383,7 @@ class Child
     /**
      * Get travel
      *
-     * @return string 
+     * @return string
      */
     public function getTravel()
     {
@@ -358,7 +406,7 @@ class Child
     /**
      * Get music
      *
-     * @return string 
+     * @return string
      */
     public function getMusic()
     {
@@ -381,7 +429,7 @@ class Child
     /**
      * Get cinema
      *
-     * @return string 
+     * @return string
      */
     public function getCinema()
     {
@@ -404,7 +452,7 @@ class Child
     /**
      * Get culture
      *
-     * @return string 
+     * @return string
      */
     public function getCulture()
     {
@@ -427,7 +475,7 @@ class Child
     /**
      * Get price
      *
-     * @return string 
+     * @return string
      */
     public function getPrice()
     {
@@ -450,7 +498,7 @@ class Child
     /**
      * Get proambition
      *
-     * @return string 
+     * @return string
      */
     public function getProambition()
     {
@@ -473,7 +521,7 @@ class Child
     /**
      * Get talentoday
      *
-     * @return string 
+     * @return string
      */
     public function getTalentoday()
     {
@@ -496,7 +544,7 @@ class Child
     /**
      * Get language
      *
-     * @return string 
+     * @return string
      */
     public function getLanguage()
     {
@@ -519,7 +567,7 @@ class Child
     /**
      * Get place
      *
-     * @return string 
+     * @return string
      */
     public function getPlace()
     {

@@ -35,9 +35,9 @@ class GdParentFormType extends AbstractType
                 'years' => range(date('Y') - 125, date('Y') - 55),
                 'label' => 'Année de naissance'
             ))
-            ->add('photo', 'file', array(
+            ->add('file', 'file', array(
+                'label' => 'Photo',
                 'required' => false,
-                'label' => 'photo'
             ))
             ->add('parents', 'entity', array(
                 'class'         => 'ThirtyOneMemberBundle:Parents',

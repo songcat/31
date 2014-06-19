@@ -31,9 +31,9 @@ class ParentFormType extends AbstractType
             ->add('job', 'text', array(
                 'label' => 'Métier'
             ))
-            ->add('photo', 'file', array(
-                'required'    => false,
-                'label' => 'photo'
+            ->add('file', 'file', array(
+                'label' => 'Photo',
+                'required' => false,
             ))
 
             ->add('Enregistrer', 'submit')->getForm();

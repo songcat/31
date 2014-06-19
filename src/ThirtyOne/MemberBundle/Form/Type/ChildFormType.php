@@ -30,7 +30,7 @@ class ChildFormType extends AbstractType
             ->add('city', 'text', array(
                 'label' => 'Ville actuelle'
             ))*/
-            ->add('photo', 'file', array(
+            ->add('file', 'file', array(
                 'label' => 'Photo',
                 'required' => false,
             ))/*
@@ -78,7 +78,6 @@ class ChildFormType extends AbstractType
                 'required'    => false,
                 'label' => 'Lieux préférés'
             ))*/
-
             ->add('Enregistrer', 'submit')->getForm();
         ;
     }

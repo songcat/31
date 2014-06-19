@@ -84,6 +84,7 @@ class AjouterController extends Controller
                     }
                 }
                 $em = $this->getDoctrine()->getManager();
+                $switch[0]->upload();
                 $em->persist($switch[0]);
                 $em->flush();
                 return $this->redirect($this->generateUrl('thirtyone_member_ajouter_ajouter'), 301);

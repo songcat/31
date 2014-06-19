@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>{% block title %}31{% endblock %}</title>
     {% block stylesheets %}
-        {% stylesheets filter="compass" output="css/vendor.css" "../app/Resources/public/css/*.scss" %}
+        {% stylesheets filter="compass" output="css/vendor.css" "@ThirtyOneFrontBundle/Resources/public/css/*.scss" %}
             <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
     {% endblock %}
@@ -14,8 +14,21 @@
 <body>
 
     <header>
-        <a href='#'><h1>logo</h1></a>
+        <a href='{{ path('thirtyone_front_default_index') }}'><h1>logo</h1></a>
         {% block navigation %}
+            <nav>
+                <ul>
+                    {% if app.user %}
+                        <li><a href='{{ path('thirtyone_member_ajouter_ajouter') }}'>ma famille</a></li>
+                        <li><a href='{{ path('thirtyone_member_rechercher_rechercher') }}'>chercher une famille</a></li>
+                        <li><a href='{{ path('fos_user_security_logout') }}'>deconnexion</a></li>
+                    {% else %}
+                        <li><a href='{{ path('fos_user_registration_register') }}'>s'inscrice</a></li>
+                        <li><a href='{{ path('fos_user_security_login') }}'>connexion</a></li>
+                    {% endif %}
+
+                </ul>
+            </nav>
         {% endblock %}
     </header>
 
@@ -27,7 +40,7 @@
     </footer>
 
     {% block javascripts %}
-        {% javascripts '../app/Resources/public/js/*.js'  output="js/vendor.js" %}
+        {% javascripts '@ThirtyOneFrontBundle//Resources/public/js/*.js'  output="js/vendor.js" %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
     {% endblock %}

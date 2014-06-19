@@ -3,6 +3,7 @@
 namespace ThirtyOne\MemberBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Parents
@@ -70,9 +71,80 @@ class Parents
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
+     * @ORM\Column(name="path", type="string", length=255, nullable=true)
      */
-    private $photo;
+    private $path;
+
+    /**
+     * photo
+     */
+
+    /**
+     * @Assert\File(maxSize="300000")
+     */
+    public $file;
+
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        if (null === $this->file) {
+            return;
+        }
+
+        $extension = $this->file->guessExtension();
+        if (!$extension) {
+            // l'extension n'a pas été trouvée
+            $extension = 'bin';
+        }
+        $fileName = time() . '.' . $extension;
+        $this->file->move($this->getUploadRootDir(), $fileName);
+
+        $this->path = $fileName;
+
+        // « nettoie » la propriété « file » comme vous n'en aurez plus besoin
+        $this->file = null;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->path ? null : $this->getUploadDir() . '/' . $this->path;
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        return 'uploads/documents';
+    }
+
+    /**
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
 
 
     /**
@@ -152,29 +224,6 @@ class Parents
     public function getJob()
     {
         return $this->job;
-    }
-
-    /**
-     * Set photo
-     *
-     * @param string $photo
-     * @return Parents
-     */
-    public function setPhoto($photo)
-    {
-        $this->photo = $photo;
-
-        return $this;
-    }
-
-    /**
-     * Get photo
-     *
-     * @return string 
-     */
-    public function getPhoto()
-    {
-        return $this->photo;
     }
 
     /**

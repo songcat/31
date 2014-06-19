@@ -105,6 +105,13 @@ class Family extends BaseUser
      */
     private $activities;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="publish", type="boolean")
+     */
+    private $publish = 0;
+
 
     /**
      * Get id
@@ -334,5 +341,21 @@ class Family extends BaseUser
     public function getPhonenumber()
     {
         return $this->phonenumber;
+    }
+
+    /**
+     * @param string $publish
+     */
+    public function setPublish($publish)
+    {
+        $this->publish = $publish;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPublish()
+    {
+        return $this->publish;
     }
 }

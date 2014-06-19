@@ -16,6 +16,9 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Document.php" />
+  </component>
   <component name="ProjectRootManager" version="2" />
 </project>
 
