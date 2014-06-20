@@ -107,6 +107,7 @@ class AjouterController extends Controller
             else if ($gdparent)
                 return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
                     'parent' => $parent,
+                    'nbChildren' => $nbChildren,
                     'gdparent' => $gdparent,
                 ));
 
@@ -128,7 +129,9 @@ class AjouterController extends Controller
                 ));
         }
 
-        return array();
+        return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
+            'nbChildren' => $nbChildren,
+        ));
     }
 
     /**

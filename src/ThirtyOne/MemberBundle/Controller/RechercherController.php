@@ -5,6 +5,8 @@ namespace ThirtyOne\MemberBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
+use ThirtyOne\MemberBundle\Entity\Family;
 
 class RechercherController extends Controller {
 
@@ -57,15 +59,37 @@ class RechercherController extends Controller {
         ));
     }
 
+    private function isEmpty($tab) {
+        if ($tab)
+            return ('%'.$tab.'%');
+        else
+            return ('');
+    }
     /**
      * @Route("/rechercher/getResult/{params}")
      * @Template()
      */
     public function getResultAction($params) {
         $tab = explode('_', $params);
-        return $this->render('ThirtyOneMemberBundle:Rechercher:getResult.html.twig', array(
-            'family' => $tab[0],
-            'region' => $tab[1]
-        ));
+        $tab[0] = $this->isEmpty($tab[0]);
+        $tab[1] = $this->isEmpty($tab[1]);
+        $em = $this->getDoctrine()->getEntityManager();
+        if ($tab[0] && $tab[1])
+            $query = $em->createQuery('SELECT f.username, f.region, f.id FROM ThirtyOneMemberBundle:Family f WHERE f.username LIKE :name AND f.region LIKE :region')
+                ->setParameter('name', $tab[0])
+                ->setParameter('region', $tab[1]);
+        else
+            $query = $em->createQuery('SELECT f.username, f.region, f.id FROM ThirtyOneMemberBundle:Family f WHERE f.username LIKE :name OR f.region LIKE :region')
+                     ->setParameter('name', $tab[0])
+                     ->setParameter('region', $tab[1]);
+        $result = $query->getResult();
+        if ($result)
+            return $this->render('ThirtyOneMemberBundle:Rechercher:getResult.html.twig', array(
+                'result' => $result
+            ));
+        else
+            return $this->render('ThirtyOneMemberBundle:Rechercher:getResult.html.twig', array(
+                'error' => 'Pas de résultat.'
+            ));
     }
 }
