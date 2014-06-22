@@ -1,0 +1,35 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    {% trans_default_domain 'FOSUserBundle' %}
+
+    <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+        <h2>Informations</h2>
+        {{ form_row(form.username) }}
+        {{ form_row(form.nbChildren) }}
+        <br>
+        {{ form_row(form.region) }}
+        {{ form_row(form.city) }}
+        <br>
+        {{ form_row(form.path) }}
+        {{ form_row(form.history) }}
+        {{ form_row(form.activities) }}
+
+
+        <h2>Contact</h2>
+        {{ form_row(form.email) }}
+        {{ form_row(form.phonenumber) }}
+
+        <h2>Pour enregistrer, saisir votre mot de passe</h2>
+        {{ form_rest(form) }}
+        <div>
+            <input type="submit" value="{{ 'registration.submit'|trans }}"/>
+        </div>
+
+    </form>
+
+    <a href='{{ path('fos_user_change_password') }}'>changer mon mot de passe</a>
+
+
+
+{% endblock fos_user_content %}

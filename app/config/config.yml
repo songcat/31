@@ -79,3 +79,6 @@ fos_user:
     registration:
          form:
              type: thirtyone_member_registration
+    profile:
+         form:
+             type: thirtyone_member_profile

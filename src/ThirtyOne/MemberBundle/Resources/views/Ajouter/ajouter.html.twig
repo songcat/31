@@ -11,7 +11,11 @@
         {% if (parent is defined) and (parent|length == 2) %}
             {% if gdparent is defined %}
                 {% for gp in gdparent %}
-                    <div>{{ gp.firstname }} {{ gp.birthname }}</div>
+                    <div>{{ gp.firstname }} {{ gp.birthname }}
+                        <div class="form {{ gp.id }}">
+                            <a href="#" id="GdParent" class="editEntity {{ gp.id }}">modifier</a>
+                        </div>
+                    </div>
                 {% endfor %}
                 {% if gdparent|length < 4 %}
                     {% for i in gdparent|length+1..4 %}

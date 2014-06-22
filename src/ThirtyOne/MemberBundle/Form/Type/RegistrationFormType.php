@@ -62,19 +62,6 @@ class RegistrationFormType extends BaseType
                 ->add('phonenumber', 'number', array(
                     'label'=>'Numéro de téléphone'
                 ));
-        if ($options == 'edit') {
-            $builder->add('photo', 'file', array(
-                    'label'=>'Photo de famille'
-                    ))
-                    ->add('history', 'textarea', array(
-                        'required'    => false,
-                        'label'=>'Votre histoire'
-                    ))
-                    ->add('activities', 'textarea', array(
-                        'required'    => false,
-                        'label'=>'Activités en famille'
-                    ));
-        }
     }
 
     public function getName()

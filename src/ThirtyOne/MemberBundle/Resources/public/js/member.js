@@ -1,12 +1,19 @@
-$('.addForm a').click(function () {
+$('.addForm a, a.editEntity').click(function () {
     var formType = $(this).attr('id');
-    var num = $(this).attr('class');
+    if($(this).hasClass('editEntity')) {
+        var id = $(this).attr('class').split(" ")[1];
+        var num = id;
+    }
+    else {
+        var num = $(this).attr('class');
+        var id = null;
+    }
     $.ajax({
         type: "POST",
         url: '/ThirtyOne/web/app_dev.php/profil/getAjax',
-        data: {form: formType}
+        data: {form: formType, id: id}
     }).done(function (data) {
-        $('.'+formType+' .form .' + num).replaceWith(data);
+         $('.'+formType+' .form .' + num).replaceWith(data);
     });
 });
 

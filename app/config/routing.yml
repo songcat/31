@@ -24,6 +24,10 @@ fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
     prefix: /profil
 
+fos_user_profile_edit:
+    path:   /profil/edition
+    defaults:  { _controller: FOSUserBundle:Profile:edit }
+
 fos_user_register:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
     prefix: /inscription
@@ -34,4 +38,4 @@ fos_user_resetting:
 
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /profile
+    prefix: /profil/edition/pass

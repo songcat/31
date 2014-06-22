@@ -34,6 +34,25 @@ class AjouterController extends Controller
         return array($entity, $form);
     }
 
+    private function switch_edit($formType, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($id) {
+            switch ($formType) {
+                case 'Child' :
+                    $entity = $em->getRepository('ThirtyOneMemberBundle:Child')->findById($id);
+                    break;
+                case 'Parent' :
+                    $entity = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($id);
+                    break;
+                case 'GdParent' :
+                    $entity = $em->getRepository('ThirtyOneMemberBundle:Gdparent')->findById($id);
+                    break;
+            }
+            return ($entity);
+        }
+    }
+
     /**
      * @Route("/inscription/confirmation")
      * @Template()
@@ -66,13 +85,21 @@ class AjouterController extends Controller
 
         if ($request->getMethod() == 'POST') {
             $formType = $request->get('formType');
-
+            $edit = $request->get('edit');
             $switch = $this->switch_case($formType);
             $switch[1]->handleRequest($request);
             if ($switch[1]->isValid()) {
-                if ($formType != 'GdParent') {
-                    $switch[0]->setFamily($fam);
-                } else {
+                $em = $this->getDoctrine()->getManager();
+                if ($edit) {
+                    $entity = $this->switch_edit($formType, $edit);
+                    //\Doctrine\Common\Util\Debug::dump($switch[1]['firstname']->getData());
+                    $entity[0]->setFirstname($switch[1]['firstname']->getData());
+                    $em->flush();
+                }
+                else {
+                    if ($formType != 'GdParent') {
+                        $switch[0]->setFamily($fam);
+                    } else {
                     $selectParent = $switch[1]->getData();
                     $parentId = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($selectParent->getParents());
                     $nbGdparent = count($em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parentId));
@@ -83,12 +110,19 @@ class AjouterController extends Controller
                         ));
                     }
                 }
-                $em = $this->getDoctrine()->getManager();
-                $switch[0]->upload();
-                $em->persist($switch[0]);
-                $em->flush();
+                    $switch[0]->upload();
+                    $em->persist($switch[0]);
+                    $em->flush();
+                }
+
                 return $this->redirect($this->generateUrl('thirtyone_member_ajouter_ajouter'), 301);
             }
+        }
+        if (count($parent) == 2 && count($gdparent == 4) && count($child) == $fam->getnbChildren()) {
+            $fam->setPublish(1);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($fam);
+            $em->flush();
         }
         if ($parent) {
             if ($child && $gdparent)
@@ -112,9 +146,9 @@ class AjouterController extends Controller
                 ));
 
             return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
-                    'parent' => $parent,
-                    'nbChildren' => $nbChildren,
-                ));
+                'parent' => $parent,
+                'nbChildren' => $nbChildren,
+            ));
         } else if ($child) {
             if ($parent)
                 return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
@@ -141,9 +175,12 @@ class AjouterController extends Controller
     public function getAjaxAction()
     {
         $formType = $this->get('request')->request->get('form');
+        $id = $this->get('request')->request->get('id');
 
         $famId = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
+
+        $entity = $this->switch_edit($formType, $id);
 
         if ($formType == 'Parent' || $formType == 'GdParent') {
             $nbParent = count($em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId));
@@ -165,10 +202,15 @@ class AjouterController extends Controller
         }
 
         $form = $this->switch_case($formType)[1];
-
+        if ($id) {
+            $edit = $id;
+            $form->get('firstname')->setData($entity[0]->getFirstname());
+        }
+        $edit = 0;
         return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
             'form' => $form->createView(),
             'formType' => $formType,
+            'edit' => $edit,
         ));
     }
 }

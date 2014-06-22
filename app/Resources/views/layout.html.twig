@@ -48,7 +48,8 @@
             <nav>
                 <ul>
                     {% if app.user %}
-                        <li><a href='{{ path('thirtyone_member_ajouter_ajouter') }}'>ma famille</a></li>
+                        <li><a href='{{ path('thirtyone_member_ajouter_ajouter') }}'>modifier ma famille</a></li>
+                        <li><a href='{{ path('fos_user_profile_edit') }}'>modifier mon compte</a></li>
                         <li><a href='{{ path('thirtyone_member_rechercher_rechercher') }}'>chercher une famille</a></li>
                         <li><a href='{{ path('fos_user_security_logout') }}'>deconnexion</a></li>
                     {% else %}

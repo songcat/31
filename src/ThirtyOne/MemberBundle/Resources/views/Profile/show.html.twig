@@ -1,0 +1,34 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    {% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <p>Famille {{ user.username }}</p>
+
+    <div>
+        <h2>Grands parents {{ user.username }}</h2>
+        {% for p in user.parents %}
+            {% for gp in p.gdparent %}
+                <p>{{ gp.firstname }}</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <div>
+        <h2>Epoux {{ user.username }}</h2>
+        {% for p in user.parents %}
+        <p>{{ p.firstname }}</p>
+        {% endfor %}
+    </div>
+
+    <div>
+        <h2>Enfants {{ user.username }}</h2>
+        {% for c in user.child %}
+            <p>{{ c.firstname }}</p>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock fos_user_content %}
