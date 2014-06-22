@@ -95,21 +95,20 @@ class AjouterController extends Controller
                     //\Doctrine\Common\Util\Debug::dump($switch[1]['firstname']->getData());
                     $entity[0]->setFirstname($switch[1]['firstname']->getData());
                     $em->flush();
-                }
-                else {
+                } else {
                     if ($formType != 'GdParent') {
                         $switch[0]->setFamily($fam);
                     } else {
-                    $selectParent = $switch[1]->getData();
-                    $parentId = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($selectParent->getParents());
-                    $nbGdparent = count($em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parentId));
-                    if ($nbGdparent >= '2') {
-                        return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
-                            'formType' => $formType,
-                            'error' => 'Vous ne pouvez saisir plus de deux grand parents pour ce parent.',
-                        ));
+                        $selectParent = $switch[1]->getData();
+                        $parentId = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($selectParent->getParents());
+                        $nbGdparent = count($em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parentId));
+                        if ($nbGdparent >= '2') {
+                            return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
+                                'formType' => $formType,
+                                'error' => 'Vous ne pouvez saisir plus de deux grand parents pour ce parent.',
+                            ));
+                        }
                     }
-                }
                     $switch[0]->upload();
                     $em->persist($switch[0]);
                     $em->flush();
@@ -124,6 +123,7 @@ class AjouterController extends Controller
             $em->persist($fam);
             $em->flush();
         }
+
         if ($parent) {
             if ($child && $gdparent)
                 return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
@@ -172,7 +172,8 @@ class AjouterController extends Controller
      * @Route("/profil/getAjax")
      * @Template()
      */
-    public function getAjaxAction()
+    public
+    function getAjaxAction()
     {
         $formType = $this->get('request')->request->get('form');
         $id = $this->get('request')->request->get('id');
@@ -202,11 +203,11 @@ class AjouterController extends Controller
         }
 
         $form = $this->switch_case($formType)[1];
+        $edit = 0;
         if ($id) {
             $edit = $id;
             $form->get('firstname')->setData($entity[0]->getFirstname());
         }
-        $edit = 0;
         return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
             'form' => $form->createView(),
             'formType' => $formType,
