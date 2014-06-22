@@ -16,6 +16,10 @@ class RechercherController extends Controller {
      */
     public function RechercherAction()
     {
+        if (!$this->get('security.context')->isGranted('ROLE_USER')) {
+            throw new AccessDeniedHttpException();
+        }
+
         $form = $this->createFormBuilder()
             ->add('family', 'text', array(
                 'label'=>'Nom de famille',
@@ -73,17 +77,31 @@ class RechercherController extends Controller {
         $tab = explode('_', $params);
         $tab[0] = $this->isEmpty($tab[0]);
         $tab[1] = $this->isEmpty($tab[1]);
-        $em = $this->getDoctrine()->getEntityManager();
+
+        $famId = $this->getUser()->getId();
+        $em = $this->getDoctrine()->getManager();
+        $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($famId);
+
         if ($tab[0] && $tab[1])
-            $query = $em->createQuery('SELECT f.username, f.region, f.id FROM ThirtyOneMemberBundle:Family f
-            WHERE f.username LIKE :name AND f.region LIKE :region AND f.publish = 1')
+            $query = $em->createQuery('SELECT f.username, f.region, f.id
+            FROM ThirtyOneMemberBundle:Family f
+            WHERE f.username LIKE :name
+                AND f.region LIKE :region
+                AND f.id != :fam
+                AND f.publish = 1')
                 ->setParameter('name', $tab[0])
-                ->setParameter('region', $tab[1]);
+                ->setParameter('region', $tab[1])
+                ->setParameter('fam', $fam->getId());
         else
-            $query = $em->createQuery('SELECT f.username, f.region, f.id FROM ThirtyOneMemberBundle:Family f
-            WHERE f.publish = 1 AND f.username LIKE :name OR f.region LIKE :region')
-                     ->setParameter('name', $tab[0])
-                     ->setParameter('region', $tab[1]);
+            $query = $em->createQuery('SELECT f.username, f.region, f.id
+            FROM ThirtyOneMemberBundle:Family f
+            WHERE f.publish = 1
+                AND f.id != :fam
+                AND f.username LIKE :name
+                OR f.region LIKE :region')
+                ->setParameter('name', $tab[0])
+                ->setParameter('region', $tab[1])
+                ->setParameter('fam', $fam->getId());
         $result = $query->getResult();
         if ($result)
             return $this->render('ThirtyOneMemberBundle:Rechercher:getResult.html.twig', array(
