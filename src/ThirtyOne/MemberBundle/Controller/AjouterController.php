@@ -92,7 +92,6 @@ class AjouterController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 if ($edit) {
                     $entity = $this->switch_edit($formType, $edit);
-                    //\Doctrine\Common\Util\Debug::dump($switch[1]['firstname']->getData());
                     $entity[0]->setFirstname($switch[1]['firstname']->getData());
                     $em->flush();
                 } else {
@@ -113,7 +112,6 @@ class AjouterController extends Controller
                     $em->persist($switch[0]);
                     $em->flush();
                 }
-
                 return $this->redirect($this->generateUrl('thirtyone_member_ajouter_ajouter'), 301);
             }
         }

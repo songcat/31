@@ -4,7 +4,7 @@
 {% else %}
 <ul>
     {% for r in result %}
-        <li>{{ r.username }}<br>
+        <li><a href="{{ path('thirtyone_member_default_profil', {'params': r.username~'_'~r.id}) }}">{{ r.username }}</a><br>
         {{ r.region }}</li>
     {% endfor %}
 </ul>

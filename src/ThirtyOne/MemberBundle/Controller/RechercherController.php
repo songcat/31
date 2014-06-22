@@ -75,11 +75,13 @@ class RechercherController extends Controller {
         $tab[1] = $this->isEmpty($tab[1]);
         $em = $this->getDoctrine()->getEntityManager();
         if ($tab[0] && $tab[1])
-            $query = $em->createQuery('SELECT f.username, f.region, f.id FROM ThirtyOneMemberBundle:Family f WHERE f.username LIKE :name AND f.region LIKE :region')
+            $query = $em->createQuery('SELECT f.username, f.region, f.id FROM ThirtyOneMemberBundle:Family f
+            WHERE f.username LIKE :name AND f.region LIKE :region AND f.publish = 1')
                 ->setParameter('name', $tab[0])
                 ->setParameter('region', $tab[1]);
         else
-            $query = $em->createQuery('SELECT f.username, f.region, f.id FROM ThirtyOneMemberBundle:Family f WHERE f.username LIKE :name OR f.region LIKE :region')
+            $query = $em->createQuery('SELECT f.username, f.region, f.id FROM ThirtyOneMemberBundle:Family f
+            WHERE f.publish = 1 AND f.username LIKE :name OR f.region LIKE :region')
                      ->setParameter('name', $tab[0])
                      ->setParameter('region', $tab[1]);
         $result = $query->getResult();

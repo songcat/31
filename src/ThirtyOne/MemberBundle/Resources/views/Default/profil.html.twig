@@ -1,0 +1,25 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block content %}
+
+    {% if error is defined %}
+        {{ error }}
+
+    {% else %}
+        <h2 class="nameForm">{{ fam.username }}</h2>
+        {% for p in fam.parents %}
+            {% for gp in p.gdparent %}
+                <p>{{ gp.firstname }}</p>
+            {% endfor %}
+        {% endfor %}
+
+        {% for p in fam.parents %}
+            <div>{{ p.firstname }} {{ p.birthname }}</div>
+        {% endfor %}
+
+        {% for c in fam.child %}
+            <p>{{ c.firstname }}</p>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
