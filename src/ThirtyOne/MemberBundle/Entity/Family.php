@@ -38,7 +38,12 @@ class Family extends BaseUser implements ParticipantInterface
     private $child;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Event", mappedBy="family")
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Informations", mappedBy="family")
+     */
+    private $informations;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Family")
      */
     private $event;
 
@@ -88,27 +93,6 @@ class Family extends BaseUser implements ParticipantInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="string", length=255, nullable=true)
-     */
-    private $path;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="history", type="string", length=1000, nullable=true)
-     */
-    private $history;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="activities", type="string", length=255, nullable=true)
-     */
-    private $activities;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="publish", type="boolean")
      */
     private $publish = 0;
@@ -122,76 +106,6 @@ class Family extends BaseUser implements ParticipantInterface
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * photo
-     */
-
-    /**
-     * @Assert\File(maxSize="300000")
-     */
-    public $file;
-
-
-    /**
-     * @ORM\PostPersist()
-     * @ORM\PostUpdate()
-     */
-    public function upload()
-    {
-        if (null === $this->file) {
-            return;
-        }
-
-        $extension = $this->file->guessExtension();
-        if (!$extension) {
-            // l'extension n'a pas été trouvée
-            $extension = 'bin';
-        }
-        $fileName = time() . '.' . $extension;
-        $this->file->move($this->getUploadRootDir(), $fileName);
-
-        $this->path = $fileName;
-
-        // « nettoie » la propriété « file » comme vous n'en aurez plus besoin
-        $this->file = null;
-    }
-
-    public function getAbsolutePath()
-    {
-        return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;
-    }
-
-    public function getWebPath()
-    {
-        return null === $this->path ? null : $this->getUploadDir() . '/' . $this->path;
-    }
-
-    protected function getUploadRootDir()
-    {
-        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
-    }
-
-    protected function getUploadDir()
-    {
-        return 'uploads/documents';
-    }
-
-    /**
-     * @param string $path
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPath()
-    {
-        return $this->path;
     }
 
 
@@ -216,53 +130,6 @@ class Family extends BaseUser implements ParticipantInterface
     public function getCity()
     {
         return $this->city;
-    }
-
-
-    /**
-     * Set history
-     *
-     * @param string $history
-     * @return Family
-     */
-    public function setHistory($history)
-    {
-        $this->history = $history;
-
-        return $this;
-    }
-
-    /**
-     * Get history
-     *
-     * @return string
-     */
-    public function getHistory()
-    {
-        return $this->history;
-    }
-
-    /**
-     * Set activities
-     *
-     * @param string $activities
-     * @return Family
-     */
-    public function setActivities($activities)
-    {
-        $this->activities = $activities;
-
-        return $this;
-    }
-
-    /**
-     * Get activities
-     *
-     * @return string
-     */
-    public function getActivities()
-    {
-        return $this->activities;
     }
 
     /**
@@ -407,5 +274,21 @@ class Family extends BaseUser implements ParticipantInterface
     public function getPublish()
     {
         return $this->publish;
+    }
+
+    /**
+     * @param mixed $informations
+     */
+    public function setInformations($informations)
+    {
+        $this->informations = $informations;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInformations()
+    {
+        return $this->informations;
     }
 }

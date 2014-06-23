@@ -64,18 +64,6 @@ class ProfileFormType extends BaseType
             ))
             ->add('phonenumber', 'number', array(
                 'label' => 'Numéro de téléphone'
-            ))
-            ->add('path', 'file', array(
-                'required' => false,
-                'label' => 'Photo de famille'
-            ))
-            ->add('history', 'textarea', array(
-                'required' => false,
-                'label' => 'Votre histoire'
-            ))
-            ->add('activities', 'textarea', array(
-                'required' => false,
-                'label' => 'Activités en famille'
             ));
     }
 

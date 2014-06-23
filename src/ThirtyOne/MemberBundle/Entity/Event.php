@@ -22,28 +22,10 @@ class Event
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Family", inversedBy="event")
+     * @ORM\ManyToMany(targetEntity="event")
      * @ORM\JoinColumn(nullable=false)
      */
     private $family;
-
-    /**
-     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\EventComment", mappedBy="comment")
-     */
-    private $comment;
-
-    /**
-     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\EventSuggest", mappedBy="suggest")
-     */
-    private $suggest;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pack", type="string", length=255)
-     */
-    private $pack;
 
     /**
      * @var string
@@ -65,13 +47,6 @@ class Event
      * @ORM\Column(name="place", type="string", length=255)
      */
     private $place;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="guest", type="array")
-     */
-    private $guest;
 
     /**
      * @var string
@@ -96,29 +71,6 @@ class Event
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set pack
-     *
-     * @param string $pack
-     * @return Event
-     */
-    public function setPack($pack)
-    {
-        $this->pack = $pack;
-
-        return $this;
-    }
-
-    /**
-     * Get pack
-     *
-     * @return string 
-     */
-    public function getPack()
-    {
-        return $this->pack;
     }
 
     /**
@@ -191,29 +143,6 @@ class Event
     }
 
     /**
-     * Set guest
-     *
-     * @param array $guest
-     * @return Event
-     */
-    public function setGuest($guest)
-    {
-        $this->guest = $guest;
-
-        return $this;
-    }
-
-    /**
-     * Get guest
-     *
-     * @return array 
-     */
-    public function getGuest()
-    {
-        return $this->guest;
-    }
-
-    /**
      * Set information
      *
      * @param string $information
@@ -260,22 +189,6 @@ class Event
     }
 
     /**
-     * @param mixed $comment
-     */
-    public function setComment($comment)
-    {
-        $this->comment = $comment;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getComment()
-    {
-        return $this->comment;
-    }
-
-    /**
      * @param array $family
      */
     public function setFamily($family)
@@ -291,19 +204,4 @@ class Event
         return $this->family;
     }
 
-    /**
-     * @param mixed $suggest
-     */
-    public function setSuggest($suggest)
-    {
-        $this->suggest = $suggest;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSuggest()
-    {
-        return $this->suggest;
-    }
 }

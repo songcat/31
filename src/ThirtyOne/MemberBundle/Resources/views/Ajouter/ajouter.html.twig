@@ -4,33 +4,47 @@
 
 
 
-    <p>Attention. Ajouter les membres de votre famille individuellement.</p>
+    <div class="info">
+        {% if info|length >= 1 %}
+            <img src="{{ asset('uploads/documents/'~info.path) }}" alt=""/>
+
+            <div class="form 1">
+                <div class="addForm">
+                    <a href="#" id="info" class="1">modifier image</a></div>
+            </div>
+            <p>{{ info.history }}</p>
+
+            <div class="form 2">
+                <div class="addForm">
+                    <a href="#" id="info" class="2">modifier histoire</a></div>
+            </div>
+        {% else %}
+            <div class="form 1">
+                <div class="addForm">
+                    <a href="#" id="info" class="1">ajouter une image</a></div>
+            </div>
+
+            <div class="form 2">
+                <div class="addForm">
+                    <a href="#" id="info" class="2">ajouter l'histoire</a></div>
+            </div>
+        {% endif %}
+    </div>
 
 
     <div class="GdParent">
+        <h2>GdParents</h2>
         {% if (parent is defined) and (parent|length == 2) %}
-            {% if gdparent is defined %}
-                {% for gp in gdparent %}
-                    <div>{{ gp.firstname }} {{ gp.birthname }}
-                        <div class="form {{ gp.id }}">
-                            <a href="#" id="GdParent" class="editEntity {{ gp.id }}">modifier</a>
-                        </div>
+
+            {% for gp in gdparent %}
+                <div>{{ gp.firstname }} {{ gp.birthname }}
+                    <div class="form {{ gp.id }}">
+                        <a href="#" id="GdParent" class="editEntity {{ gp.id }}">modifier</a>
                     </div>
-                {% endfor %}
-                {% if gdparent|length < 4 %}
-                    {% for i in gdparent|length+1..4 %}
-
-                        <div class="form {{ i }}">
-                            <div class="addForm">
-                                <a href="#" id="GdParent" class="{{ i }}">Ajouter gd
-                                    parent</a>
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-
-            {% else %}
-                {% for i in 1..4 %}
+                </div>
+            {% endfor %}
+            {% if gdparent|length < 4 %}
+                {% for i in gdparent|length+1..4 %}
 
                     <div class="form {{ i }}">
                         <div class="addForm">
@@ -41,6 +55,7 @@
                 {% endfor %}
             {% endif %}
 
+
         {% else %}
             <p>Les parents sont nécessaires afin d'ajouter un grand parent.</p>
         {% endif %}
@@ -48,58 +63,43 @@
 
     <div class="Parent">
         <h2>Parents</h2>
-        {% if parent is defined %}
-            {% for p in parent %}
-                <div>{{ p.firstname }} {{ p.birthname }}
-                    <div class="form {{ p.id }}">
-                        <a href="#" id="Parent" class="editEntity {{ p.id }}">modifier</a>
-                    </div>
-                </div>
 
-            {% endfor %}
-            {% if parent|length < 2 %}
+        {% for p in parent %}
+            <div>{{ p.firstname }} {{ p.birthname }}
+                <div class="form {{ p.id }}">
+                    <a href="#" id="Parent"
+                       class="editEntity {{ p.id }}">modifier</a>
+                </div>
+            </div>
+
+        {% endfor %}
+        {% if parent|length < 2 %}
+            {% for i in parent|length+1..2 %}
+
                 <div class="form 2">
                     <div class="addForm">
                         <a href="#" id="Parent" class="2">Ajouter un parent</a>
                     </div>
                 </div>
-            {% endif %}
-
-        {% else %}
-            {% for i in 1..2 %}
-
-                <div class="form {{ i }}">
-                    <div class="addForm">
-                        <a href="#" id="Parent" class="{{ i }}">Ajouter un parent</a>
-                    </div>
-                </div>
             {% endfor %}
         {% endif %}
+
 
     </div>
     <div class="Child">
         <h2>Enfants</h2>
-        {% if child is defined %}
-            {% for c in child %}
-                <div>{{ c.firstname }}
-                    <div class="form {{ c.id }}">
-                        <a href="#" id="Child" class="editEntity {{ c.id }}">modifier</a>
-                    </div></div>
-            {% endfor %}
-            {% if child|length < nbChildren %}
-                {% for i in child|length+1..nbChildren %}
 
-                    <div class="form {{ i }}">
-                        <div class="addForm">
-                            <a href="#" id="Child" class="{{ i }}">Ajouter un
-                                enfant</a>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% endif %}
-
-        {% else %}
-            {% for i in 1..nbChildren %}
+        {% for c in child %}
+            <div><img src="{{ asset('uploads/documents/'~c.path) }}" alt=""/>
+                {{ c.firstname }}
+                <div class="form {{ c.id }}">
+                    <a href="#" id="Child"
+                       class="editEntity {{ c.id }}">modifier</a>
+                </div>
+            </div>
+        {% endfor %}
+        {% if child|length < nbChildren %}
+            {% for i in child|length+1..nbChildren %}
 
                 <div class="form {{ i }}">
                     <div class="addForm">
@@ -109,6 +109,8 @@
                 </div>
             {% endfor %}
         {% endif %}
+
+
     </div>
 
 {% endblock %}
