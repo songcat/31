@@ -82,3 +82,8 @@ fos_user:
     profile:
          form:
              type: thirtyone_member_profile
+
+fos_message:
+    db_driver: orm
+    thread_class: ThirtyOne\MemberBundle\Entity\Thread
+    message_class: ThirtyOne\MemberBundle\Entity\Message

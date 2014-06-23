@@ -15,42 +15,44 @@ use ThirtyOne\MemberBundle\Form\Type\GdParentFormType;
 
 class AjouterController extends Controller
 {
-    private function switch_case($formType)
+    private function switch_case($formType, $id)
     {
-        switch ($formType) {
-            case 'Child' :
-                $entity = new Child();
-                $form = $this->createForm(new ChildFormType(), $entity);
-                break;
-            case 'Parent' :
-                $entity = new Parents();
-                $form = $this->createForm(new ParentFormType(), $entity);
-                break;
-            case 'GdParent' :
-                $entity = new Gdparent();
-                $form = $this->createForm(new GdParentFormType($this->getUser()->getId()), $entity);
-                break;
-        }
-        return array($entity, $form);
-    }
-
-    private function switch_edit($formType, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        if ($id) {
+        if ($id > 0) {
+            $em = $this->getDoctrine()->getManager();
             switch ($formType) {
                 case 'Child' :
                     $entity = $em->getRepository('ThirtyOneMemberBundle:Child')->findById($id);
+                    $entity = $entity[0];
+                    $form = $this->createForm(new ChildFormType(), $entity);
                     break;
                 case 'Parent' :
                     $entity = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($id);
+                    $entity = $entity[0];
+                    $form = $this->createForm(new ParentFormType(), $entity);
                     break;
                 case 'GdParent' :
                     $entity = $em->getRepository('ThirtyOneMemberBundle:Gdparent')->findById($id);
+                    $entity = $entity[0];
+                    $form = $this->createForm(new GdParentFormType($this->getUser()->getId()), $entity);
                     break;
             }
-            return ($entity);
+        } else {
+            switch ($formType) {
+                case 'Child' :
+                    $entity = new Child();
+                    $form = $this->createForm(new ChildFormType(), $entity);
+                    break;
+                case 'Parent' :
+                    $entity = new Parents();
+                    $form = $this->createForm(new ParentFormType(), $entity);
+                    break;
+                case 'GdParent' :
+                    $entity = new Gdparent();
+                    $form = $this->createForm(new GdParentFormType($this->getUser()->getId()), $entity);
+                    break;
+            }
         }
+        return array($entity, $form);
     }
 
     /**
@@ -86,13 +88,13 @@ class AjouterController extends Controller
         if ($request->getMethod() == 'POST') {
             $formType = $request->get('formType');
             $edit = $request->get('edit');
-            $switch = $this->switch_case($formType);
+            $switch = $this->switch_case($formType, 0);
             $switch[1]->handleRequest($request);
             if ($switch[1]->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 if ($edit) {
-                    $entity = $this->switch_edit($formType, $edit);
-                    $entity[0]->setFirstname($switch[1]['firstname']->getData());
+                    $entity = $this->switch_case($formType, $edit);
+                    $entity[0]->setData();
                     $em->flush();
                 } else {
                     if ($formType != 'GdParent') {
@@ -174,14 +176,14 @@ class AjouterController extends Controller
     function getAjaxAction()
     {
         $formType = $this->get('request')->request->get('form');
-        $id = $this->get('request')->request->get('id');
+        $id = $this->get('request')->request->get('id') ? $this->get('request')->request->get('id') : null;
 
         $famId = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $this->switch_edit($formType, $id);
+        $entity = $this->switch_case($formType, $id);
 
-        if ($formType == 'Parent' || $formType == 'GdParent') {
+        if (($formType == 'Parent' || $formType == 'GdParent') && !$id) {
             $nbParent = count($em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId));
             if ($formType == 'Parent') {
                 if ($nbParent >= 2) {
@@ -199,12 +201,10 @@ class AjouterController extends Controller
                 }
             }
         }
-
-        $form = $this->switch_case($formType)[1];
+        $form = $entity[1];
         $edit = 0;
         if ($id) {
             $edit = $id;
-            $form->get('firstname')->setData($entity[0]->getFirstname());
         }
         return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
             'form' => $form->createView(),

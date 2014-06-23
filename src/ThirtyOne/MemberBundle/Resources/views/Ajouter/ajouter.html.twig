@@ -50,7 +50,12 @@
         <h2>Parents</h2>
         {% if parent is defined %}
             {% for p in parent %}
-                <div>{{ p.firstname }} {{ p.birthname }}</div>
+                <div>{{ p.firstname }} {{ p.birthname }}
+                    <div class="form {{ p.id }}">
+                        <a href="#" id="Parent" class="editEntity {{ p.id }}">modifier</a>
+                    </div>
+                </div>
+
             {% endfor %}
             {% if parent|length < 2 %}
                 <div class="form 2">
@@ -76,7 +81,10 @@
         <h2>Enfants</h2>
         {% if child is defined %}
             {% for c in child %}
-                <div>{{ c.firstname }}</div>
+                <div>{{ c.firstname }}
+                    <div class="form {{ c.id }}">
+                        <a href="#" id="Child" class="editEntity {{ c.id }}">modifier</a>
+                    </div></div>
             {% endfor %}
             {% if child|length < nbChildren %}
                 {% for i in child|length+1..nbChildren %}
