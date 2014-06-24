@@ -57,6 +57,13 @@ class Event
     private $city;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="private", type="boolean")
+     */
+    private $private = 0;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=500)
@@ -368,6 +375,22 @@ class Event
     public function getPlace()
     {
         return $this->place;
+    }
+
+    /**
+     * @param boolean $private
+     */
+    public function setPrivate($private)
+    {
+        $this->private = $private;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getPrivate()
+    {
+        return $this->private;
     }
 
 }

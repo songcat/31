@@ -19,7 +19,7 @@ class DefaultController extends Controller
             throw new AccessDeniedHttpException();
         }
 
-        $tab = explode('_', $params);
+        $tab = explode('.', $params);
         $em = $this->getDoctrine()->getManager();
         $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($tab[1]);
         if ($fam && $fam->getPublish() == 1){

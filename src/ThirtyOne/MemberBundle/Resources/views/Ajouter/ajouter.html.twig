@@ -10,23 +10,23 @@
 
             <div class="form 1">
                 <div class="addForm">
-                    <a href="#" id="info" class="1">modifier image</a></div>
+                    <a href="" id="info" class="1">modifier image</a></div>
             </div>
             <p>{{ info.history }}</p>
 
             <div class="form 2">
                 <div class="addForm">
-                    <a href="#" id="info" class="2">modifier histoire</a></div>
+                    <a href="" id="info" class="2">modifier histoire</a></div>
             </div>
         {% else %}
             <div class="form 1">
                 <div class="addForm">
-                    <a href="#" id="info" class="1">ajouter une image</a></div>
+                    <a href="" id="info" class="1">ajouter une image</a></div>
             </div>
 
             <div class="form 2">
                 <div class="addForm">
-                    <a href="#" id="info" class="2">ajouter l'histoire</a></div>
+                    <a href="" id="info" class="2">ajouter l'histoire</a></div>
             </div>
         {% endif %}
     </div>
@@ -39,7 +39,7 @@
             {% for gp in gdparent %}
                 <div>{{ gp.firstname }} {{ gp.birthname }}
                     <div class="form {{ gp.id }}">
-                        <a href="#" id="GdParent" class="editEntity {{ gp.id }}">modifier</a>
+                        <a href="" id="GdParent" class="editEntity {{ gp.id }}">modifier</a>
                     </div>
                 </div>
             {% endfor %}
@@ -48,7 +48,7 @@
 
                     <div class="form {{ i }}">
                         <div class="addForm">
-                            <a href="#" id="GdParent" class="{{ i }}">Ajouter gd
+                            <a href="" id="GdParent" class="{{ i }}">Ajouter gd
                                 parent</a>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
 
                 <div class="form 2">
                     <div class="addForm">
-                        <a href="#" id="Parent" class="2">Ajouter un parent</a>
+                        <a href="" id="Parent" class="2">Ajouter un parent</a>
                     </div>
                 </div>
             {% endfor %}

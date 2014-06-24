@@ -37,6 +37,13 @@ class Service
     private $name;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="price", type="integer")
+     */
+    private $price;
+
+    /**
      * @var text
      *
      * @ORM\Column(name="description", type="text")
@@ -177,6 +184,22 @@ class Service
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * @param int $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 
 }

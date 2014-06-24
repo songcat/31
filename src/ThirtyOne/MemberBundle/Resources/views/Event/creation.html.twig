@@ -1,0 +1,62 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block content %}
+
+
+    <form action="#" method="post">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        {{ form_row(form.file) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.date) }}
+        {{ form_row(form.adress) }}
+        {{ form_row(form.city) }}
+        {{ form_row(form.description) }}
+
+
+    <div class="service">
+        {% for s in service %}
+            {% if s.type == 1 %}
+
+                <div>
+                    {{ s.name }}
+                    <a class="reserve" href="" data-type="place" data-price="{{ s.price }}" data-id="{{ s.id }}">
+                        réserver
+                    </a>
+
+                </div>
+            {% elseif s.type == 3 %}
+                <div>
+                    {{ s.name }}
+                    <a class="reserve" data-type="food" href="" data-price="{{ s.price }}" data-id="{{ s.id }}">
+                        réserver
+                    </a>
+                </div>
+            {% else %}
+                <div>
+                    {{ s.name }}
+                    <a class="reserve" data-type="music" data-price="{{ s.price }}" href="" data-id="{{ s.id }}">
+                        réserver
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+    {{ form_row(form.private) }}
+    {{ form_row(form.place) }}
+    {{ form_row(form.food) }}
+    {{ form_row(form.music) }}
+
+    <div class="resume">
+        lieu : <span class="place"></span>
+        traiteur : <span class="food"></span>
+        dj : <span class="music"></span>
+    </div>
+
+    {{ form_row(form.enregistrer) }}
+    {{ form_rest(form) }}
+    </form>
+{% endblock %}
