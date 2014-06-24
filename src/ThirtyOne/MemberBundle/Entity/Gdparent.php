@@ -45,9 +45,25 @@ class Gdparent
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="birthyear", type="datetime")
+     * @ORM\Column(name="birthyear", type="integer")
      */
     private $birthyear;
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="deathyear", type="integer", nullable=true)
+     */
+    private $deathyear;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="job", type="string", length=255, nullable=true)
+     */
+    private $job;
+
 
     /**
      * @var string
@@ -260,6 +276,38 @@ class Gdparent
     public function getBirthyear()
     {
         return $this->birthyear;
+    }
+
+    /**
+     * @param string $job
+     */
+    public function setJob($job)
+    {
+        $this->job = $job;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJob()
+    {
+        return $this->job;
+    }
+
+    /**
+     * @param \DateTime $deathyear
+     */
+    public function setDeathyear($deathyear)
+    {
+        $this->deathyear = $deathyear;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDeathyear()
+    {
+        return $this->deathyear;
     }
 
 }

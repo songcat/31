@@ -11,29 +11,27 @@ class ParentFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('file', 'file', array(
+                'label' => 'Photo',
+                'required' => false,
+            ))
             ->add('gender', 'choice', array(
                 'choices'   => array('m' => 'homme', 'f' => 'femme'),
                 'multiple'  => false,
                 'expanded'  => true,
-                'label'     => 'sexe'
+                'label'     => 'sexe*'
             ))
             ->add('firstname', 'text', array(
-                'label' => 'Prénom'
+                'label' => 'Prénom*'
             ))
             ->add('birthname', 'text', array(
-                'required'    => false,
-                'label' => 'Nom'
+                'label' => 'Nom*'
             ))
-            ->add('age', 'date', array(
-                'years' => range(date('Y') -80, date('Y') - 30),
-                'label' => 'Date de naissance'
+            ->add('age', 'integer', array(
+                'label' => 'Année de naissance*'
             ))
             ->add('job', 'text', array(
-                'label' => 'Métier'
-            ))
-            ->add('file', 'file', array(
-                'label' => 'Photo',
-                'required' => false,
+                'label' => 'Métier*'
             ))
 
             ->add('Enregistrer', 'submit')->getForm();

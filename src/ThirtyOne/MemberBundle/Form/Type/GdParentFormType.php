@@ -18,26 +18,31 @@ class GdParentFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('file', 'file', array(
+                'label' => 'Photo',
+                'required' => false,
+            ))
             ->add('gender', 'choice', array(
                 'choices'   => array('m' => 'homme', 'f' => 'femme'),
                 'multiple'  => false,
                 'expanded'  => true,
-                'label'     => 'sexe'
+                'label'     => 'sexe*'
             ))
             ->add('firstname', 'text', array(
-                'label' => 'Prénom'
+                'label' => 'Prénom*'
             ))
             ->add('birthname', 'text', array(
-                'required' => false,
-                'label' => 'Nom'
+                'label' => 'Nom*'
             ))
-            ->add('birthyear', 'date', array(
-                'years' => range(date('Y') - 125, date('Y') - 55),
-                'label' => 'Année de naissance'
+            ->add('birthyear', 'integer', array(
+                'label' => 'Année de naissance*'
             ))
-            ->add('file', 'file', array(
-                'label' => 'Photo',
+            ->add('deathyear', 'integer', array(
+                'label' => 'Année de décès'
+            ))
+            ->add('job', 'text', array(
                 'required' => false,
+                'label' => 'Métier'
             ))
             ->add('parents', 'entity', array(
                 'class'         => 'ThirtyOneMemberBundle:Parents',

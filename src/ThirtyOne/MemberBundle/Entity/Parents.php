@@ -57,7 +57,7 @@ class Parents
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="age", type="datetime")
+     * @ORM\Column(name="age", type="integer")
      */
     private $age;
 

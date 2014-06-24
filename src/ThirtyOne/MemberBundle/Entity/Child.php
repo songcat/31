@@ -59,13 +59,6 @@ class Child
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=255, nullable=true)
-     */
-    private $city;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;
@@ -76,6 +69,13 @@ class Child
      * @ORM\Column(name="passion", type="string", length=255, nullable=true)
      */
     private $passion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="price", type="string", length=255, nullable=true)
+     */
+    private $price;
 
     /**
      * @var string
@@ -91,33 +91,6 @@ class Child
      */
     private $travel;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="music", type="string", length=255, nullable=true)
-     */
-    private $music;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cinema", type="string", length=255, nullable=true)
-     */
-    private $cinema;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="culture", type="string", length=255, nullable=true)
-     */
-    private $culture;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="price", type="string", length=255, nullable=true)
-     */
-    private $price;
 
     /**
      * @var string
@@ -139,13 +112,6 @@ class Child
      * @ORM\Column(name="language", type="string", length=255, nullable=true)
      */
     private $language;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="place", type="string", length=255, nullable=true)
-     */
-    private $place;
 
     /**
      * Get id
@@ -298,30 +264,6 @@ class Child
     }
 
     /**
-     * Set city
-     *
-     * @param string $city
-     * @return Child
-     */
-    public function setCity($city)
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    /**
-     * Get city
-     *
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->city;
-    }
-
-
-    /**
      * Set passion
      *
      * @param string $passion
@@ -391,65 +333,6 @@ class Child
     }
 
     /**
-     * Set music
-     *
-     * @param string $music
-     * @return Child
-     */
-    public function setMusic($music)
-    {
-        $this->music = $music;
-
-        return $this;
-    }
-
-    /**
-     * Get music
-     *
-     * @return string
-     */
-    public function getMusic()
-    {
-        return $this->music;
-    }
-
-    /**
-     * Set cinema
-     *
-     * @param string $cinema
-     * @return Child
-     */
-    public function setCinema($cinema)
-    {
-        $this->cinema = $cinema;
-
-        return $this;
-    }
-
-    /**
-     * Get cinema
-     *
-     * @return string
-     */
-    public function getCinema()
-    {
-        return $this->cinema;
-    }
-
-    /**
-     * Set culture
-     *
-     * @param string $culture
-     * @return Child
-     */
-    public function setCulture($culture)
-    {
-        $this->culture = $culture;
-
-        return $this;
-    }
-
-    /**
      * Get culture
      *
      * @return string
@@ -457,29 +340,6 @@ class Child
     public function getCulture()
     {
         return $this->culture;
-    }
-
-    /**
-     * Set price
-     *
-     * @param string $price
-     * @return Child
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * Get price
-     *
-     * @return string
-     */
-    public function getPrice()
-    {
-        return $this->price;
     }
 
     /**
@@ -552,29 +412,6 @@ class Child
     }
 
     /**
-     * Set place
-     *
-     * @param string $place
-     * @return Child
-     */
-    public function setPlace($place)
-    {
-        $this->place = $place;
-
-        return $this;
-    }
-
-    /**
-     * Get place
-     *
-     * @return string
-     */
-    public function getPlace()
-    {
-        return $this->place;
-    }
-
-    /**
      * @param mixed $family
      */
     public function setFamily($family)
@@ -604,5 +441,21 @@ class Child
     public function getGender()
     {
         return $this->gender;
+    }
+
+    /**
+     * @param string $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 }

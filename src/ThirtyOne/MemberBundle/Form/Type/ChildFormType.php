@@ -11,29 +11,28 @@ class ChildFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('age', 'date', array(
-                'years' => range(date('Y') - 25, date('Y')),
-                'label' => 'Date de naissance'
+            ->add('file', 'file', array(
+                'label' => 'Photo',
+                'required' => false,
             ))
             ->add('firstname', 'text', array(
-                'label' => 'Prénom'
+                'label' => 'Prénom*'
             ))
             ->add('gender', 'choice', array(
                 'choices'   => array('m' => 'homme', 'f' => 'femme'),
                 'multiple'  => false,
                 'expanded'  => true,
-                'label'     => 'sexe'
+                'label'     => 'sexe*'
             ))
-            /*->add('school', 'text', array(
+            ->add('age', 'date', array(
+                'years' => range(date('Y') - 30, date('Y')),
+                'label' => 'Date de naissance*'
+            ))
+            ->add('school', 'text', array(
+                'required' => false,
                 'label' => 'Ecole fréquentée'
             ))
-            ->add('city', 'text', array(
-                'label' => 'Ville actuelle'
-            ))*/
-            ->add('file', 'file', array(
-                'label' => 'Photo',
-                'required' => false,
-            ))/*
+
             ->add('passion', 'text', array(
                 'required'    => false,
                 'label' => 'Passions'
@@ -45,18 +44,6 @@ class ChildFormType extends AbstractType
             ->add('travel', 'text', array(
                 'required'    => false,
                 'label' => 'Voyage'
-            ))
-            ->add('music', 'text', array(
-                'required'    => false,
-                'label' => 'Musique'
-            ))
-            ->add('cinema', 'text', array(
-                'required'    => false,
-                'label' => 'Cinéma'
-            ))
-            ->add('culture', 'text', array(
-                'required'    => false,
-                'label' => 'Culture'
             ))
             ->add('price', 'text', array(
                 'required'    => false,
@@ -74,10 +61,6 @@ class ChildFormType extends AbstractType
                 'required'    => false,
                 'label' => 'Langues'
             ))
-            ->add('place', 'text', array(
-                'required'    => false,
-                'label' => 'Lieux préférés'
-            ))*/
             ->add('Enregistrer', 'submit')->getForm();
         ;
     }

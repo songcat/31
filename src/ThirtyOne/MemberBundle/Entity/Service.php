@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Child
+ * Event
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Informations
+class Service
 {
     /**
      * @var integer
@@ -23,49 +23,33 @@ class Informations
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Family", inversedBy="informations")
-     * @ORM\JoinColumn(nullable=false)
+     * @var integer
+     *
+     * @ORM\Column(name="type", type="integer")
      */
-    private $family;
+    private $type;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="string", length=255, nullable=true)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $path;
+    private $name;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
 
     /**
      * @var string
      *
-     * @ORM\Column(name="history", type="text", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $history;
-
-    /**
-     * @param mixed $family
-     */
-    public function setFamily($family)
-    {
-        $this->family = $family;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFamily()
-    {
-        return $this->family;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
+    public $path;
     /**
      * photo
      */
@@ -136,27 +120,63 @@ class Informations
         return $this->path;
     }
 
-    /**
-     * Set history
-     *
-     * @param string $history
-     * @return Family
-     */
-    public function setHistory($history)
-    {
-        $this->history = $history;
 
-        return $this;
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
-     * Get history
-     *
+     * @param \ThirtyOne\MemberBundle\Entity\text $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return \ThirtyOne\MemberBundle\Entity\text
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
      * @return string
      */
-    public function getHistory()
+    public function getName()
     {
-        return $this->history;
+        return $this->name;
+    }
+
+    /**
+     * @param int $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 
 }

@@ -3,6 +3,7 @@
 namespace ThirtyOne\MemberBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Event
@@ -44,23 +45,115 @@ class Event
     /**
      * @var string
      *
-     * @ORM\Column(name="place", type="string", length=255)
+     * @ORM\Column(name="adress", type="string", length=255)
+     */
+    private $adress;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", length=255)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=500)
+     */
+    private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Service", mappedBy="id")
      */
     private $place;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="information", type="string", length=300)
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Service", mappedBy="id")
      */
-    private $information;
+    private $food;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Service", mappedBy="id")
+     */
+    private $music;
+
 
     /**
      * @var string
      *
-     * @ORM\Column(name="theme", type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $theme;
+    public $path;
+    /**
+     * photo
+     */
+
+    /**
+     * @Assert\File(maxSize="300000")
+     */
+    public $file;
+
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        if (null === $this->file) {
+            return;
+        }
+
+        $extension = $this->file->guessExtension();
+        if (!$extension) {
+            // l'extension n'a pas été trouvée
+            $extension = 'bin';
+        }
+        $fileName = time() . '.' . $extension;
+        $this->file->move($this->getUploadRootDir(), $fileName);
+
+        $this->path = $fileName;
+
+        // « nettoie » la propriété « file » comme vous n'en aurez plus besoin
+        $this->file = null;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->path ? null : $this->getUploadDir() . '/' . $this->path;
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        return 'uploads/documents';
+    }
+
+    /**
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
 
 
     /**
@@ -117,29 +210,6 @@ class Event
     public function getDate()
     {
         return $this->date;
-    }
-
-    /**
-     * Set place
-     *
-     * @param string $place
-     * @return Event
-     */
-    public function setPlace($place)
-    {
-        $this->place = $place;
-
-        return $this;
-    }
-
-    /**
-     * Get place
-     *
-     * @return string 
-     */
-    public function getPlace()
-    {
-        return $this->place;
     }
 
     /**
@@ -202,6 +272,102 @@ class Event
     public function getFamily()
     {
         return $this->family;
+    }
+
+    /**
+     * @param string $adress
+     */
+    public function setAdress($adress)
+    {
+        $this->adress = $adress;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdress()
+    {
+        return $this->adress;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $food
+     */
+    public function setFood($food)
+    {
+        $this->food = $food;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFood()
+    {
+        return $this->food;
+    }
+
+    /**
+     * @param mixed $music
+     */
+    public function setMusic($music)
+    {
+        $this->music = $music;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMusic()
+    {
+        return $this->music;
+    }
+
+    /**
+     * @param mixed $place
+     */
+    public function setPlace($place)
+    {
+        $this->place = $place;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlace()
+    {
+        return $this->place;
     }
 
 }
