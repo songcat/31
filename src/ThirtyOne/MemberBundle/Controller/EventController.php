@@ -111,6 +111,9 @@ class EventController extends Controller
                 if ($form["place"]->getData()) {
                     $place = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["place"]->getData());
                     $rallye->setPlace($place);
+                    $rallye->setRegion($place->getRegion());
+                    $rallye->setAdress($place->getAdress());
+                    $rallye->setCity($place->getCity());
                 }
                 if ($form["food"]->getData()) {
                     $food = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["food"]->getData());

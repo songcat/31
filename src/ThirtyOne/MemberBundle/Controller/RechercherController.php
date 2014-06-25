@@ -20,28 +20,19 @@ class RechercherController extends Controller
         return array();
     }
 
-    private function isEmpty($tab)
-    {
-        if ($tab)
-            return ('%' . $tab . '%');
-        else
-            return ('');
-    }
-
     /**
      * @Route("/rechercher/resultats/famille")
      * @Template()
      */
     public function getFamilyAction()
     {
-        $family = $_GET['famille'];
-        $region = $_GET['region'];
-
+        $family = !empty($_GET['famille']) ? '%'.$_GET['famille'].'%' : null;
+        $region = !empty($_GET['region']) ? '%'.$_GET['region'].'%' : null;
         $fam = $this->getUser();
         $em = $this->getDoctrine()->getManager();
 
-        if ($family && $region)
-            $query = $em->createQuery('SELECT f.username, f.region, f.id
+        if ($family && $region) {
+            $query = $em->createQuery('SELECT f.username, f.region, f.id, f.slug
             FROM ThirtyOneMemberBundle:Family f
             WHERE f.username LIKE :name
                 AND f.region LIKE :region
@@ -50,16 +41,17 @@ class RechercherController extends Controller
                 ->setParameter('name', $family)
                 ->setParameter('region', $region)
                 ->setParameter('fam', $fam->getId());
-        else
-            $query = $em->createQuery('SELECT f.username, f.region, f.id
+        } else {
+            $query = $em->createQuery('SELECT f.username, f.region, f.id, f.slug
             FROM ThirtyOneMemberBundle:Family f
             WHERE f.publish = 1
                 AND f.id != :fam
-                AND f.username LIKE :name
-                OR f.region LIKE :region')
+                AND (f.username LIKE :name
+                OR f.region LIKE :region)')
                 ->setParameter('name', $family)
                 ->setParameter('region', $region)
                 ->setParameter('fam', $fam->getId());
+        }
         $result = $query->getResult();
         if ($result)
             return array(
@@ -77,15 +69,16 @@ class RechercherController extends Controller
      */
     public function getEventAction()
     {
-        $region = $_GET['region'];
+        $region = '%'.$_GET['region'].'%';
+        $date = new \DateTime();
         $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery('SELECT e.name, e.region, e.id
+        $query = $em->createQuery('SELECT e.name, e.region, e.id, e.slug
             FROM ThirtyOneMemberBundle:Event e
-            INNER JOIN ThirtyOneMemberBundle:Service s
-            ON s.id = e.place
             WHERE e.private = 0
-                AND (e.region LIKE :region OR s.region LIKE :region')
-            ->setParameter('region', $region);
+                AND e.region LIKE :region
+                AND e.date > :date')
+            ->setParameter('region', $region)
+            ->setParameter('date', $date);
         $result = $query->getResult();
         if ($result)
             return array(
