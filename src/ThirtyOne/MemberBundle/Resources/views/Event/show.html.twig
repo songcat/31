@@ -1,0 +1,9 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block content %}
+
+
+    <img src="{{ asset('uploads/documents/'~event.path) }}" alt=""/>
+    {{ event.name }}
+
+{% endblock %}

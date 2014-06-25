@@ -1,4 +1,5 @@
-$('.addForm a, a.editEntity').click(function () {
+$('.addForm a, a.editEntity').click(function (event) {
+    event.preventDefault();
     var formType = $(this).attr('id');
     if($(this).hasClass('editEntity')) {
         var id = $(this).attr('class').split(" ")[1];
@@ -16,7 +17,7 @@ $('.addForm a, a.editEntity').click(function () {
          $('.'+formType+' .form .' + num).replaceWith(data);
     });
 });
-
+/*
 $('.recherche form').submit(function () {
     var family = $("input#form_family").val();
     var region = $("option:selected").val();
@@ -27,7 +28,7 @@ $('.recherche form').submit(function () {
         $('.results').html(data);
     });
     return false;
-});
+});*/
 
 $('.service a.reserve').click(function(event) {
     event.preventDefault();

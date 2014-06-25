@@ -11,22 +11,34 @@ use ThirtyOne\MemberBundle\Entity\Event;
 class EventController extends Controller
 {
 
+    private function foreachDate($flag, $events)
+    {
+        $result = array();
+        $date = new \DateTime();
+        if ($flag)
+            foreach ($events as $e) {
+                if ($e->getDate() > $date && $e->getPrivate() == 0)
+                    $result[] = $e;
+            }
+        else
+            foreach ($events as $e) {
+                if ($e->getDate() <= $date && $e->getPrivate() == 0)
+                    $result[] = $e;
+            }
+        return $result;
+    }
+
     /**
      * @Route("/rallye/creation")
      * @Template()
      */
     public function createAction()
     {
-        if (!$this->get('security.context')->isGranted('ROLE_USER')) {
-            throw new AccessDeniedHttpException();
-        }
-
         $rallye = new Event();
         $em = $this->getDoctrine()->getManager();
         $service = $em->getRepository('ThirtyOneMemberBundle:Service')->findAll();
         $request = $this->get('request');
-        $famId = $this->getUser()->getId();
-        $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($famId);
+        $fam = $this->getUser();
 
         $form = $this->createFormBuilder($rallye)
             ->add('file', 'file', array(
@@ -46,6 +58,35 @@ class EventController extends Controller
             ->add('city', 'text', array(
                 "label" => "Ville",
                 'required' => false
+            ))
+            ->add('region', 'choice', array(
+                'choices'   => array(
+                    'Alsace' => 'Alsace',
+                    'Aqutaine' => 'Aqutaine',
+                    'Auvergne' => 'Auvergne',
+                    'Basse-Normandie' => 'Basse-Normandie',
+                    'Bourgogne' => 'Bourgogne',
+                    'Bretagne' => 'Bretagne',
+                    'Centre' => 'Centre',
+                    'Champagne-Ardenne' => 'Champagne-Ardenne',
+                    'Corse' => 'Corse',
+                    'Franche-Comté' => 'Franche-Comté',
+                    'Haute-Normandie' => 'Haute-Normandie',
+                    'Île-de-France' => 'Île-de-France',
+                    'Languedoc-Roussillon' => 'Languedoc-Roussillon',
+                    'Limousin' => 'Limousin',
+                    'Lorraine' => 'Lorraine',
+                    'Midi-Pyrénées' => 'Midi-Pyrénées',
+                    'Nord-Pas-de-Calais' => 'Nord-Pas-de-Calais',
+                    'Pays de la Loire' => 'Pays de la Loire',
+                    'Picardie' => 'Picardie',
+                    'Poitou-Charentes' => 'Poitou-Charentes',
+                    'Provence-Alpes-Côte d\'Azur' => 'Provence-Alpes-Côte d\'Azur',
+                    'Rhône-Alpes' => 'Rhône-Alpes',
+                ),
+                'multiple'=>false,
+                'label'=>'Région',
+                'required'=>false
             ))
             ->add('description', 'textarea', array(
                 "label" => "description*"
@@ -67,25 +108,27 @@ class EventController extends Controller
         $form->handleRequest($request);
         if ($form->isValid()) {
             if ($request->getMethod() == 'POST') {
-                $place = $food = $music = 0;
-                if ($form["place"]->getData())
+                if ($form["place"]->getData()) {
                     $place = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["place"]->getData());
-                if ($form["food"]->getData())
+                    $rallye->setPlace($place);
+                }
+                if ($form["food"]->getData()) {
                     $food = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["food"]->getData());
-                if ($form["music"]->getData())
+                    $rallye->setFood($food);
+                }
+                if ($form["music"]->getData()) {
                     $music = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["music"]->getData());
-                if (!$place && (!$form["adress"]->getData() || !$form["city"]->getData()))
-                    return $this->render('ThirtyOneMemberBundle:event:creation.html.twig', array(
+                    $rallye->setMusic($music);
+                }
+                if (!$place && (!$form["adress"]->getData() || !$form["city"]->getData() || !$form["region"]->getData()))
+                    return array(
                         'form' => $form->createView(),
                         'service' => $service,
-                        'error' => 'Merci de choisir un lieu ou de saisir adresse/ville'
-                    ));
+                        'error' => 'Merci de choisir un lieu ou de saisir adresse/ville/region.'
+                    );
                 $rallye->upload();
                 $rallye->setFamily($fam);
                 $rallye->setParticipant($fam);
-                $rallye->setPlace($place);
-                $rallye->setFood($food);
-                $rallye->setMusic($music);
                 $em->persist($rallye);
                 $em->flush();
                 return $this->redirect($this->generateUrl('thirtyone_member_event_create'), 301);
@@ -93,12 +136,43 @@ class EventController extends Controller
         }
 
 
-        return $this->render('ThirtyOneMemberBundle:event:creation.html.twig', array(
+        return array(
             'form' => $form->createView(),
             'service' => $service,
-        ));
+        );
 
 
+    }
+
+    /**
+     * @Route("/rallye/{path}", requirements={"path"="null|avenir|passe"}, defaults={"path"="null"})
+     * @Template()
+     */
+    public function HomeAction($path)
+    {
+
+        $events = $this->getUser()->getEvents();
+
+        if ($path == 'avenir')
+            $events = $this->foreachDate(1, $events);
+        else if ($path == 'passe')
+            $events = $this->foreachDate(0, $events);
+
+        return array(
+            'events' => $events,
+            'path' => $path
+        );
+    }
+
+    /**
+     * @Route("/rallye/{slug}")
+     * @Template()
+     */
+    public function ShowAction(Event $event)
+    {
+        return array(
+            'event' => $event,
+        );
     }
 
 }

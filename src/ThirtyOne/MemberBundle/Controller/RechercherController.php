@@ -8,7 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
 use ThirtyOne\MemberBundle\Entity\Family;
 
-class RechercherController extends Controller {
+class RechercherController extends Controller
+{
 
     /**
      * @Route("/rechercher")
@@ -16,81 +17,38 @@ class RechercherController extends Controller {
      */
     public function RechercherAction()
     {
-        if (!$this->get('security.context')->isGranted('ROLE_USER')) {
-            throw new AccessDeniedHttpException();
-        }
-
-        $form = $this->createFormBuilder()
-            ->add('family', 'text', array(
-                'label'=>'Nom de famille',
-                'required' => false
-            ))
-            ->add('region', 'choice', array(
-                'choices'   => array(
-                    null => '',
-                    'Alsace' => 'Alsace',
-                    'Aqutaine' => 'Aqutaine',
-                    'Auvergne' => 'Auvergne',
-                    'Basse-Normandie' => 'Basse-Normandie',
-                    'Bourgogne' => 'Bourgogne',
-                    'Bretagne' => 'Bretagne',
-                    'Centre' => 'Centre',
-                    'Champagne-Ardenne' => 'Champagne-Ardenne',
-                    'Corse' => 'Corse',
-                    'Franche-Comté' => 'Franche-Comté',
-                    'Haute-Normandie' => 'Haute-Normandie',
-                    'Île-de-France' => 'Île-de-France',
-                    'Languedoc-Roussillon' => 'Languedoc-Roussillon',
-                    'Limousin' => 'Limousin',
-                    'Lorraine' => 'Lorraine',
-                    'Midi-Pyrénées' => 'Midi-Pyrénées',
-                    'Nord-Pas-de-Calais' => 'Nord-Pas-de-Calais',
-                    'Pays de la Loire' => 'Pays de la Loire',
-                    'Picardie' => 'Picardie',
-                    'Poitou-Charentes' => 'Poitou-Charentes',
-                    'Provence-Alpes-Côte d\'Azur' => 'Provence-Alpes-Côte d\'Azur',
-                    'Rhône-Alpes' => 'Rhône-Alpes',
-                ),
-                'multiple'=>false,
-                'label'=>'Région',
-                'required' => false
-            ))
-            ->add('rechercher', 'submit')
-            ->getForm();
-
-        return $this->render('ThirtyOneMemberBundle:Rechercher:rechercher.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        return array();
     }
 
-    private function isEmpty($tab) {
+    private function isEmpty($tab)
+    {
         if ($tab)
-            return ('%'.$tab.'%');
+            return ('%' . $tab . '%');
         else
             return ('');
     }
+
     /**
-     * @Route("/rechercher/getResult/{params}")
+     * @Route("/rechercher/resultats/famille")
      * @Template()
      */
-    public function getResultAction($params) {
-        $tab = explode('_', $params);
-        $tab[0] = $this->isEmpty($tab[0]);
-        $tab[1] = $this->isEmpty($tab[1]);
+    public function getFamilyAction()
+    {
+        $family = $_GET['famille'];
+        $region = $_GET['region'];
 
-        $famId = $this->getUser()->getId();
+        $fam = $this->getUser();
         $em = $this->getDoctrine()->getManager();
-        $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($famId);
 
-        if ($tab[0] && $tab[1])
+        if ($family && $region)
             $query = $em->createQuery('SELECT f.username, f.region, f.id
             FROM ThirtyOneMemberBundle:Family f
             WHERE f.username LIKE :name
                 AND f.region LIKE :region
                 AND f.id != :fam
                 AND f.publish = 1')
-                ->setParameter('name', $tab[0])
-                ->setParameter('region', $tab[1])
+                ->setParameter('name', $family)
+                ->setParameter('region', $region)
                 ->setParameter('fam', $fam->getId());
         else
             $query = $em->createQuery('SELECT f.username, f.region, f.id
@@ -99,17 +57,43 @@ class RechercherController extends Controller {
                 AND f.id != :fam
                 AND f.username LIKE :name
                 OR f.region LIKE :region')
-                ->setParameter('name', $tab[0])
-                ->setParameter('region', $tab[1])
+                ->setParameter('name', $family)
+                ->setParameter('region', $region)
                 ->setParameter('fam', $fam->getId());
         $result = $query->getResult();
         if ($result)
-            return $this->render('ThirtyOneMemberBundle:Rechercher:getResult.html.twig', array(
+            return array(
                 'result' => $result
-            ));
+            );
         else
-            return $this->render('ThirtyOneMemberBundle:Rechercher:getResult.html.twig', array(
+            return array(
                 'error' => 'Pas de résultat.'
-            ));
+            );
+    }
+
+    /**
+     * @Route("/rechercher/resultats/rallye")
+     * @Template()
+     */
+    public function getEventAction()
+    {
+        $region = $_GET['region'];
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT e.name, e.region, e.id
+            FROM ThirtyOneMemberBundle:Event e
+            INNER JOIN ThirtyOneMemberBundle:Service s
+            ON s.id = e.place
+            WHERE e.private = 0
+                AND (e.region LIKE :region OR s.region LIKE :region')
+            ->setParameter('region', $region);
+        $result = $query->getResult();
+        if ($result)
+            return array(
+                'result' => $result
+            );
+        else
+            return array(
+                'error' => 'Pas de résultat.'
+            );
     }
 }

@@ -6,33 +6,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use ThirtyOne\MemberBundle\Entity\Family;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/profil/{params}")
+     * @Route("/profil/{slug}.html")
      * @Template()
      */
-    public function profilAction($params)
+    public function profilAction(Family $fam)
     {
-        if (!$this->get('security.context')->isGranted('ROLE_USER')) {
-            throw new AccessDeniedHttpException();
-        }
-
-        $tab = explode('.', $params);
-        $em = $this->getDoctrine()->getManager();
-        $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($tab[1]);
-        if ($fam && $fam->getPublish() == 1){
-            return $this->render('ThirtyOneMemberBundle:Default:profil.html.twig', array(
+        if ($fam && $fam->getPublish() == 1) {
+            return array(
                 'fam' => $fam,
-            ));
-        }
-        else {
-            return $this->render('ThirtyOneMemberBundle:Default:profil.html.twig', array(
+            );
+        } else {
+            return array(
                 'error' => 'Pas de famille',
-            ));
+            );
         }
-
-
     }
 }

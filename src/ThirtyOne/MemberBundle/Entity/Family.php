@@ -5,6 +5,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
  * Family
@@ -14,6 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Family extends BaseUser implements ParticipantInterface
 {
+    use ORMBehaviors\Sluggable\Sluggable;
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -36,6 +38,11 @@ class Family extends BaseUser implements ParticipantInterface
      * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Event", mappedBy="family")
      */
     private $rallye;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Event", mappedBy="participant")
+     */
+    private $events;
 
     /**
      * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Child", mappedBy="family")
@@ -108,6 +115,11 @@ class Family extends BaseUser implements ParticipantInterface
         return $this->id;
     }
 
+    public function getSluggableFields()
+    {
+        return [ 'username' ];
+    }
+
 
     /**
      * Set city
@@ -162,22 +174,6 @@ class Family extends BaseUser implements ParticipantInterface
     public function getParents()
     {
         return $this->parents;
-    }
-
-    /**
-     * @param mixed $event
-     */
-    public function setEvent($event)
-    {
-        $this->event = $event;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEvent()
-    {
-        return $this->event;
     }
 
     /**
@@ -306,5 +302,21 @@ class Family extends BaseUser implements ParticipantInterface
     public function getRallye()
     {
         return $this->rallye;
+    }
+
+    /**
+     * @param mixed $events
+     */
+    public function setEvents($events)
+    {
+        $this->events = $events;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEvents()
+    {
+        return $this->events;
     }
 }

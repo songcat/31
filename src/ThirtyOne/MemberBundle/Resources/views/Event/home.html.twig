@@ -1,0 +1,41 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block content %}
+
+    <ul>
+        <li><a href='{{ path('thirtyone_member_event_create') }}'>nouveau</a></li>
+        <li><a href='{{ path('thirtyone_member_event_home', {'path': 'avenir'}) }}'>a
+                venir</a></li>
+        <li><a href='{{ path('thirtyone_member_event_home', {'path': 'passe'}) }}'>passés</a>
+        </li>
+
+    </ul>
+
+    {% if path == "null" %}
+        {% set flag = 0 %}
+        {% for e in events %}
+            {% if (e.date|date("m/d/Y") > "now"|date("m/d/Y")) and (flag == 0) and (e.private == false) %}
+                <a href='{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}'>{{ e.name }}</a>
+                {% set flag = 1 %}
+            {% endif %}
+        {% endfor %}
+
+        <h2>Events Passé</h2>
+        {% for e in events %}
+            {% if (e.date|date("m/d/Y") <= "now"|date("m/d/Y")) and (e.private == false) %}
+                <a href="">{{ e.name }}</a>
+            {% endif %}
+        {% endfor %}
+
+    {% else %}
+        {% for e in events %}
+
+            <a href='{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}'>{{ e.name }}</a>
+            {% set flag = 1 %}
+
+        {% endfor %}
+
+    {% endif %}
+
+
+{% endblock %}

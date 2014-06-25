@@ -80,6 +80,12 @@ class Service
      */
     public $file;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="region", type="string", length=255, nullable=true)
+     */
+    private $region;
 
     /**
      * @ORM\PostPersist()
@@ -246,6 +252,22 @@ class Service
     public function getCity()
     {
         return $this->city;
+    }
+
+    /**
+     * @param string $region
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
     }
 
 }

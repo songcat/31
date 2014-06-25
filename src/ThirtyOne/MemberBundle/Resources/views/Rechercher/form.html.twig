@@ -1,0 +1,56 @@
+<div class="recherche">
+
+    <form action='
+    {% if family == 1 %}
+    {{ path('thirtyone_member_rechercher_getfamily') }}
+    {% else %}
+    {{ path('thirtyone_member_rechercher_getevent') }}
+    {% endif %}'
+          method="GET">
+        <div id="form">
+            {% if family == 1 %}
+            <div><label for="form_family">Nom de famille</label><input
+                        type="text"
+                        id="form_family"
+                        name="famille">
+            </div>
+            {% endif %}
+            <div><label for="form_region">Région</label><select id="form_region"
+                                                                name="region">
+                    <option value="" selected="selected"></option>
+                    <option value="Alsace">Alsace</option>
+                    <option value="Aqutaine">Aqutaine</option>
+                    <option value="Auvergne">Auvergne</option>
+                    <option value="Basse-Normandie">Basse-Normandie</option>
+                    <option value="Bourgogne">Bourgogne</option>
+                    <option value="Bretagne">Bretagne</option>
+                    <option value="Centre">Centre</option>
+                    <option value="Champagne-Ardenne">Champagne-Ardenne</option>
+                    <option value="Corse">Corse</option>
+                    <option value="Franche-Comté">Franche-Comté</option>
+                    <option value="Haute-Normandie">Haute-Normandie</option>
+                    <option value="Île-de-France">Île-de-France</option>
+                    <option value="Languedoc-Roussillon">Languedoc-Roussillon
+                    </option>
+                    <option value="Limousin">Limousin</option>
+                    <option value="Lorraine">Lorraine</option>
+                    <option value="Midi-Pyrénées">Midi-Pyrénées</option>
+                    <option value="Nord-Pas-de-Calais">Nord-Pas-de-Calais
+                    </option>
+                    <option value="Pays de la Loire">Pays de la Loire</option>
+                    <option value="Picardie">Picardie</option>
+                    <option value="Poitou-Charentes">Poitou-Charentes</option>
+                    <option value="Provence-Alpes-Côte d'Azur">
+                        Provence-Alpes-Côte
+                        d'Azur
+                    </option>
+                    <option value="Rhône-Alpes">Rhône-Alpes</option>
+                </select></div>
+            <div>
+                <button type="submit" id="form_rechercher">
+                    Rechercher
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

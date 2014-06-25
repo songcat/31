@@ -2,27 +2,11 @@
 
 {% block content %}
 
-    <div class="recherche">
-        <form action="" method="POST">
-            {{ form_start(form) }}
-            {{ form_errors(form) }}
+    <h2>Par famille</h2>
+    {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':1}) }}
 
-            {% for champs in form %}
-                {% if champs.errors is defined %}
-                    {{ form_label(champs) }}
-                    {% if champs.errors is defined %}
-                        {{ form_errors(champs) }}
-                    {% endif %}
-                    {{ form_widget(champs) }}
-                {% endif %}
-            {% endfor %}
 
-            {{ form_end(form) }}
+    <h2>Par rallye</h2>
+    {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':0}) }}
 
-        </form>
-    </div>
-
-    <div class="results">
-
-    </div>
 {% endblock %}

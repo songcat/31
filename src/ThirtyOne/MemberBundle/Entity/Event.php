@@ -4,6 +4,7 @@ namespace ThirtyOne\MemberBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
  * Event
@@ -13,6 +14,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Event
 {
+    use ORMBehaviors\Sluggable\Sluggable;
+
     /**
      * @var integer
      *
@@ -30,7 +33,7 @@ class Event
     private $family;
 
     /**
-     * @ORM\ManyToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Family", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Family", cascade={"persist"}, inversedBy="events")
      */
     private $participant;
 
@@ -40,6 +43,7 @@ class Event
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+
 
     /**
      * @var \DateTime
@@ -54,6 +58,13 @@ class Event
      * @ORM\Column(name="adress", type="string", length=255, nullable=true)
      */
     private $adress;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="region", type="string", length=255, nullable=true)
+     */
+    private $region;
 
     /**
      * @var string
@@ -176,7 +187,7 @@ class Event
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -199,11 +210,16 @@ class Event
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
         return $this->name;
+    }
+
+    public function getSluggableFields()
+    {
+        return ['name'];
     }
 
     /**
@@ -222,7 +238,7 @@ class Event
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -245,7 +261,7 @@ class Event
     /**
      * Get information
      *
-     * @return string 
+     * @return string
      */
     public function getInformation()
     {
@@ -268,7 +284,7 @@ class Event
     /**
      * Get theme
      *
-     * @return string 
+     * @return string
      */
     public function getTheme()
     {
@@ -417,6 +433,22 @@ class Event
     public function getParticipant()
     {
         return $this->participant;
+    }
+
+    /**
+     * @param string $region
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
     }
 
 }

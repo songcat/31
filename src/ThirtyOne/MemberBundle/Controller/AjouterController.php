@@ -24,17 +24,17 @@ class AjouterController extends Controller
             switch ($formType) {
                 case 'Child' :
                     $entity = $em->getRepository('ThirtyOneMemberBundle:Child')->find($id);
-                    $entity = $entity[0];
+                    $entity = $entity;
                     $form = $this->createForm(new ChildFormType(), $entity);
                     break;
                 case 'Parent' :
                     $entity = $em->getRepository('ThirtyOneMemberBundle:Parents')->find($id);
-                    $entity = $entity[0];
+                    $entity = $entity;
                     $form = $this->createForm(new ParentFormType(), $entity);
                     break;
                 case 'GdParent' :
                     $entity = $em->getRepository('ThirtyOneMemberBundle:Gdparent')->find($id);
-                    $entity = $entity[0];
+                    $entity = $entity;
                     $form = $this->createForm(new GdParentFormType($this->getUser()->getId()), $entity);
                     break;
             }
@@ -72,14 +72,10 @@ class AjouterController extends Controller
      */
     public function ajouterAction()
     {
-        if (!$this->get('security.context')->isGranted('ROLE_USER')) {
-            throw new AccessDeniedHttpException();
-        }
-
         $request = $this->get('request');
-        $famId = $this->getUser()->getId();
+        $fam = $this->getUser();
+        $famId = $fam->getId();
         $em = $this->getDoctrine()->getManager();
-        $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->find($famId);
 
         $parent = $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId)
             ? $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId) : null;
@@ -109,7 +105,7 @@ class AjouterController extends Controller
                             $switch[0]->setFamily($fam);
                         } else {
                             $selectParent = $switch[1]->getData();
-                            $parentId = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($selectParent->getParents());
+                            $parentId = $em->getRepository('ThirtyOneMemberBundle:Parents')->find($selectParent->getParents());
                             $nbGdparent = count($em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parentId));
                             if ($nbGdparent >= '2') {
                                 return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
@@ -163,14 +159,13 @@ class AjouterController extends Controller
             $em->flush();
         }
 
-
-        return $this->render('ThirtyOneMemberBundle:ajouter:ajouter.html.twig', array(
+        return array(
             'info' => $info,
             'parent' => $parent,
             'nbChildren' => $nbChildren,
             'gdparent' => $gdparent,
             'child' => $child,
-        ));
+        );
 
     }
 
@@ -194,17 +189,17 @@ class AjouterController extends Controller
                 $nbParent = count($em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId));
                 if ($formType == 'Parent') {
                     if ($nbParent >= 2) {
-                        return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
+                        return array(
                             'formType' => $formType,
                             'error' => 'deja deux parents',
-                        ));
+                        );
                     }
                 } else {
                     if (!$nbParent) {
-                        return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
+                        return array(
                             'formType' => $formType,
                             'error' => 'Vous ne pouvez saisir de grand parent sans parent. Merci d\'en saisir un.',
-                        ));
+                        );
                     }
                 }
             }
@@ -241,10 +236,10 @@ class AjouterController extends Controller
         }
 
 
-        return $this->render('ThirtyOneMemberBundle:ajouter:getAjax.html.twig', array(
+        return array(
             'form' => $form->createView(),
             'formType' => $formType,
             'edit' => $edit,
-        ));
+        );
     }
 }
