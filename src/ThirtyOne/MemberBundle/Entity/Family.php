@@ -33,6 +33,11 @@ class Family extends BaseUser implements ParticipantInterface
     private $parents;
 
     /**
+     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Event", mappedBy="family")
+     */
+    private $rallye;
+
+    /**
      * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Child", mappedBy="family")
      */
     private $child;
@@ -41,11 +46,6 @@ class Family extends BaseUser implements ParticipantInterface
      * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Informations", mappedBy="family")
      */
     private $informations;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="Family")
-     */
-    private $event;
 
     /**
      * @var string
@@ -290,5 +290,21 @@ class Family extends BaseUser implements ParticipantInterface
     public function getInformations()
     {
         return $this->informations;
+    }
+
+    /**
+     * @param mixed $rallye
+     */
+    public function setRallye($rallye)
+    {
+        $this->rallye = $rallye;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRallye()
+    {
+        return $this->rallye;
     }
 }

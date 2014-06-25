@@ -30,8 +30,7 @@ class EventController extends Controller
 
         $form = $this->createFormBuilder($rallye)
             ->add('file', 'file', array(
-                "label" => "ajouter une photo de couverture*",
-                'required' => false
+                "label" => "ajouter une photo de couverture*"
             ))
             ->add('name', 'text', array(
                 "label" => "nom du rallye*"
@@ -70,14 +69,20 @@ class EventController extends Controller
             if ($request->getMethod() == 'POST') {
                 $place = $food = $music = 0;
                 if ($form["place"]->getData())
-                    $place = $em->getRepository('ThirtyOneMemberBundle:Service')->findOneById($form["place"]->getData());
+                    $place = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["place"]->getData());
                 if ($form["food"]->getData())
-                    $place = $em->getRepository('ThirtyOneMemberBundle:Service')->findOneById($form["food"]->getData());
+                    $food = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["food"]->getData());
                 if ($form["music"]->getData())
-                    $place = $em->getRepository('ThirtyOneMemberBundle:Service')->findOneById($form["music"]->getData());
-                \Doctrine\Common\Util\Debug::dump($place);die();
+                    $music = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["music"]->getData());
+                if (!$place && (!$form["adress"]->getData() || !$form["city"]->getData()))
+                    return $this->render('ThirtyOneMemberBundle:event:creation.html.twig', array(
+                        'form' => $form->createView(),
+                        'service' => $service,
+                        'error' => 'Merci de choisir un lieu ou de saisir adresse/ville'
+                    ));
                 $rallye->upload();
                 $rallye->setFamily($fam);
+                $rallye->setParticipant($fam);
                 $rallye->setPlace($place);
                 $rallye->setFood($food);
                 $rallye->setMusic($music);

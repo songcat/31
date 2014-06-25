@@ -22,11 +22,17 @@ class Event
      */
     private $id;
 
+
     /**
-     * @ORM\ManyToMany(targetEntity="event")
+     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Family", inversedBy="rallye")
      * @ORM\JoinColumn(nullable=false)
      */
     private $family;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Family", cascade={"persist"})
+     */
+    private $participant;
 
     /**
      * @var string
@@ -45,14 +51,14 @@ class Event
     /**
      * @var string
      *
-     * @ORM\Column(name="adress", type="string", length=255)
+     * @ORM\Column(name="adress", type="string", length=255, nullable=true)
      */
     private $adress;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=255)
+     * @ORM\Column(name="city", type="string", length=255, nullable=true)
      */
     private $city;
 
@@ -71,20 +77,25 @@ class Event
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Service", mappedBy="id")
+     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Service")
      */
     private $place;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Service", mappedBy="id")
+     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Service")
      */
     private $food;
 
     /**
-     * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Service", mappedBy="id")
+     * @ORM\ManyToOne(targetEntity="ThirtyOne\MemberBundle\Entity\Service")
      */
     private $music;
 
+
+    public function __construct()
+    {
+        $this->participant = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * @var string
@@ -100,7 +111,6 @@ class Event
      * @Assert\File(maxSize="300000")
      */
     public $file;
-
 
     /**
      * @ORM\PostPersist()
@@ -391,6 +401,22 @@ class Event
     public function getPrivate()
     {
         return $this->private;
+    }
+
+    /**
+     * @param mixed $participant
+     */
+    public function setParticipant($participant)
+    {
+        $this->participant[] = $participant;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getParticipant()
+    {
+        return $this->participant;
     }
 
 }

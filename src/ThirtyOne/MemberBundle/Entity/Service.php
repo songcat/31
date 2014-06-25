@@ -52,6 +52,20 @@ class Service
 
 
     /**
+     * @var text
+     *
+     * @ORM\Column(name="adress", type="string", length=255, nullable=true)
+     */
+    private $adress;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="city", type="string", length=255, nullable=true)
+     */
+    private $city;
+
+    /**
      * @var string
      *
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -200,6 +214,38 @@ class Service
     public function getPrice()
     {
         return $this->price;
+    }
+
+    /**
+     * @param \ThirtyOne\MemberBundle\Entity\text $adress
+     */
+    public function setAdress($adress)
+    {
+        $this->adress = $adress;
+    }
+
+    /**
+     * @return \ThirtyOne\MemberBundle\Entity\text
+     */
+    public function getAdress()
+    {
+        return $this->adress;
+    }
+
+    /**
+     * @param \ThirtyOne\MemberBundle\Entity\text $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * @return \ThirtyOne\MemberBundle\Entity\text
+     */
+    public function getCity()
+    {
+        return $this->city;
     }
 
 }

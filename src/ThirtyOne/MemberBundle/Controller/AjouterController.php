@@ -23,17 +23,17 @@ class AjouterController extends Controller
             $em = $this->getDoctrine()->getManager();
             switch ($formType) {
                 case 'Child' :
-                    $entity = $em->getRepository('ThirtyOneMemberBundle:Child')->findById($id);
+                    $entity = $em->getRepository('ThirtyOneMemberBundle:Child')->find($id);
                     $entity = $entity[0];
                     $form = $this->createForm(new ChildFormType(), $entity);
                     break;
                 case 'Parent' :
-                    $entity = $em->getRepository('ThirtyOneMemberBundle:Parents')->findById($id);
+                    $entity = $em->getRepository('ThirtyOneMemberBundle:Parents')->find($id);
                     $entity = $entity[0];
                     $form = $this->createForm(new ParentFormType(), $entity);
                     break;
                 case 'GdParent' :
-                    $entity = $em->getRepository('ThirtyOneMemberBundle:Gdparent')->findById($id);
+                    $entity = $em->getRepository('ThirtyOneMemberBundle:Gdparent')->find($id);
                     $entity = $entity[0];
                     $form = $this->createForm(new GdParentFormType($this->getUser()->getId()), $entity);
                     break;
@@ -79,7 +79,7 @@ class AjouterController extends Controller
         $request = $this->get('request');
         $famId = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
-        $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneById($famId);
+        $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->find($famId);
 
         $parent = $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId)
             ? $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId) : null;
