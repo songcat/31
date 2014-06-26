@@ -57,11 +57,15 @@ class RechercherController extends Controller
         $result = $query->getResult();
         if ($result)
             return array(
-                'result' => $result
+                'result' => $result,
+                'searchFam' => $_GET['famille'],
+                'searchRegion' => $_GET['region']
             );
         else
             return array(
-                'error' => 'Pas de résultat.'
+                'error' => 'Pas de résultat.',
+                'searchFam' => $_GET['famille'],
+                'searchRegion' => $_GET['region']
             );
     }
 
@@ -85,11 +89,13 @@ class RechercherController extends Controller
         $result = $query->getResult();
         if ($result)
             return array(
-                'result' => $result
+                'result' => $result,
+                'search' => $_GET['region']
             );
         else
             return array(
-                'error' => 'Pas de résultat.'
+                'error' => 'Pas de résultat.',
+                'search' => $_GET['region']
             );
     }
 }

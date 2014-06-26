@@ -21,6 +21,9 @@ class MessageController extends Controller
 
         $data = array();
         $form = $this->createFormBuilder($data)
+            ->add('Dest', 'text', array(
+                "label" => "Destinataire"
+            ))
             ->add('Subject', 'text', array(
                 "label" => "Sujet"
             ))
