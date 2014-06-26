@@ -1,0 +1,14 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block content %}
+    {{ include('ThirtyOneMemberBundle:Message:menu.html.twig') }}
+
+    <h2>Nouveau message</h2>
+
+    <form action="{{ url('fos_message_thread_new') }}" method="post">
+        {{ form_widget(form) }}
+
+        <input type="submit"/>
+    </form>
+
+{% endblock %}

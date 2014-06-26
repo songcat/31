@@ -1,0 +1,10 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block content %}
+    {{ include('ThirtyOneMemberBundle:Message:menu.html.twig') }}
+
+    <h2>Envoyé</h2>
+
+    {% include 'ThirtyOneMemberBundle:Message:threads_list.html.twig' with {'threads': threads} %}
+
+{% endblock %}
