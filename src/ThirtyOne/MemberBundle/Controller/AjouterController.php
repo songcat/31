@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use ThirtyOne\MemberBundle\Entity\Child;
 use ThirtyOne\MemberBundle\Entity\Informations;
 use ThirtyOne\MemberBundle\Entity\Parents;
@@ -88,7 +87,6 @@ class AjouterController extends Controller
         $info = $em->getRepository('ThirtyOneMemberBundle:Informations')->findByFamily($famId)
             ? $em->getRepository('ThirtyOneMemberBundle:Informations')->findByFamily($famId)[0] : null;
 
-       // \Doctrine\Common\Util\Debug::dump($info);
         $nbChildren = $fam->getNbChildren() ? $fam->getNbChildren() : null;
 
         if ($request->getMethod() == 'POST') {
@@ -122,8 +120,7 @@ class AjouterController extends Controller
                     }
                     return $this->redirect($this->generateUrl('thirtyone_member_ajouter_ajouter'), 301);
                 }
-            }
-            else {
+            } else {
                 $informations = $info ? $info : new Informations();
                 $form = $this->createFormBuilder($informations)
                     ->add('file', 'file', array(
@@ -141,12 +138,11 @@ class AjouterController extends Controller
                 $form->handleRequest($request);
                 if ($form->isValid()) {
                     $em = $this->getDoctrine()->getManager();
-                    if (!$info){
+                    if (!$info) {
                         $informations->upload();
                         $informations->setFamily($fam);
                         $em->persist($informations);
-                    }
-                    else
+                    } else
                         $info->upload();
                     $em->flush();
                 }
@@ -168,7 +164,6 @@ class AjouterController extends Controller
             'gdparent' => $gdparent,
             'child' => $child,
         );
-
     }
 
     /**
@@ -185,7 +180,7 @@ class AjouterController extends Controller
         $em = $this->getDoctrine()->getManager();
         $edit = 0;
 
-        // @TODO have to be a service
+        // @TODO service
 
         if ($formType != 'info') {
             $entity = $this->switch_case($formType, $id);
@@ -225,8 +220,7 @@ class AjouterController extends Controller
                         'attr' => array('class' => 'save'),
                     ))
                     ->getForm();
-            }
-            else {
+            } else {
                 $form = $this->createFormBuilder($informations)
                     ->add('history', 'textarea', array(
                         "label" => "histoire de la famille"
@@ -236,9 +230,7 @@ class AjouterController extends Controller
                     ))
                     ->getForm();
             }
-
         }
-
 
         return array(
             'form' => $form->createView(),

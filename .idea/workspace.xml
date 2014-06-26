@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b75587af-0014-4250-b8a4-30c743296745" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewThreadMessageFormType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/deleted.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/inbox.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/menu.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/newThread.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/sent.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/thread.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/threads_list.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/EventFormType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/EventRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/FamilyRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewMessageFormType.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewThreadMessageFormType.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/deleted.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/inbox.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/menu.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/newThread.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/sent.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/thread.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/threads_list.html.twig" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Event.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/MessageController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/MessageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getFamily.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getFamily.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/profil.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/profil.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ThirtyOne.iws" />
@@ -43,7 +55,7 @@
           <file leaf-file-name="MessageController.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/MessageController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="104" column="54" selection-start="2624" selection-end="2624" vertical-scroll-proportion="-2.4342105" vertical-offset="1167" max-vertical-offset="2444">
+                <state line="34" column="86" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-4.644737" vertical-offset="89" max-vertical-offset="767">
                   <folding>
                     <element signature="e#53#110#0" expanded="true" />
                   </folding>
@@ -51,64 +63,62 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NewThreadMessageFormFactory.php" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormFactory/NewThreadMessageFormFactory.php">
+          <file leaf-file-name="RechercherController.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="5" selection-start="483" selection-end="483" vertical-scroll-proportion="0.47231835" vertical-offset="0" max-vertical-offset="578">
+                <state line="54" column="32" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.733564" vertical-offset="278" max-vertical-offset="988">
+                  <folding>
+                    <element signature="e#53#110#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Event.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Event.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="67" selection-start="286" selection-end="286" vertical-scroll-proportion="-6.1904764" vertical-offset="0" max-vertical-offset="5954">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NewThreadMessageFormHandler.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormHandler/NewThreadMessageFormHandler.php">
+          <file leaf-file-name="FamilyRepository.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/FamilyRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="455">
+                <state line="29" column="43" selection-start="0" selection-end="1182" vertical-scroll-proportion="-17.952381" vertical-offset="0" max-vertical-offset="533">
+                  <folding>
+                    <marker date="1403791416000" expanded="true" signature="270:508" placeholder="SELECT f.use..ThirtyOneMemberBundle..." />
+                    <marker date="1403791416000" expanded="true" signature="716:955" placeholder="SELECT f.use..ThirtyOneMemberBundle..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EventRepository.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/EventRepository.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="0" selection-start="547" selection-end="547" vertical-scroll-proportion="-11.142858" vertical-offset="0" max-vertical-offset="351">
+                  <folding>
+                    <marker date="1403791729000" expanded="true" signature="185:349" placeholder="SELECT f.use..ThirtyOneMemberBundle..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GdParentFormType.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="16" column="0" selection-start="292" selection-end="391" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="962">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NewThreadMessageFormType.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormType/NewThreadMessageFormType.php">
+          <file leaf-file-name="profil.html.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/profil.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="36" selection-start="416" selection-end="416" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="507">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NewThreadMessageFormType.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewThreadMessageFormType.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="41" selection-start="1053" selection-end="1053" vertical-scroll-proportion="-22.285715" vertical-offset="0" max-vertical-offset="585">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="threads_list.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/threads_list.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="71" selection-start="2528" selection-end="2528" vertical-scroll-proportion="-33.42857" vertical-offset="0" max-vertical-offset="1053">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="inbox.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/inbox.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="0" selection-start="427" selection-end="427" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="247">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="newThread.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/newThread.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="43" selection-start="217" selection-end="217" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="260">
+                <state line="21" column="32" selection-start="616" selection-end="616" vertical-scroll-proportion="-13.0" vertical-offset="0" max-vertical-offset="429">
                   <folding />
                 </state>
               </provider>
@@ -143,11 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Thread.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Message.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/RegistrationFormType.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Profile/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ProfileFormType.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Messagerie/messagerie.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Gdparent.php" />
@@ -161,28 +166,21 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/creation.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getResult.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/show.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/form.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Service.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Event.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig" />
         <option value="$PROJECT_DIR$/app/logs/dev.log" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/SendTo.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/config/security.yml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getFamily.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/rechercher.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getEvent.html.twig" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/search.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/threads_list.html.twig" />
@@ -193,7 +191,19 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/thread.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/inbox.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewThreadMessageFormType.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getFamily.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/profil.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/MessageController.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewMessageFormType.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/EventFormType.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/FamilyRepository.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Event.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/EventRepository.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php" />
       </list>
     </option>
   </component>
@@ -677,6 +687,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Event" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThirtyOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MemberBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Default" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1198,7 +1242,11 @@
       <created>1403768583484</created>
       <updated>1403768583484</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="messaging start : v1 (before delete)">
+      <created>1403784856602</created>
+      <updated>1403784856602</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1261,7 +1309,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="access to &quot;ajouter&quot; page after registration. can add our own parent profil and a child.&#10;-&gt; now, it seems to work" />
     <MESSAGE value="advanced process to add a new member with his family" />
     <MESSAGE value="modifying inscription process" />
     <MESSAGE value="before change all AjouterController" />
@@ -1286,7 +1333,8 @@
     <MESSAGE value="messaging : startin" />
     <MESSAGE value="search : adding the new search form on result page" />
     <MESSAGE value="messaging start : v1 (before delete)" />
-    <option name="LAST_COMMIT_MESSAGE" value="messaging start : v1 (before delete)" />
+    <MESSAGE value="repo and formtype. trying to clean the code..." />
+    <option name="LAST_COMMIT_MESSAGE" value="repo and formtype. trying to clean the code..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1294,13 +1342,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Parents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="4" selection-start="377" selection-end="545" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="3900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="59" selection-start="141" selection-end="165" vertical-scroll-proportion="0.091292135" vertical-offset="0" max-vertical-offset="712" />
@@ -1316,11 +1357,6 @@
         <state line="20" column="0" selection-start="728" selection-end="728" vertical-scroll-proportion="-12.380953" vertical-offset="0" max-vertical-offset="897" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="75" selection-start="149" selection-end="212" vertical-scroll-proportion="0.14647888" vertical-offset="0" max-vertical-offset="1573" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="14" selection-start="184" selection-end="184" vertical-scroll-proportion="-4.952381" vertical-offset="0" max-vertical-offset="182" />
@@ -1329,29 +1365,6 @@
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="5" selection-start="920" selection-end="920" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="20" selection-start="1866" selection-end="1866" vertical-scroll-proportion="0.42564803" vertical-offset="754" max-vertical-offset="4264">
-          <folding>
-            <element signature="e#48#102#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/RegistrationFormType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="18" selection-start="1050" selection-end="2527" vertical-scroll-proportion="0.69167805" vertical-offset="221" max-vertical-offset="975" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="74" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.17605634" vertical-offset="707" max-vertical-offset="5980">
-          <folding>
-            <element signature="e#49#81#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Service.php">
@@ -1369,21 +1382,9 @@
         <state line="27" column="50" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.47885403" vertical-offset="0" max-vertical-offset="793" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="0" selection-end="756" vertical-scroll-proportion="-11.761905" vertical-offset="0" max-vertical-offset="403" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="31" selection-start="497" selection-end="497" vertical-scroll-proportion="0.28376535" vertical-offset="0" max-vertical-offset="949" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="24" selection-start="3262" selection-end="3262" vertical-scroll-proportion="0.70672387" vertical-offset="260" max-vertical-offset="1131">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Controller/DefaultController.php">
@@ -1407,37 +1408,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="110" selection-start="4641" selection-end="4665" vertical-scroll-proportion="0.79591835" vertical-offset="949" max-vertical-offset="2418">
-          <folding>
-            <element signature="e#53#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/rechercher.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.017687075" vertical-offset="0" max-vertical-offset="735">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getFamily.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="82" selection-start="82" selection-end="253" vertical-scroll-proportion="0.088435374" vertical-offset="0" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="46" selection-start="2774" selection-end="2774" vertical-scroll-proportion="0.5755102" vertical-offset="591" max-vertical-offset="1326">
-          <folding>
-            <marker date="1403768527000" expanded="true" signature="-1:-1" placeholder="SELECT f.use..ThirtyOneMemberBundle..." />
-            <marker date="1403768527000" expanded="true" signature="-1:-1" placeholder="SELECT f.use..ThirtyOneMemberBundle..." />
-            <marker date="1403768527000" expanded="true" signature="-1:-1" placeholder="SELECT e.nam..ThirtyOneMemberBundle..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1513,62 +1487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getEvent.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="82" selection-start="136" selection-end="214" vertical-scroll-proportion="0.11054422" vertical-offset="0" max-vertical-offset="588">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/deleted.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="65" selection-start="81" selection-end="142" vertical-scroll-proportion="0.06632653" vertical-offset="0" max-vertical-offset="588">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.24319728" vertical-offset="0" max-vertical-offset="588">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/thread.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="65" selection-start="142" selection-end="142" vertical-scroll-proportion="0.06632653" vertical-offset="0" max-vertical-offset="588">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/threads_list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="71" selection-start="2528" selection-end="2528" vertical-scroll-proportion="-33.42857" vertical-offset="0" max-vertical-offset="1053">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/sent.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="65" selection-start="142" selection-end="142" vertical-scroll-proportion="0.06902655" vertical-offset="0" max-vertical-offset="565">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/inbox.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="427" selection-end="427" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="247">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/newThread.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="217" selection-end="217" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/ThreadMetadata.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="599">
@@ -1590,6 +1508,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormFactory/NewThreadMessageFormFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="5" selection-start="483" selection-end="483" vertical-scroll-proportion="0.38450703" vertical-offset="0" max-vertical-offset="710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormHandler/NewThreadMessageFormHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="586">
@@ -1597,47 +1522,179 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getEvent.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="88" selection-start="365" selection-end="424" vertical-scroll-proportion="0.23802817" vertical-offset="0" max-vertical-offset="710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getFamily.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="84" selection-start="367" selection-end="430" vertical-scroll-proportion="0.23802817" vertical-offset="0" max-vertical-offset="710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormType/NewThreadMessageFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="36" selection-start="416" selection-end="416" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="507">
+        <state line="15" column="36" selection-start="416" selection-end="416" vertical-scroll-proportion="0.23802817" vertical-offset="0" max-vertical-offset="710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="38" selection-start="2954" selection-end="2954" vertical-scroll-proportion="0.5777778" vertical-offset="286" max-vertical-offset="1131">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="1" selection-start="207" selection-end="1494" vertical-scroll-proportion="0.88676673" vertical-offset="0" max-vertical-offset="741">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ProfileFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="24" selection-start="567" selection-end="567" vertical-scroll-proportion="0.23055935" vertical-offset="0" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="75" selection-start="149" selection-end="212" vertical-scroll-proportion="0.14188267" vertical-offset="0" max-vertical-offset="1573">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/GdParentFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="50" vertical-scroll-proportion="0.044982698" vertical-offset="0" max-vertical-offset="962">
+        <state line="16" column="0" selection-start="292" selection-end="391" vertical-scroll-proportion="-8.047619" vertical-offset="0" max-vertical-offset="962">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/RegistrationFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="56" selection-end="63" vertical-scroll-proportion="0.07323944" vertical-offset="0" max-vertical-offset="988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewMessageFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="39" selection-start="132" selection-end="132" vertical-scroll-proportion="0.09154929" vertical-offset="0" max-vertical-offset="710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ChildFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1092">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/EventFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="14" selection-start="831" selection-end="831" vertical-scroll-proportion="0.4611187" vertical-offset="0" max-vertical-offset="1183">
+          <folding>
+            <element signature="e#52#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/profil.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="32" selection-start="616" selection-end="616" vertical-scroll-proportion="-13.0" vertical-offset="0" max-vertical-offset="429">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="62" selection-start="233" selection-end="233" vertical-scroll-proportion="0.10641201" vertical-offset="0" max-vertical-offset="733">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="65" selection-start="1917" selection-end="1936" vertical-scroll-proportion="0.29238755" vertical-offset="260" max-vertical-offset="3159">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewThreadMessageFormType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="41" selection-start="1053" selection-end="1053" vertical-scroll-proportion="-22.285715" vertical-offset="0" max-vertical-offset="585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/MessageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="54" selection-start="2624" selection-end="2624" vertical-scroll-proportion="-2.4342105" vertical-offset="1167" max-vertical-offset="2444">
+        <state line="31" column="73" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.30150068" vertical-offset="182" max-vertical-offset="3198">
           <folding>
             <element signature="e#53#110#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormFactory/NewThreadMessageFormFactory.php">
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="5" selection-start="483" selection-end="483" vertical-scroll-proportion="0.47231835" vertical-offset="0" max-vertical-offset="578">
+        <state line="29" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="-0.63165075" vertical-offset="840" max-vertical-offset="1573">
+          <folding>
+            <element signature="e#53#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Family.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="80" selection-start="310" selection-end="376" vertical-scroll-proportion="0.14188267" vertical-offset="0" max-vertical-offset="4212">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/Event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="67" selection-start="286" selection-end="286" vertical-scroll-proportion="-6.1904764" vertical-offset="0" max-vertical-offset="5954">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/FamilyRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="43" selection-start="0" selection-end="1182" vertical-scroll-proportion="-17.952381" vertical-offset="0" max-vertical-offset="533">
+          <folding>
+            <marker date="1403791416000" expanded="true" signature="270:508" placeholder="SELECT f.use..ThirtyOneMemberBundle..." />
+            <marker date="1403791416000" expanded="true" signature="716:955" placeholder="SELECT f.use..ThirtyOneMemberBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/EventRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="547" selection-end="547" vertical-scroll-proportion="-11.142858" vertical-offset="0" max-vertical-offset="351">
+          <folding>
+            <marker date="1403791729000" expanded="true" signature="185:349" placeholder="SELECT f.use..ThirtyOneMemberBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/MessageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="86" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-4.644737" vertical-offset="89" max-vertical-offset="767">
+          <folding>
+            <element signature="e#53#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/sensio/framework-extra-bundle/Sensio/Bundle/FrameworkExtraBundle/Configuration/Template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="507" selection-end="507" vertical-scroll-proportion="0.25633803" vertical-offset="0" max-vertical-offset="2054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="32" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.733564" vertical-offset="278" max-vertical-offset="988">
+          <folding>
+            <element signature="e#53#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

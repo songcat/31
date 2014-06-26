@@ -10,7 +10,7 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 /**
  * Family
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ThirtyOne\MemberBundle\Entity\FamilyRepository")
  * @ORM\Table(name="family")
  */
 class Family extends BaseUser implements ParticipantInterface

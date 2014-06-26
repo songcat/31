@@ -11,7 +11,7 @@
 {% else %}
 <ul>
     {% for r in result %}
-        <li><a href="">{{ r.username }}</a><br>
+        <li><a href="{{ path('thirtyone_member_default_profil', {'slug': r.slug}) }}">{{ r.username }}</a><br>
         {{ r.region }}</li>
     {% endfor %}
 </ul>
