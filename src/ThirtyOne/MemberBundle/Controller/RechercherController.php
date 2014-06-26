@@ -26,12 +26,14 @@ class RechercherController extends Controller
      */
     public function getFamilyAction()
     {
+        // @TODO must be entityrepo
         $family = !empty($_GET['famille']) ? '%'.$_GET['famille'].'%' : null;
         $region = !empty($_GET['region']) ? '%'.$_GET['region'].'%' : null;
         $fam = $this->getUser();
         $em = $this->getDoctrine()->getManager();
 
         if ($family && $region) {
+            // @TODO for a vaudoo reason it doesn't work with a personal query typing
             $query = $em->createQuery('SELECT f.username, f.region, f.id, f.slug
             FROM ThirtyOneMemberBundle:Family f
             WHERE f.username LIKE :name
@@ -69,6 +71,7 @@ class RechercherController extends Controller
      */
     public function getEventAction()
     {
+        // @TODO must be entityrepo
         $region = '%'.$_GET['region'].'%';
         $date = new \DateTime();
         $em = $this->getDoctrine()->getManager();

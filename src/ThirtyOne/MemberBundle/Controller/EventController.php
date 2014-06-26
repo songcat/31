@@ -39,7 +39,7 @@ class EventController extends Controller
         $service = $em->getRepository('ThirtyOneMemberBundle:Service')->findAll();
         $request = $this->get('request');
         $fam = $this->getUser();
-
+        // @TODO must be a formtyp
         $form = $this->createFormBuilder($rallye)
             ->add('file', 'file', array(
                 "label" => "ajouter une photo de couverture*"
