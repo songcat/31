@@ -1,7 +1,7 @@
 @import 'base/normalize';
+@import 'base/variables';
 @import 'base/typo';
-@import url(http://fonts.googleapis.com/css?family=Raleway);
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import 'base/includes';
 
 html,
 body {
@@ -14,13 +14,42 @@ body {
   background-size: cover;
 }
 
+header {
+  background-color: $white;
+}
+
 .wrapper {
   margin: 0 auto;
-  max-width: 960px;
-  width: 90%;
-  text-align: center;
+  max-width: $wrapper;
+}
 
+#content {
   min-height:100%;
   position:relative;
 }
 
+footer {
+  background-color: $dgrey;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+
+nav {
+  height: 35px;
+  text-align: right;
+  margin-top: 25px;
+  li {
+    display: inline-block;
+    a {
+      padding: 10px 30px;
+      &:hover {
+        background-color: $pink;
+        color: $white;
+      }
+    }
+    & + li {
+      border-left: 1px solid $dgrey;
+    }
+  }
+}

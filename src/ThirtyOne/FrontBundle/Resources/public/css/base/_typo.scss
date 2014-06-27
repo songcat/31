@@ -1,0 +1,28 @@
+@import 'variables';
+
+a.logo {
+  display: inline-block;
+}
+
+h1 {
+  font-size: 0;
+  background-image: url('../bundles/thirtyonefront/images/form/trentetun.png');
+  width: 193px;
+  height: 77px;
+  margin: auto;
+}
+
+html,
+body { font-size: 12px }
+
+
+a {
+  text-decoration: none;
+}
+
+/* header */
+nav {
+  font-family: $ralleway;
+  text-transform: uppercase;
+  color: $dgrey;
+}
