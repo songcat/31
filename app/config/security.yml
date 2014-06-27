@@ -6,7 +6,13 @@ security:
         ROLE_ADMIN:       ROLE_USER
 
     access_control:
+        - { path: ^/css, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/js, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/bundles, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/l-agence, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/presse, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/contact, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/inscription, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/, role: ROLE_USER }
+        - { path: ^/inscription, role: YOUPI }
+        - { path: ^/resetting, role: YOUPI }
+        - { path: ^/, role: YOUPI }

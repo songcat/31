@@ -1,0 +1,26 @@
+@import 'base/normalize';
+@import 'base/typo';
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+body {
+  background: url('../bundles/thirtyonefront/images/form/fond.jpg') no-repeat center fixed;
+  background-size: cover;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 90%;
+  text-align: center;
+
+  min-height:100%;
+  position:relative;
+}
+
