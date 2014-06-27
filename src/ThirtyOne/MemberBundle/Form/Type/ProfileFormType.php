@@ -59,6 +59,12 @@ class ProfileFormType extends BaseType
                 'multiple' => false,
                 'label' => 'Région'
             ))
+            ->add('address', 'text', array(
+                'label' => 'Adresse postale'
+            ))
+            ->add('zipcode', 'text', array(
+                'label' => 'Code Postal'
+            ))
             ->add('city', 'text', array(
                 'label' => 'Ville'
             ))

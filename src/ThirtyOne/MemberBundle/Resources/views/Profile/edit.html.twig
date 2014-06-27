@@ -8,12 +8,19 @@
         {{ form_row(form.username) }}
         {{ form_row(form.nbChildren) }}
         <br>
-        {{ form_row(form.region) }}
+        {{ form_row(form.address) }}
+        {{ form_row(form.zipcode) }}
         {{ form_row(form.city) }}
+        {{ form_row(form.region) }}
 
         <h2>Contact</h2>
         {{ form_row(form.email) }}
         {{ form_row(form.phonenumber) }}
+
+
+        <h2>carte bancaire</h2>
+
+
 
         <h2>Pour enregistrer, saisir votre mot de passe</h2>
         {{ form_rest(form) }}
@@ -23,8 +30,7 @@
 
     </form>
 
-    <a href='{{ path('fos_user_change_password') }}'>changer mon mot de passe</a>
-
-
+    <h2>mes commandes</h2>
+    {{ render(controller('ThirtyOneMemberBundle:Event:getCmd')) }}
 
 {% endblock fos_user_content %}

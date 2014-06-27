@@ -1,0 +1,5 @@
+<ul>
+    {% for c in cmd %}
+        <li>Commande #{{ c.id }} - {{ c.date|date("d m Y") }}</li>
+    {% endfor %}
+</ul>

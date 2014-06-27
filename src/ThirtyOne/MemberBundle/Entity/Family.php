@@ -45,6 +45,11 @@ class Family extends BaseUser implements ParticipantInterface
     private $events;
 
     /**
+     * @ORM\OneToOne(targetEntity="ThirtyOne\MemberBundle\Entity\creditCard", cascade={"persist"})
+     */
+    private $creditCard;
+
+    /**
      * @ORM\OneToMany(targetEntity="ThirtyOne\MemberBundle\Entity\Child", mappedBy="family")
      */
     private $child;
@@ -60,6 +65,13 @@ class Family extends BaseUser implements ParticipantInterface
      * @ORM\Column(name="civilite", type="string", length=255)
      */
     private $civilite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="newsletter", type="boolean")
+     */
+    private $newsletter = 1;
 
     /**
      * @var string
@@ -89,6 +101,12 @@ class Family extends BaseUser implements ParticipantInterface
      */
     private $phonenumber;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255)
+     */
+    private $address;
 
     /**
      * @var string
@@ -96,6 +114,13 @@ class Family extends BaseUser implements ParticipantInterface
      * @ORM\Column(name="city", type="string", length=255)
      */
     private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zipcode", type="text", length=15)
+     */
+    private $zipcode;
 
     /**
      * @var string
@@ -318,5 +343,69 @@ class Family extends BaseUser implements ParticipantInterface
     public function getEvents()
     {
         return $this->events;
+    }
+
+    /**
+     * @param string $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param string $newsletter
+     */
+    public function setNewsletter($newsletter)
+    {
+        $this->newsletter = $newsletter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNewsletter()
+    {
+        return $this->newsletter;
+    }
+
+    /**
+     * @param mixed $creditCard
+     */
+    public function setCreditCard($creditCard)
+    {
+        $this->creditCard = $creditCard;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreditCard()
+    {
+        return $this->creditCard;
+    }
+
+    /**
+     * @param string $zipcode
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+    }
+
+    /**
+     * @return string
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
     }
 }

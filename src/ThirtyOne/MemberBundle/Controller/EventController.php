@@ -154,4 +154,17 @@ class EventController extends Controller
         );
     }
 
+    /**
+     * @Template()
+     */
+    public function getCmdAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $cmd = $em->getRepository('ThirtyOneMemberBundle:Event')->findByFamily($this->getUser());
+
+        return array(
+            'cmd' => $cmd,
+        );
+    }
+
 }
