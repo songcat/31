@@ -7,11 +7,15 @@ INSTALL PROJET
 $git clone https://github.com/songcat/31.git
 
 
+
 2) Install ruby and compass
 -------------------------------------
 http://rubyinstaller.org/
+
 $gem update --system
+
 $ gem install compass
+
 
 
 3) Install vendors
@@ -31,10 +35,13 @@ $php app/console assets:install --symlink
 -------------------------------------
 ### windows
 compass.bin: 'C:\Ruby(version)\bin\compass'
+
 ruby.bin: 'C:\Ruby(version)\bin\ruby.exe'
 ### mac os
 ruby.bin: /usr/bin/ruby
+
 compass.bin: /usr/bin/compass
+
 
 6) for CSS and JS 
 -------------------------------------
@@ -42,3 +49,10 @@ compass.bin: /usr/bin/compass
 $php app/console assetic:dump --watch
 ### prod
 $php app/console assetic:dump --env=prod
+
+
+7) database
+-------------------------------------
+$php app/console doctrine:database:create
+
+$php app/console doctrine:schema:update --force
