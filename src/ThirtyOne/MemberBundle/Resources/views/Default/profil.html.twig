@@ -6,7 +6,7 @@
         {{ error }}
 
     {% else %}
-        <a href="{{ path('thirtyone_member_message_sendto', {'slug': fam.slug}) }}">envoyer un message</a>
+        <a href="{{ path('thirtyone_member_message_new', {'slug': fam.slug}) }}">envoyer un message</a>
 
         <h2 class="nameForm">{{ fam.username }}</h2>
         {% for p in fam.parents %}

@@ -42,4 +42,4 @@ fos_user_change_password:
 
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
-    prefix: /messagerie
+    prefix: /message

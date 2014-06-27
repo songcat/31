@@ -20,17 +20,20 @@
 
     <services>
 
-        <service id="thirtyone_member.registration.form.type" class="ThirtyOne\MemberBundle\Form\Type\RegistrationFormType">
-            <tag name="form.type" alias="thirtyone_member_registration" />
+        <service id="thirtyone_member.registration.form.type"
+                 class="ThirtyOne\MemberBundle\Form\Type\RegistrationFormType">
+            <tag name="form.type" alias="thirtyone_member_registration"/>
             <argument>%fos_user.model.user.class%</argument>
         </service>
 
-        <service id="thirtyone_member.profile.form.type" class="ThirtyOne\MemberBundle\Form\Type\ProfileFormType">
-            <tag name="form.type" alias="thirtyone_member_profile" />
+        <service id="thirtyone_member.profile.form.type"
+                 class="ThirtyOne\MemberBundle\Form\Type\ProfileFormType">
+            <tag name="form.type" alias="thirtyone_member_profile"/>
             <argument>%fos_user.model.user.class%</argument>
         </service>
 
-        <service id="thirtyone_member.registration_completed" class="ThirtyOne\MemberBundle\EventListener\RegistrationCompletedListener">
+        <service id="thirtyone_member.registration_completed"
+                 class="ThirtyOne\MemberBundle\EventListener\RegistrationCompletedListener">
             <tag name="kernel.event_subscriber"/>
             <argument type="service" id="router"/>
         </service>

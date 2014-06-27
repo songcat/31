@@ -103,6 +103,47 @@ class EventController extends Controller
     }
 
     /**
+     * @Template()
+     */
+    public function participateAction($eventId)
+    {
+        $events = $this->getUser()->getEvents();
+        $em = $this->getDoctrine()->getManager();
+        $rallye = $em->getRepository('ThirtyOneMemberBundle:Event')->find($eventId);
+        $participants = $rallye->getParticipant();
+        $id = array();
+
+        foreach($events as $e) {
+            $id[] = $e->getId();
+        }
+
+        if (in_array($eventId, $id))
+            return array(
+                'participe'=>true,
+                'participants' => $participants
+            );
+
+        return array(
+            'eventId' => $eventId,
+            'participants' => $participants
+        );
+    }
+
+    /**
+     * @Route("/rallye/AddParticipant{eventId}")
+     */
+    public function registerInEventAction($eventId)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $rallye = $em->getRepository('ThirtyOneMemberBundle:Event')->find($eventId);
+
+        $rallye->setParticipant($this->getUser());
+        $em->flush();
+
+        return new \Symfony\Component\HttpFoundation\Response(null);
+    }
+
+    /**
      * @Route("/rallye/{slug}")
      * @Template()
      */

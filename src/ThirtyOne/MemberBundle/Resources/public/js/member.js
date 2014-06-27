@@ -17,18 +17,6 @@ $('.addForm a, a.editEntity').click(function (event) {
          $('.'+formType+' .form .' + num).replaceWith(data);
     });
 });
-/*
-$('.recherche form').submit(function () {
-    var family = $("input#form_family").val();
-    var region = $("option:selected").val();
-    $.ajax({
-        type: "POST",
-        url: '/ThirtyOne/web/app_dev.php/rechercher/getResult/'+family+'_'+region
-    }).done(function (data) {
-        $('.results').html(data);
-    });
-    return false;
-});*/
 
 $('.service a.reserve').click(function(event) {
     event.preventDefault();
@@ -44,4 +32,22 @@ $('.service a.reserve').click(function(event) {
         $('input#form_music').val($(this).attr('data-id'));
         $('.resume .music').html($(this).attr('data-price'));
     }
+});
+
+var getThreadMessage = function($this) {
+    var thread = $this.attr('data-info');
+    $.ajax({
+        type: "POST",
+        url: '/ThirtyOne/web/app_dev.php/message/getMessage',
+        data: {thread: thread}
+    }).done(function (data) {
+        $('.threadMessages').html(data);
+    });
+};
+
+getThreadMessage($(".thread a:first-child"));
+
+$('.thread a').click(function(event) {
+    event.preventDefault();
+    getThreadMessage($(this));
 });

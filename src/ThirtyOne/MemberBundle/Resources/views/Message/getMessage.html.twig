@@ -1,0 +1,10 @@
+{% for m in thread.messages %}
+<p>
+    by {{ m.sender.username }}
+    {{ m.createdAt|date("d/m/Y H:i:s")}}<br>
+    {{ m.body }}
+
+</p>
+
+{% endfor %}
+{{ form(form) }}

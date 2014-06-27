@@ -14,10 +14,9 @@ class MessageController extends Controller
 {
     /**
      * @Route("/message/nouveau/{slug}", defaults={"slug"="null"})
-     * @Template()$
+     * @Template()
      */
-
-    public function SendToAction($slug)
+    public function newAction($slug)
     {
         $composer = $this->get('fos_message.composer');
         $exp = $this->getUser();
@@ -32,7 +31,7 @@ class MessageController extends Controller
         if ($form->isValid()) {
             if ($request->getMethod() == 'POST') {
                 if (!$fam) {
-                   $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneByUsername($form["Dest"]->getData());
+                    $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneByUsername($form["Dest"]->getData());
                 }
                 $message = $composer->newThread()
                     ->setSender($exp)
@@ -47,6 +46,66 @@ class MessageController extends Controller
         }
 
         return array(
+            'form' => $form->createView()
+        );
+    }
+
+    private function generateForm($id) {
+        return $form = $this->createFormBuilder(array())
+            ->add('Message', 'textarea')
+            ->add('Répondre', 'submit')
+            ->add('Thread', 'hidden', array(
+                'data' => $id,
+            ))
+            ->getForm();
+    }
+    /**
+     * @Route("/message")
+     * @Template()
+     */
+    public function getThreadAction()
+    {
+        $provider = $this->get('fos_message.provider');
+        $thread = $provider->getInboxThreads();
+        $composer = $this->get('fos_message.composer');
+        $request = $this->get('request');
+        if ($request->getMethod() == 'POST') {
+            $postData = $request->request->get('form');
+            $threadId = $provider->getThread($postData['Thread']);
+
+            $message = $composer->reply($threadId)
+                ->setSender($this->getUser())
+                ->setBody($postData['Message'])
+                ->getMessage();
+            $sender = $this->get('fos_message.sender');
+            $sender->send($message);
+            return $this->redirect($this->generateUrl('thirtyone_member_message_getthread'), 301);
+        }
+        return array(
+            'thread' => $thread
+        );
+    }
+
+    /**
+     * @Route("/message/getMessage")
+     * @Template()
+     */
+    public function getMessageAction()
+    {
+        $id = $this->get('request')->request->get('thread');
+        $provider = $this->get('fos_message.provider');
+        $thread = $provider->getThread($id);
+
+        $form = $this->createFormBuilder(array())
+            ->add('Message', 'textarea')
+            ->add('Répondre', 'submit')
+            ->add('Thread', 'hidden', array(
+                'data' => $id,
+            ))
+            ->getForm();
+
+        return array(
+            'thread' => $thread,
             'form' => $form->createView()
         );
     }

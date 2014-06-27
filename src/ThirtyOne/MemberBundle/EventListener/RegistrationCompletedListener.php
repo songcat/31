@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
-* Listener responsible to change the redirection at the end of the password resetting
+* Listener responsible to change the redirection at the end of the registration
 */
 class RegistrationCompletedListener implements EventSubscriberInterface
 {

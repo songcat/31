@@ -76,8 +76,7 @@ class AjouterController extends Controller
         $famId = $fam->getId();
         $em = $this->getDoctrine()->getManager();
 
-        // @TODO have to be a service
-
+        // @TODO service
         $parent = $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId)
             ? $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId) : null;
         $gdparent = $em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parent)
@@ -181,7 +180,6 @@ class AjouterController extends Controller
         $edit = 0;
 
         // @TODO service
-
         if ($formType != 'info') {
             $entity = $this->switch_case($formType, $id);
             if (($formType == 'Parent' || $formType == 'GdParent') && !$id) {
