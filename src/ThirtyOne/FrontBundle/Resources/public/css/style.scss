@@ -60,33 +60,8 @@ nav {
 }
 
 #content {
-  padding-bottom: 240px; //height footer + 40px
-}
-
-// home
-.inscriptionAP {
-  #content {
-    text-align: center;
-    margin-top: 8%;
-  }
-  .alignLeft {
-    display: inline-block;
-    margin: 35px auto;
-    text-align: left;
-  }
-}
-
-.inscription {
-  #form > div:first-child {
-    background-color: $lgrey;
-    padding: 4px 20px;
-  }
-  div {
-    display: inline-block;
-  }
-  button {
-    margin-left: 20px
-  }
+  padding-top: 20px;
+  padding-bottom: 260px; //height footer + 40px
 }
 
 // footer
@@ -121,5 +96,49 @@ footer {
   .right {
     float: right;
     width: 170px;
+  }
+}
+
+// home
+.inscriptionAP {
+  #content {
+    text-align: center;
+    margin-top: 8%;
+  }
+  .alignLeft {
+    display: inline-block;
+    margin: 35px auto;
+    text-align: left;
+  }
+}
+
+.inscription {
+  #form > div:first-child {
+    background-color: $lgrey;
+    padding: 4px 20px;
+  }
+  div {
+    display: inline-block;
+  }
+  button {
+    margin-left: 20px
+  }
+}
+
+//agence
+.agence {
+  #content {
+    text-align: center;
+    p {
+      max-width: 50%;
+      margin: 0 auto;
+    }
+  }
+  h2 {
+    border-top: 1px solid $lgrey;
+    padding-top: 1em;
+    &:first-child {
+      border: none;
+    }
   }
 }
