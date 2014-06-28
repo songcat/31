@@ -1,12 +1,12 @@
 {% extends "::layout.html.twig" %}
 {% block bodyClass %}class="inscriptionAP"{% endblock %}
 {% block content %}
+    <h2>S'inscrire à l'avant première</h2>
     {% if success is defined %}
         <div class="success">
             {{ success }}
         </div>
     {% endif %}
-    <h2>S'inscrire à l'avant première</h2>
     <div class="inscription">
         {{ form(form) }}
     </div>

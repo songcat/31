@@ -145,3 +145,12 @@ button[type='submit'] {
 .goagence:hover {
   color: $pink;
 }
+
+.puce {
+  li:before {
+    content: ">";
+    color: $pink;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}
