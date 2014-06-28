@@ -1,1 +1,29 @@
 {% extends "::layout.html.twig" %}
+{% block bodyClass %}class="inscriptionAP"{% endblock %}
+{% block content %}
+    {% if success is defined %}
+        <div class="success">
+            {{ success }}
+        </div>
+    {% endif %}
+    <h2>S'inscrire à l'avant première</h2>
+    <div class="inscription">
+        {{ form(form) }}
+    </div>
+    <div class="alignLeft">
+        <p><a class="goagence" href='{{ path('thirtyone_front_default_agence') }}'><strong>Pas encore inscrit ?
+                    Découvrez nos
+                    services</strong></a></p>
+
+        <div class="social">
+            <span>Suivez-nous sur :</span>
+            <ul>
+                <li><a href="https://www.facebook.com/pages/Trente-Un/514075625389940" class="facebook">facebook</a>
+                </li>
+                <li><a href="https://twitter.com/TrentetUn" class="twitter">twitter</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

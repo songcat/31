@@ -1,14 +1,15 @@
 @import 'base/normalize';
 @import 'base/variables';
-@import 'base/typo';
 @import 'base/includes';
+@import 'base/typo';
 
 html,
 body {
-  margin:0;
-  padding:0;
-  height:100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
+
 body {
   background: url('../bundles/thirtyonefront/images/form/fond.jpg') no-repeat center fixed;
   background-size: cover;
@@ -21,35 +22,104 @@ header {
 .wrapper {
   margin: 0 auto;
   max-width: $wrapper;
+  width: 90%;
 }
 
-#content {
-  min-height:100%;
-  position:relative;
-}
-
-footer {
-  background-color: $dgrey;
-  position:absolute;
-  bottom:0;
-  width:100%;
+#container {
+  min-height: 100%;
+  position: relative;
 }
 
 nav {
   height: 35px;
   text-align: right;
   margin-top: 25px;
+  ul {
+    font-size: 0;
+  }
   li {
     display: inline-block;
+    width: 20%;
+    font-size: 12px;
     a {
-      padding: 10px 30px;
-      &:hover {
+      display: block;
+      text-align: center;
+      padding: 5px 0;
+      &:hover, &.active {
         background-color: $pink;
         color: $white;
       }
     }
     & + li {
-      border-left: 1px solid $dgrey;
+      border-left: 1px solid $lgrey;
     }
+  }
+  &.disconnect li {
+    width: 13%
+  }
+}
+
+#content {
+  padding-bottom: 240px; //height footer + 40px
+}
+
+// home
+.inscriptionAP {
+  #content {
+    text-align: center;
+    margin-top: 8%;
+  }
+  .alignLeft {
+    display: inline-block;
+    margin: 35px auto;
+    text-align: left;
+  }
+}
+
+.inscription {
+  #form > div:first-child {
+    background-color: $lgrey;
+    padding: 4px 20px;
+  }
+  div {
+    display: inline-block;
+  }
+  button {
+    margin-left: 20px
+  }
+}
+
+// footer
+footer {
+  background-color: $dgrey;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  padding-top: 30px;
+  .left, .bottom {
+    li {
+      display: inline-block;
+      & + li:before {
+        content: "|";
+        padding: 0 10px;
+      }
+    }
+  }
+  .bottom {
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #414141;
+  }
+
+  .left {
+    display: inline-block;
+    ul {
+      margin-top: 25px;
+    }
+  }
+  .right {
+    float: right;
+    width: 170px;
   }
 }

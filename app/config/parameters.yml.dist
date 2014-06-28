@@ -2,7 +2,7 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony
+    database_name:     ThirtyOne
     database_user:     root
     database_password: ~
 
@@ -18,5 +18,5 @@ parameters:
     debug_redirects:        false
     use_assetic_controller: false
 
-    ruby.bin: /usr/bin/ruby
-    compass.bin: /usr/bin/compass
+    ruby.bin: 'C:\Ruby200-x64\bin\ruby.exe'
+    compass.bin: 'C:\Ruby200-x64\bin\compass'

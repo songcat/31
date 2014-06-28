@@ -4,7 +4,7 @@ a.logo {
   display: inline-block;
 }
 
-h1 {
+.logo h1 {
   font-size: 0;
   background-image: url('../bundles/thirtyonefront/images/form/trentetun.png');
   width: 193px;
@@ -13,8 +13,22 @@ h1 {
 }
 
 html,
-body { font-size: 12px }
+body {
+  font-family: $ralleway;
+  font-size: 12px;
+  color: $dgrey;
+}
 
+h1, h2, h3, h4, h5 {
+  font-family: $ubuntu;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2em;
+  color: $pink;
+}
 
 a {
   text-decoration: none;
@@ -23,6 +37,111 @@ a {
 /* header */
 nav {
   font-family: $ralleway;
+  font-weight: bold;
   text-transform: uppercase;
   color: $dgrey;
+}
+
+/* footer */
+footer {
+  color: $white;
+  font-size: 11px;
+  a:not(.logo):hover {
+    opacity: 0.5;
+  }
+  .bottom {
+    text-align: center;
+  }
+  p {
+   text-transform: uppercase;
+  }
+  .facebook, .twitter {
+    line-height: 24px;
+  }
+  .right li {
+    margin-bottom: 5px;
+  }
+  .facebook:before, .twitter:before {
+    display: inline-block;
+    content: "";
+    background-image: url('../bundles/thirtyonefront/images/form/social_pictos.png');
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  .facebook:before {
+    background-position: top left;
+  }
+  .twitter:before {
+    background-position: top right;
+  }
+}
+
+/* form */
+input[type='text'], input[type='email'] {
+  height: 24px;
+  border: none;
+  padding: 0 5px;
+}
+
+input.teasing {
+  width: 260px;
+  background: $white url('../bundles/thirtyonefront/images/form/input_email.png') center right 15px no-repeat;
+  padding-right: 30px;
+}
+
+button[type='submit'] {
+  border: none;
+  background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
+  height: 30px;
+  text-transform: uppercase;
+  color: $white;
+  font: $ralleway;
+  font-weight: bold;
+  padding: 0 30px;
+  &:hover {
+    background: url('../bundles/thirtyonefront/images/form/bouton_on.jpg');
+  }
+}
+
+
+
+/* pages */
+.social {
+  color: $grey;
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  a {
+    font-size: 0;
+    display: block;
+    background-image: url('../bundles/thirtyonefront/images/form/social_pictos.png');
+    width: 24px;
+    height: 24px;
+    &.facebook {
+      background-position: top left;
+      &:hover {
+        background-position: bottom left;
+      }
+    }
+    &.twitter {
+      background-position: top right;
+      &:hover {
+        background-position: bottom right;
+      }
+    }
+  }
+}
+
+.goagence:hover {
+  color: $pink;
 }

@@ -71,7 +71,6 @@ template {
  */
 
 html {
-  font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -333,7 +332,6 @@ button,
 html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button; /* 2 */
   cursor: pointer; /* 3 */
 }
 
@@ -424,7 +422,7 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  font: 1.4em/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font: 1.4em/1.5 sans-serif;
   color: #666;
   background: #fff;
 }
