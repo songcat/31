@@ -56,6 +56,16 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/decouvrir")
+     * @Template()
+     */
+    public
+    function decouvrirAction()
+    {
+        return array();
+    }
+
+    /**
      * @Route("/presse")
      * @Template()
      */
