@@ -142,3 +142,61 @@ footer {
     }
   }
 }
+
+// presse
+.static {
+  margin-top: 25px;
+  .dsp-tc {
+    vertical-align: bottom;
+  }
+  a {
+    display: block;
+    margin-top: 10px;
+  }
+  .staticRight {
+    width: 345px;
+  }
+}
+
+.mail {
+  @media (max-width: 870px) {
+    .dsp-tc {
+      display: block;
+    }
+  }
+  .dsp-tc {
+    vertical-align: top;
+  }
+  padding: 20px;
+  margin-top: 40px;
+  background-color: $white;
+  .contactRight {
+    width: 325px;
+  }
+  label {
+    width: 35%;
+    display: inline-block;
+  }
+  #thirtyone_frontbundle_contactformtype_gender label {
+    width: 80px;
+  }
+
+  input[type='text'], input[type='email'], textarea {
+    border: 1px solid #ccc;
+    width: 65%;
+  }
+
+  form {
+    width: 85%;
+    div {
+      margin-bottom: 10px;
+    }
+  }
+  textarea {
+    height: 100px;
+  }
+
+  button {
+    float: right;
+  }
+}

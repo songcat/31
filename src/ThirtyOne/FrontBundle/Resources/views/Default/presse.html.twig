@@ -1,4 +1,24 @@
 {% extends "::layout.html.twig" %}
-
+{% block title %}Presse{% endblock %}
 {% block content %}
+    <h2 class="center">Presse</h2>
+    <div class="dsp-t">
+        <div class="dsp-tr static">
+            <div class="dsp-tc">
+                <p><strong>Contact relations presse :</strong></p>
+                <span>Jean Delanoy</span>
+                <address>beaverfather@gmail.com</address>
+            </div>
+            <div class="dsp-tc staticRight">
+
+                <a class="button download"
+                   href="{{ asset('bundles/thirtyonefront/documents/dossierpresse-trentetun.pdf') }}">Télécharger le
+                    dossier
+                    de presse</a>
+                <a class="button download"
+                   href="{{ asset('bundles/thirtyonefront/documents/communique-trentetun.pdf') }}">Télécharger
+                    le communiqué</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

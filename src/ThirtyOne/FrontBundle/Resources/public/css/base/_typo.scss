@@ -22,12 +22,17 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: $ubuntu;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 h2 {
   font-size: 2em;
   color: $pink;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: $pink;
+  font-size: 1.5em;
 }
 
 a {
@@ -53,7 +58,7 @@ footer {
     text-align: center;
   }
   p {
-   text-transform: uppercase;
+    text-transform: uppercase;
   }
   .facebook, .twitter {
     line-height: 24px;
@@ -85,13 +90,30 @@ input[type='text'], input[type='email'] {
   padding: 0 5px;
 }
 
-input.teasing {
-  width: 260px;
-  background: $white url('../bundles/thirtyonefront/images/form/input_email.png') center right 15px no-repeat;
-  padding-right: 30px;
+input[type='radio'] {
+  margin-right: 10px;
 }
 
-button[type='submit'] {
+
+input.teasing {
+  width: 260px;
+}
+
+a.button {
+  display: inline-block;
+  line-height: 30px;
+
+  &.download:before {
+    background: url('../bundles/thirtyonefront/images/form/download.png');
+    width: 20px;
+    height: 14px;
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+button[type='submit'], a.button {
   border: none;
   background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
   height: 30px;
@@ -104,8 +126,6 @@ button[type='submit'] {
     background: url('../bundles/thirtyonefront/images/form/bouton_on.jpg');
   }
 }
-
-
 
 /* pages */
 .social {
@@ -153,4 +173,8 @@ button[type='submit'] {
     font-weight: bold;
     margin-right: 5px;
   }
+}
+
+.center {
+  text-align: center;
 }

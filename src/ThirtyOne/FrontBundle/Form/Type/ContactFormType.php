@@ -15,7 +15,7 @@ class ContactFormType extends AbstractType
                 'choices'   => array('m' => 'Monsieur', 'f' => 'Madame'),
                 'multiple'  => false,
                 'expanded'  => true,
-                'label'     => null
+                'label'     => false
             ))
             ->add('name', 'text', array(
                 "label" => "Nom de famille"

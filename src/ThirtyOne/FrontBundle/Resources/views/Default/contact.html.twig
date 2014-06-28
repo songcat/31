@@ -1,10 +1,57 @@
 {% extends "::layout.html.twig" %}
-
+{% block title %}Contact{% endblock %}
 {% block content %}
-    {% if success is defined %}
-        <div class="success">
-            {{ success }}
+    <h2 class="center">Contact</h2>
+    <div class="dsp-t">
+        <div class="dsp-tr static">
+            <div class="dsp-tc">
+                <p><strong>Contact :</strong></p>
+                <address>beaverfather@gmail.com</address>
+            </div>
+            <div class="dsp-tc staticRight">
+                <p><strong>Contact relations presse :</strong></p>
+                <span>Jean Delanoy</span>
+                <address>beaverfather@gmail.com</address>
+                <a class="button download"
+                   href="{{ asset('bundles/thirtyonefront/documents/dossierpresse-trentetun.pdf') }}">Télécharger le
+                    dossier
+                    de presse</a>
+                <a class="button download"
+                   href="{{ asset('bundles/thirtyonefront/documents/communique-trentetun.pdf') }}">Télécharger
+                    le communiqué</a>
+            </div>
         </div>
-    {% endif %}
-    {{ form(form) }}
+    </div>
+
+
+    <section class="mail">
+        <div class="dsp-t">
+            <div class="dsp-tr">
+                <div class="dsp-tc">
+                    <h3>Une question ?</h3>
+                    {% if success is defined %}
+                        <div class="success">
+                            {{ success }}
+                        </div>
+                    {% endif %}
+                    {{ form(form) }}
+                </div>
+                <div class="dsp-tc contactRight">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.4391618641353!2d2.337638000000006!3d48.86890409999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3b079af317%3A0x23d97c8f4ee69288!2s5+Rue+Saint-Augustin!5e0!3m2!1sfr!2sfr!4v1403979333665"
+                            width="325" height="300" frameborder="0" style="border:0"></iframe>
+
+                    <p class="center"><strong>Trente & Un</strong><br>
+                        5 rue Saint Augustin<br>
+                        75002 Paris
+                    </p>
+
+                    <p class="center"><strong>Horaires d'ouverture :</strong><br>
+                        Lundi au vendredi<br>
+                        10h à 12h / 14h à 17h
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
