@@ -196,6 +196,9 @@ body {
 
   form {
     width: 85%;
+    @media (max-width: 870px) {
+      width: 100%;
+    }
     div {
       margin-bottom: 10px;
     }
