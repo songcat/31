@@ -76,7 +76,7 @@ class AjouterController extends Controller
         $famId = $fam->getId();
         $em = $this->getDoctrine()->getManager();
 
-        // @TODO service
+        // @TODO service - getting the right entity
         $parent = $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId)
             ? $em->getRepository('ThirtyOneMemberBundle:Parents')->findByFamily($famId) : null;
         $gdparent = $em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parent)
@@ -103,6 +103,7 @@ class AjouterController extends Controller
                         if ($formType != 'GdParent') {
                             $switch[0]->setFamily($fam);
                         } else {
+                            // verification for gdparents (need to be 2 for a parent)
                             $selectParent = $switch[1]->getData();
                             $parentId = $em->getRepository('ThirtyOneMemberBundle:Parents')->find($selectParent->getParents());
                             $nbGdparent = count($em->getRepository('ThirtyOneMemberBundle:Gdparent')->findByParents($parentId));

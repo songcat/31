@@ -44,35 +44,33 @@ class EventController extends Controller
 
         $form->handleRequest($request);
         if ($form->isValid()) {
-            if ($request->getMethod() == 'POST') {
-                if ($form["place"]->getData()) {
-                    $place = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["place"]->getData());
-                    $rallye->setPlace($place);
-                    $rallye->setRegion($place->getRegion());
-                    $rallye->setAdress($place->getAdress());
-                    $rallye->setCity($place->getCity());
-                }
-                if ($form["food"]->getData()) {
-                    $food = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["food"]->getData());
-                    $rallye->setFood($food);
-                }
-                if ($form["music"]->getData()) {
-                    $music = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["music"]->getData());
-                    $rallye->setMusic($music);
-                }
-                if (!$place && (!$form["adress"]->getData() || !$form["city"]->getData() || !$form["region"]->getData()))
-                    return array(
-                        'form' => $form->createView(),
-                        'service' => $service,
-                        'error' => 'Merci de choisir un lieu ou de saisir adresse/ville/region.'
-                    );
-                $rallye->upload();
-                $rallye->setFamily($fam);
-                $rallye->setParticipant($fam);
-                $em->persist($rallye);
-                $em->flush();
-                return $this->redirect($this->generateUrl('thirtyone_member_event_create'), 301);
+            if ($form["place"]->getData()) {
+                $place = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["place"]->getData());
+                $rallye->setPlace($place);
+                $rallye->setRegion($place->getRegion());
+                $rallye->setAdress($place->getAdress());
+                $rallye->setCity($place->getCity());
             }
+            if ($form["food"]->getData()) {
+                $food = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["food"]->getData());
+                $rallye->setFood($food);
+            }
+            if ($form["music"]->getData()) {
+                $music = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["music"]->getData());
+                $rallye->setMusic($music);
+            }
+            if (!$place && (!$form["adress"]->getData() || !$form["city"]->getData() || !$form["region"]->getData()))
+                return array(
+                    'form' => $form->createView(),
+                    'service' => $service,
+                    'error' => 'Merci de choisir un lieu ou de saisir adresse/ville/region.'
+                );
+            $rallye->upload();
+            $rallye->setFamily($fam);
+            $rallye->setParticipant($fam);
+            $em->persist($rallye);
+            $em->flush();
+            return $this->redirect($this->generateUrl('thirtyone_member_event_create'), 301);
         }
 
         return array(
@@ -113,13 +111,13 @@ class EventController extends Controller
         $participants = $rallye->getParticipant();
         $id = array();
 
-        foreach($events as $e) {
+        foreach ($events as $e) {
             $id[] = $e->getId();
         }
 
         if (in_array($eventId, $id))
             return array(
-                'participe'=>true,
+                'participe' => true,
                 'participants' => $participants
             );
 

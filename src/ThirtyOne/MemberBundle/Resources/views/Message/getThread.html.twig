@@ -1,0 +1,14 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block content %}
+<h2>Messagerie</h2>
+    <ul class="thread">
+        {% for t in thread %}
+            <li><a href="" data-info="{{ t.id }}">{{ t.subject }}</a></li>
+        {% endfor %}
+    </ul>
+    <div class="threadMessages">
+
+    </div>
+
+{% endblock %}

@@ -29,20 +29,18 @@ class MessageController extends Controller
         $request = $this->get('request');
         $form->handleRequest($request);
         if ($form->isValid()) {
-            if ($request->getMethod() == 'POST') {
-                if (!$fam) {
-                    $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneByUsername($form["Dest"]->getData());
-                }
-                $message = $composer->newThread()
-                    ->setSender($exp)
-                    ->addRecipient($fam)
-                    ->setSubject($form["Subject"]->getData())
-                    ->setBody($form["Message"]->getData())
-                    ->getMessage();
-
-                $sender = $this->get('fos_message.sender');
-                $sender->send($message);
+            if (!$fam) {
+                $fam = $em->getRepository('ThirtyOneMemberBundle:Family')->findOneByUsername($form["Dest"]->getData());
             }
+            $message = $composer->newThread()
+                ->setSender($exp)
+                ->addRecipient($fam)
+                ->setSubject($form["Subject"]->getData())
+                ->setBody($form["Message"]->getData())
+                ->getMessage();
+
+            $sender = $this->get('fos_message.sender');
+            $sender->send($message);
         }
 
         return array(
@@ -50,7 +48,8 @@ class MessageController extends Controller
         );
     }
 
-    private function generateForm($id) {
+    private function generateForm($id)
+    {
         return $form = $this->createFormBuilder(array())
             ->add('Message', 'textarea')
             ->add('Répondre', 'submit')
@@ -59,6 +58,7 @@ class MessageController extends Controller
             ))
             ->getForm();
     }
+
     /**
      * @Route("/message")
      * @Template()
