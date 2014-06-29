@@ -29,7 +29,7 @@ class ContactFormType extends AbstractType
             ->add('subject', 'text', array(
                 "label" => "Objet du message"
             ))
-            ->add('Message', 'textarea', array(
+            ->add('message', 'textarea', array(
                 "label" => "Message"
             ))
             ->add('Envoyer', 'submit', array(
