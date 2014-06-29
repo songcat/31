@@ -4,6 +4,7 @@
 <h2>Messagerie</h2>
     <ul class="thread">
         {% for t in thread %}
+            {% if not fos_message_is_read(t) %}Nouveau message {% endif %}
             <li><a href="" data-info="{{ t.id }}">{{ t.subject }}</a></li>
         {% endfor %}
     </ul>

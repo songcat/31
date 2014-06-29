@@ -15,8 +15,17 @@ class DefaultController extends Controller
      * @Route("/membre.html")
      * @Template()
      */
-    public function indexAction() {
-        return array();
+    public function indexAction()
+    {
+        $fam = $this->getUser();
+        $region = $fam->getRegion();
+
+        $famresult = $this->getDoctrine()->getManager()
+            ->getRepository('ThirtyOneMemberBundle:Family')
+            ->homeFamily($region, $fam->getId());
+        return array(
+            'famresult' => $famresult,
+        );
     }
 
     /**

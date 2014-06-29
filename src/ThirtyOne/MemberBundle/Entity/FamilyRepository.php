@@ -7,9 +7,10 @@ use Doctrine\ORM\EntityRepository;
 class FamilyRepository extends EntityRepository
 {
 
-    public function getFamily($family, $region, $id){
+    public function getFamily($family, $region, $id)
+    {
         if ($family && $region) {
-            $query = $this->_em->createQuery('SELECT f.username, f.region, f.id, f.slug
+            $query = $this->_em->createQuery('SELECT f
             FROM ThirtyOneMemberBundle:Family f
             WHERE f.username LIKE :name
                 AND f.region LIKE :region
@@ -19,7 +20,7 @@ class FamilyRepository extends EntityRepository
                 ->setParameter('region', $region)
                 ->setParameter('fam', $id);
         } else {
-            $query = $this->_em->createQuery('SELECT f.username, f.region, f.id, f.slug
+            $query = $this->_em->createQuery('SELECT f
             FROM ThirtyOneMemberBundle:Family f
             WHERE f.publish = 1
                 AND f.id != :fam
@@ -32,5 +33,18 @@ class FamilyRepository extends EntityRepository
         $result = $query->getResult();
 
         return $result;
+    }
+
+    public function homeFamily($region, $id)
+    {
+        return $query = $this->_em->createQuery('SELECT f
+            FROM ThirtyOneMemberBundle:Family f
+            WHERE f.region LIKE :region
+                AND f.id != :fam
+                AND f.publish = 1')
+            ->setParameter('region', $region)
+            ->setParameter('fam', $id)
+            ->setMaxResults(3)
+            ->getResult();
     }
 }

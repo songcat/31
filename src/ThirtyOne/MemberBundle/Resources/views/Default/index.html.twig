@@ -2,6 +2,11 @@
 
 {% block content %}
 
-    Coucou t'es co !
+    {% for fam in famresult %}
+        {{ fam.username }} {{ fam.region }}
+    {% endfor %}
+
+
+
 
 {% endblock %}

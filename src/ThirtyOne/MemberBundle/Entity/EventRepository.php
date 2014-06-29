@@ -8,7 +8,7 @@ class EventRepository extends EntityRepository
 {
 
     public function getEvent($region, $date){
-        $query = $this->_em->createQuery('SELECT e.name, e.region, e.id, e.slug
+        $query = $this->_em->createQuery('SELECT e
             FROM ThirtyOneMemberBundle:Event e
             WHERE e.private = 0
                 AND e.region LIKE :region
