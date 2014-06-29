@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b75587af-0014-4250-b8a4-30c743296745" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ThirtyOne.iws" />
@@ -35,7 +36,7 @@
           <file leaf-file-name="DefaultController.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="28" column="9" selection-start="913" selection-end="913" vertical-scroll-proportion="0.5145946" vertical-offset="0" max-vertical-offset="1836">
+                <state line="19" column="39" selection-start="664" selection-end="664" vertical-scroll-proportion="0.3491892" vertical-offset="0" max-vertical-offset="1802">
                   <folding>
                     <element signature="e#53#110#0" expanded="true" />
                   </folding>
@@ -43,19 +44,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RechercherController.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="32" selection-start="1506" selection-end="1530" vertical-scroll-proportion="-34.0" vertical-offset="0" max-vertical-offset="1258">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="306">
+                <state line="14" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="340">
                   <folding />
                 </state>
               </provider>
@@ -165,8 +157,8 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/getThread.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/MessageController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/FamilyRepository.php" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Entity/EventRepository.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php" />
       </list>
     </option>
@@ -1027,7 +1019,11 @@
       <created>1404062305883</created>
       <updated>1404062305883</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="home : region ok">
+      <created>1404067654973</created>
+      <updated>1404067654973</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1090,7 +1086,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="twig and js correction. all form where opens on click" />
     <MESSAGE value="research start and img upload" />
     <MESSAGE value="research start" />
     <MESSAGE value="adding style" />
@@ -1115,7 +1110,8 @@
     <MESSAGE value="correction creating an event&#10;correction research" />
     <MESSAGE value="starting home connectée" />
     <MESSAGE value="home :family ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="home :family ok" />
+    <MESSAGE value="home : region ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="home : region ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1426,20 +1422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="32" selection-start="1506" selection-end="1530" vertical-scroll-proportion="-34.0" vertical-offset="0" max-vertical-offset="1258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="115" column="32" selection-start="3922" selection-end="3922" vertical-scroll-proportion="0.7016216" vertical-offset="1238" max-vertical-offset="2890">
@@ -1447,9 +1429,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/RechercherController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="32" selection-start="1506" selection-end="1530" vertical-scroll-proportion="0.9424307" vertical-offset="0" max-vertical-offset="1258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="9" selection-start="913" selection-end="913" vertical-scroll-proportion="0.5145946" vertical-offset="0" max-vertical-offset="1836">
+        <state line="19" column="39" selection-start="664" selection-end="664" vertical-scroll-proportion="0.3491892" vertical-offset="0" max-vertical-offset="1802">
           <folding>
             <element signature="e#53#110#0" expanded="true" />
           </folding>

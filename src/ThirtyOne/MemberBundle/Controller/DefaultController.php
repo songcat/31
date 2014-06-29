@@ -40,14 +40,12 @@ class DefaultController extends Controller
         $region = $fam->getRegion();
         $famevent = $this->getUser()->getEvents();
         $eventresult = $this->getNewEvents($famevent);
-        //echo '<pre>';
-        //\Doctrine\Common\Util\Debug::dump($eventresult);
-
         $famresult = $this->getDoctrine()->getManager()
             ->getRepository('ThirtyOneMemberBundle:Family')
             ->homeFamily($region, $fam->getId());
         return array(
             'famresult' => $famresult,
+            'eventresult' => $eventresult
         );
     }
 
