@@ -60,7 +60,7 @@ class MessageController extends Controller
     }
 
     /**
-     * @Route("/message")
+     * @Route("/message.html")
      * @Template()
      */
     public function getThreadAction()

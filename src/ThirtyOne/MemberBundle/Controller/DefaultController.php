@@ -10,6 +10,15 @@ use ThirtyOne\MemberBundle\Form\Type\ParrainageFormType;
 
 class DefaultController extends Controller
 {
+
+    /**
+     * @Route("/membre.html")
+     * @Template()
+     */
+    public function indexAction() {
+        return array();
+    }
+
     /**
      * @Route("/profil/{slug}.html")
      * @Template()
@@ -28,7 +37,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/parrainer")
+     * @Route("/parrainer.html")
      * @Template()
      */
     public function parrainageAction()

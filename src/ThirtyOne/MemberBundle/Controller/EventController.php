@@ -29,7 +29,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/rallye/creation")
+     * @Route("/rallye/creation.html")
      * @Template()
      */
     public function createAction()

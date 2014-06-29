@@ -10,7 +10,7 @@ class RechercherController extends Controller
 {
 
     /**
-     * @Route("/rechercher")
+     * @Route("/rechercher.html")
      * @Template()
      */
     public function RechercherAction()

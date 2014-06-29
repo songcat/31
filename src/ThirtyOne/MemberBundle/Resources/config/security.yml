@@ -17,7 +17,7 @@ security:
                 csrf_provider: form.csrf_provider
                 login_path: /
                 always_use_default_target_path: true
-                default_target_path: /profil/famille
+                default_target_path: /membre.html
             remember_me:
                 key:      %secret%
                 lifetime: 3000000000

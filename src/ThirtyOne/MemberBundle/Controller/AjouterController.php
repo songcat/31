@@ -57,7 +57,7 @@ class AjouterController extends Controller
     }
 
     /**
-     * @Route("/inscription/confirmation")
+     * @Route("/inscription/confirmation.html")
      * @Template()
      */
     public function confirmationAction()
@@ -66,7 +66,7 @@ class AjouterController extends Controller
     }
 
     /**
-     * @Route("/profil/famille")
+     * @Route("/profil/famille.html")
      * @Template()
      */
     public function ajouterAction()
