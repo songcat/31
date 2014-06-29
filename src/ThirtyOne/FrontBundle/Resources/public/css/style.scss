@@ -17,10 +17,6 @@ body {
   background-size: cover;
 }
 
-header {
-  background-color: $white;
-}
-
 .wrapper {
   margin: 0 auto;
   max-width: $wrapper;
@@ -32,73 +28,11 @@ header {
   position: relative;
 }
 
-nav {
-  height: 35px;
-  text-align: right;
-  margin-top: 25px;
-  ul {
-    font-size: 0;
-  }
-  li {
-    display: inline-block;
-    width: 20%;
-    min-width: 100px;
-    font-size: 12px;
-    a {
-      display: block;
-      text-align: center;
-      padding: 5px 0;
-      &:hover, &.active {
-        background-color: $pink;
-        color: $white;
-      }
-    }
-    & + li {
-      border-left: 1px solid $lgrey;
-    }
-  }
-  &.disconnect li {
-    width: 13%
-  }
-}
-
 #content {
   padding-top: 40px;
-  padding-bottom: 260px; //height footer + 40px
-}
-
-// footer
-footer {
-  background-color: $dgrey;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 200px;
-  padding-top: 30px;
-  .left, .bottom {
-    li {
-      display: inline-block;
-      & + li:before {
-        content: "|";
-        padding: 0 10px;
-      }
-    }
-  }
-  .bottom {
-    margin-top: 10px;
-    padding: 10px 0;
-    border-top: 1px solid #414141;
-  }
-
-  .left {
-    display: inline-block;
-    ul {
-      margin-top: 25px;
-    }
-  }
-  .right {
-    float: right;
-    width: 170px;
+  padding-bottom: 340px; //height footer + 40px
+  @media (max-width: 640px) {
+    padding-bottom: 370px; //height footer + 40px
   }
 }
 
@@ -124,7 +58,10 @@ footer {
     display: inline-block;
   }
   button {
-    margin-left: 20px
+    margin-left: 20px;
+    @media (max-width: 640px) {
+      margin-top: 25px;
+    }
   }
 }
 
@@ -132,7 +69,20 @@ footer {
 .bgpic {
   padding: 30px 0 60px;
   background-size: cover;
+  background-position: center center;
+  &.contact {
+    padding: 30px 20px 60px;
+    margin-top: -40px;
+    background-image: url('../bundles/thirtyonefront/images/content/contact.jpg');
+  }
+  &.presse {
+    padding: 30px 20px 60px;
+    margin-top: -40px;
+    background-image: url('../bundles/thirtyonefront/images/content/presse.jpg');
+  }
 }
+
+
 
 .agence {
   #content {
@@ -141,6 +91,9 @@ footer {
     p {
       max-width: 50%;
       margin: 0 auto;
+      @media (max-width: 640px) {
+        max-width: 90%;
+      }
     }
   }
   h2 {
@@ -151,15 +104,33 @@ footer {
   }
 
   //background
-  .famille {background: url('../bundles/thirtyonefront/images/content/famille.jpg');}
-  .tradition {background: url('../bundles/thirtyonefront/images/content/tradition.jpg');}
-  .securite {background: url('../bundles/thirtyonefront/images/content/securite.jpg');}
-  .education {background: url('../bundles/thirtyonefront/images/content/education.jpg');}
-  .genealogie {background: url('../bundles/thirtyonefront/images/content/genealogie.jpg');}
-  .voluptueux {background: url('../bundles/thirtyonefront/images/content/voluptueux.jpg');}
-  .cercle {background: url('../bundles/thirtyonefront/images/content/cercle.jpg');}
-  .rallye {background: url('../bundles/thirtyonefront/images/content/rallye.jpg');}
-  .envols {background: url('../bundles/thirtyonefront/images/content/envols.jpg');}
+  .famille {
+    background-image: url('../bundles/thirtyonefront/images/content/famille.jpg');
+  }
+  .tradition {
+    background-image: url('../bundles/thirtyonefront/images/content/tradition.jpg');
+  }
+  .securite {
+    background-image: url('../bundles/thirtyonefront/images/content/securite.jpg');
+  }
+  .education {
+    background-image: url('../bundles/thirtyonefront/images/content/education.jpg');
+  }
+  .genealogie {
+    background-image: url('../bundles/thirtyonefront/images/content/genealogie.jpg');
+  }
+  .voluptueux {
+    background-image: url('../bundles/thirtyonefront/images/content/voluptueux.jpg');
+  }
+  .cercle {
+    background-image: url('../bundles/thirtyonefront/images/content/cercle.jpg');
+  }
+  .rallye {
+    background-image: url('../bundles/thirtyonefront/images/content/rallye.jpg');
+  }
+  .envols {
+    background-image: url('../bundles/thirtyonefront/images/content/envols.jpg');
+  }
 }
 
 // presse
@@ -167,18 +138,30 @@ footer {
   margin-top: 25px;
   .dsp-tc {
     vertical-align: bottom;
+    @media (max-width: 640px) {
+      display: block;
+    }
   }
   a {
     display: block;
     margin-top: 10px;
+    @media (max-width: 640px) {
+      margin-top: 25px;
+    }
   }
   .staticRight {
     width: 345px;
+    @media (max-width: 640px) {
+      width: 100%;
+    }
   }
 }
 
 .mail {
   @media (max-width: 870px) {
+    iframe {
+      display: none;
+    }
     .dsp-tc {
       display: block;
     }
@@ -187,15 +170,21 @@ footer {
     vertical-align: top;
   }
   padding: 20px;
-  margin-top: 40px;
   background-color: $white;
   .contactRight {
     width: 325px;
+    @media (max-width: 870px) {
+      width: 100%;
+      clear: both;
+      padding-top: 30px;
+    }
   }
+
   label {
     width: 35%;
     display: inline-block;
   }
+
   #thirtyone_frontbundle_contactformtype_gender label {
     width: 80px;
   }
@@ -207,10 +196,14 @@ footer {
 
   form {
     width: 85%;
+    @media (max-width: 870px) {
+      width: 100%;
+    }
     div {
       margin-bottom: 10px;
     }
   }
+
   textarea {
     height: 100px;
   }

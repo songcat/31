@@ -1,17 +1,5 @@
 @import 'variables';
 
-a.logo {
-  display: inline-block;
-}
-
-.logo h1 {
-  font-size: 0;
-  background-image: url('../bundles/thirtyonefront/images/form/trentetun.png');
-  width: 193px;
-  height: 77px;
-  margin: auto;
-}
-
 html,
 body {
   font-family: $raleway;
@@ -60,6 +48,9 @@ a.button {
   display: inline-block;
   line-height: 30px;
 
+  &.subscribe {
+    margin-top: 20px;
+  }
   &.download:before {
     background: url('../bundles/thirtyonefront/images/form/download.png');
     width: 20px;
@@ -67,6 +58,9 @@ a.button {
     content: "";
     display: inline-block;
     margin-right: 10px;
+    @media (max-width:640px) {
+      display: none;
+    }
   }
 }
 
@@ -134,4 +128,8 @@ button[type='submit'], a.button {
 
 .center {
   text-align: center;
+}
+
+.pink {
+  color: $pink;
 }

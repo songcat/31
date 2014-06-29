@@ -4,6 +4,22 @@
 @import 'base/typo';
 
 //header
+a.logo {
+  display: inline-block;
+  @media (max-width: 640px) {
+    display: block;
+    padding-top: 15px;
+  }
+}
+
+.logo h1 {
+  font-size: 0;
+  background-image: url('../bundles/thirtyonefront/images/form/trentetun.png');
+  width: 193px;
+  height: 77px;
+  margin: auto;
+}
+
 header {
   background-color: $white;
 }
@@ -18,6 +34,9 @@ nav {
   margin-top: 25px;
   ul {
     font-size: 0;
+    @media (max-width: 640px) {
+      text-align: center;
+    }
   }
   li {
     display: inline-block;
