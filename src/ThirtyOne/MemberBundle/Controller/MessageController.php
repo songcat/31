@@ -109,4 +109,17 @@ class MessageController extends Controller
             'form' => $form->createView()
         );
     }
+
+    /**
+     * @Template()
+     */
+    public function getUnreadMessageAction()
+    {
+        $provider = $this->get('fos_message.provider');
+        $unreadMessage = $provider->getNbUnreadMessages();
+
+        return array(
+            'unreadMessage' => $unreadMessage
+        );
+    }
 }

@@ -21,7 +21,6 @@
         <h2>carte bancaire</h2>
 
 
-
         <h2>Pour enregistrer, saisir votre mot de passe</h2>
         {{ form_rest(form) }}
         <div>
@@ -29,6 +28,9 @@
         </div>
 
     </form>
+
+    <h2>Modifier mot de passe</h2>
+    <a href='{{ path('fos_user_change_password') }}'>Modifier votre mot de passe</a>
 
     <h2>mes commandes</h2>
     {{ render(controller('ThirtyOneMemberBundle:Event:getCmd')) }}

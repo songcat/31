@@ -53,10 +53,6 @@ class ChildFormType extends AbstractType
                 'required'    => false,
                 'label' => 'Ambition professionnelle'
             ))
-            ->add('talentoday', 'text', array(
-                'required'    => false,
-                'label' => 'Talentoday'
-            ))
             ->add('language', 'text', array(
                 'required'    => false,
                 'label' => 'Langues'

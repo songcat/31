@@ -30,7 +30,7 @@ class EventFormType extends AbstractType
                 'required' => false
             ))
             ->add('region', 'choice', array(
-                'choices'   => array(
+                'choices' => array(
                     'Alsace' => 'Alsace',
                     'Aqutaine' => 'Aqutaine',
                     'Auvergne' => 'Auvergne',
@@ -54,9 +54,9 @@ class EventFormType extends AbstractType
                     'Provence-Alpes-Côte d\'Azur' => 'Provence-Alpes-Côte d\'Azur',
                     'Rhône-Alpes' => 'Rhône-Alpes',
                 ),
-                'multiple'=>false,
-                'label'=>'Région',
-                'required'=>false
+                'multiple' => false,
+                'label' => 'Région',
+                'required' => false
             ))
             ->add('description', 'textarea', array(
                 "label" => "description*"
@@ -67,9 +67,15 @@ class EventFormType extends AbstractType
                 'expanded' => true,
                 'label' => 'confidentialité'
             ))
-            ->add('place', 'hidden')
-            ->add('food', 'hidden')
-            ->add('music', 'hidden')
+            ->add('place', 'hidden', array(
+                'attr' => array('class' => 'placeValue')
+            ))
+            ->add('food', 'hidden', array(
+                'attr' => array('class' => 'foodValue')
+            ))
+            ->add('music', 'hidden', array(
+                'attr' => array('class' => 'musicValue')
+            ))
             ->add('enregistrer', 'submit', array(
                 'attr' => array('class' => 'save'),
             ))

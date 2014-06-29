@@ -82,7 +82,8 @@ class Event
 
     /**
      * @var string
-     *
+     * max = "250",
+     * maxMessage = "Votre description ne pas excéder 250 caractères."
      * @ORM\Column(name="description", type="string", length=500)
      */
     private $description;
@@ -119,7 +120,7 @@ class Event
      */
 
     /**
-     * @Assert\File(maxSize="300000")
+     * @Assert\File(maxSize="1000000")
      */
     public $file;
 

@@ -44,6 +44,7 @@ class EventController extends Controller
 
         $form->handleRequest($request);
         if ($form->isValid()) {
+            \Doctrine\Common\Util\Debug::dump($form["place"]->getData());
             if ($form["place"]->getData()) {
                 $place = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["place"]->getData());
                 $rallye->setPlace($place);
@@ -59,7 +60,7 @@ class EventController extends Controller
                 $music = $em->getRepository('ThirtyOneMemberBundle:Service')->find($form["music"]->getData());
                 $rallye->setMusic($music);
             }
-            if (!$place && (!$form["adress"]->getData() || !$form["city"]->getData() || !$form["region"]->getData()))
+            if (!$form["place"]->getData() && (!$form["adress"]->getData() && !$form["city"]->getData() && !$form["region"]->getData()))
                 return array(
                     'form' => $form->createView(),
                     'service' => $service,

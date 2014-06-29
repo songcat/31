@@ -71,7 +71,7 @@ class Family extends BaseUser implements ParticipantInterface
      *
      * @ORM\Column(name="newsletter", type="boolean")
      */
-    private $newsletter = 1;
+    private $newsletter = 0;
 
     /**
      * @var string

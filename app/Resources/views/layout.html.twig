@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>{% block title %}Trente & Un{% endblock %}</title>
     <meta name="description" lang="fr" content="{% block description %}{% endblock %}">
     {% block stylesheets %}
         {% stylesheets filter="compass" output="css/vendor.css" "@ThirtyOneFrontBundle/Resources/public/css/*.scss" %}
-            <link rel="stylesheet" href="{{ asset_url }}"/>
+        <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
     {% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@TrentetUn">
     <meta name="twitter:title" content="Trente & Un">
-    <meta name="twitter:description" content="Trente & Un est un site communautaire imprégné des traditions de la haute société française, permettant à des jeunes de bonne éducation de se rencontrer.">
+    <meta name="twitter:description"
+          content="Trente & Un est un site communautaire imprégné des traditions de la haute société française, permettant à des jeunes de bonne éducation de se rencontrer.">
     <meta name="twitter:creator" content="@TrentetUn">
     <meta name="twitter:domain" content="trentetun.com">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <meta name="twitter:image:src" content="http://trentetun.com/img/trentetun.png">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Trente & Un" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://www.facebook.com/pages/Trente-Un/514075625389940" />
-    <meta property="og:image" content="logo.jpg" />
-    <meta property="og:description" content="Trente & Un est un site communautaire imprégné des traditions de la haute société française, permettant à des jeunes de bonne éducation de se rencontrer." />
-    <meta property="og:site_name" content="Trente & Un" />
-    <meta property="fb:admins" content="514075625389940" />
+    <meta property="og:title" content="Trente & Un"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://www.facebook.com/pages/Trente-Un/514075625389940"/>
+    <meta property="og:image" content="logo.jpg"/>
+    <meta property="og:description"
+          content="Trente & Un est un site communautaire imprégné des traditions de la haute société française, permettant à des jeunes de bonne éducation de se rencontrer."/>
+    <meta property="og:site_name" content="Trente & Un"/>
+    <meta property="fb:admins" content="514075625389940"/>
 
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-52131211-1', 'trentetun.com');
         ga('send', 'pageview');
@@ -42,41 +51,45 @@
 
 <body>
 
-    <header>
-        <a href='{{ path('fos_user_security_login') }}'><h1>logo</h1></a>
-        {% block navigation %}
-            <nav>
-                <ul>
-                    {% if app.user %}
-                        <li><a href='{{ path('thirtyone_member_ajouter_ajouter') }}'>ma famille</a></li>
-                        <li><a href='{{ path('fos_user_profile_edit') }}'>mon compte</a></li>
-                        <li><a href='{{ path('thirtyone_member_rechercher_rechercher') }}'>recherche</a></li>
-                        <li><a href='{{ path('thirtyone_member_event_home') }}'>rallye</a></li>
-                        <li><a href='{{ path('thirtyone_member_message_getthread') }}'>messagerie</a></li>
-                        <li><a href='{{ path('thirtyone_member_default_parrainage') }}'>parrainage</a></li>
-                        <li><a href='{{ path('fos_user_security_logout') }}'>deconnexion</a></li>
-                    {% else %}
-                        <li><a href='{{ path('fos_user_registration_register') }}'>s'inscrire</a></li>
+<header>
+    <a href='{{ path('fos_user_security_login') }}'><h1>logo</h1></a>
 
-                    {% endif %}
+    {% if app.user %}
+        {{ render(controller('ThirtyOneMemberBundle:Message:getUnreadMessage')) }}
+    {% endif %}
+    {% block navigation %}
+        <nav>
+            <ul>
+                {% if app.user %}
+                    <li><a href='{{ path('thirtyone_member_ajouter_ajouter') }}'>ma famille</a></li>
+                    <li><a href='{{ path('fos_user_profile_edit') }}'>mon compte</a></li>
+                    <li><a href='{{ path('thirtyone_member_rechercher_rechercher') }}'>recherche</a></li>
+                    <li><a href='{{ path('thirtyone_member_event_home') }}'>rallye</a></li>
+                    <li><a href='{{ path('thirtyone_member_message_getthread') }}'>messagerie</a></li>
+                    <li><a href='{{ path('thirtyone_member_default_parrainage') }}'>parrainage</a></li>
+                    <li><a href='{{ path('fos_user_security_logout') }}'>deconnexion</a></li>
+                {% else %}
+                    <li><a href='{{ path('fos_user_registration_register') }}'>s'inscrire</a></li>
 
-                </ul>
-            </nav>
-        {% endblock %}
-    </header>
+                {% endif %}
 
-    {% block content %}
+            </ul>
+        </nav>
     {% endblock %}
+</header>
 
-    <footer>
-        ©footer
-    </footer>
+{% block content %}
+{% endblock %}
 
-    {% block javascripts %}
-        {% javascripts '@ThirtyOneFrontBundle//Resources/public/js/*.js'  output="js/vendor.js" %}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
-        {% endjavascripts %}
-    {% endblock %}
+<footer>
+    ©footer
+</footer>
+
+{% block javascripts %}
+    {% javascripts '@ThirtyOneFrontBundle//Resources/public/js/*.js'  output="js/vendor.js" %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
 </body>
 
 </html>

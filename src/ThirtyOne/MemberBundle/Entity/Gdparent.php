@@ -85,7 +85,7 @@ class Gdparent
      */
 
     /**
-     * @Assert\File(maxSize="300000")
+     * @Assert\File(maxSize="1000000")
      */
     public $file;
 

@@ -21,15 +21,15 @@ $('.addForm a, a.editEntity').click(function (event) {
 $('.service a.reserve').click(function(event) {
     event.preventDefault();
     if($(this).attr('data-type')=='place') {
-        $('input#form_place').val($(this).attr('data-id'));
+        $('.placeValue').val($(this).attr('data-id'));
         $('.resume .place').html($(this).attr('data-price'));
     }
     else if ($(this).attr('data-type')=='food'){
-        $('input#form_food').val($(this).attr('data-id'));
+        $('.foodValue').val($(this).attr('data-id'));
         $('.resume .food').html($(this).attr('data-price'));
     }
     else {
-        $('input#form_music').val($(this).attr('data-id'));
+        $('.musicValue').val($(this).attr('data-id'));
         $('.resume .music').html($(this).attr('data-price'));
     }
 });

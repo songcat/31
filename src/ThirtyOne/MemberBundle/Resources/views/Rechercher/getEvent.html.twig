@@ -1,0 +1,23 @@
+{% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+
+{% block content %}
+
+    <p>Résultats de la recherche : "région: {{ search }}"</p>
+    {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':0}) }}
+
+{% if error is defined %}
+   <p>{{ error }}</p>
+
+{% else %}
+<ul>
+    {% for r in result %}
+        <li><a href="{{ path('thirtyone_member_event_show', {'slug': r.slug}) }}">{{ r.name }}</a><br>
+        {{ r.region }}
+        <br>
+            {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': r.id })) }}
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

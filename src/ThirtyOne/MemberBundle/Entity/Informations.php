@@ -37,7 +37,8 @@ class Informations
 
     /**
      * @var string
-     *
+     * max = "750",
+     * maxMessage = "Votre histoire ne pas excéder 750 caractères."
      * @ORM\Column(name="history", type="text", nullable=true)
      */
     private $history;
@@ -71,7 +72,7 @@ class Informations
      */
 
     /**
-     * @Assert\File(maxSize="300000")
+     * @Assert\File(maxSize="1000000")
      */
     public $file;
 
