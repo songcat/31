@@ -11,6 +11,25 @@ use ThirtyOne\MemberBundle\Form\Type\ParrainageFormType;
 class DefaultController extends Controller
 {
 
+    private function getNewEvents($famevent)
+    {
+        $date = new \DateTime();
+        $region = $this->getUser()->getRegion();
+        $rallye = $this->getDoctrine()->getManager()
+            ->getRepository('ThirtyOneMemberBundle:Event')
+            ->getEvent($region, $date);
+        $result = $id = array();
+        foreach ($famevent as $e) {
+            $id[] = $e->getId();
+        }
+        foreach ($rallye as $r) {
+            if (!in_array($r->getId(), $id)) {
+                $result[] = $r;
+            }
+        }
+        return $result;
+    }
+
     /**
      * @Route("/membre.html")
      * @Template()
@@ -19,6 +38,10 @@ class DefaultController extends Controller
     {
         $fam = $this->getUser();
         $region = $fam->getRegion();
+        $famevent = $this->getUser()->getEvents();
+        $eventresult = $this->getNewEvents($famevent);
+        //echo '<pre>';
+        //\Doctrine\Common\Util\Debug::dump($eventresult);
 
         $famresult = $this->getDoctrine()->getManager()
             ->getRepository('ThirtyOneMemberBundle:Family')
