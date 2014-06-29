@@ -23,7 +23,7 @@ class DefaultController extends Controller
             ->add('mail', 'email', array(
                 'label' => false,
                 'attr' => array(
-                    'placeholder' => 'email',
+                    'placeholder' => 'votre email',
                     'class' => 'teasing'
                 )))
             ->add("S'inscrire", 'submit')

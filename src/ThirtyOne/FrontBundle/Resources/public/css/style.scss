@@ -32,7 +32,7 @@ body {
   padding-top: 40px;
   padding-bottom: 340px; //height footer + 40px
   @media (max-width: 640px) {
-    padding-bottom: 370px; //height footer + 40px
+    padding-bottom: 330px; //height footer + 40px
   }
 }
 
@@ -82,13 +82,38 @@ body {
   }
 }
 
-
-
 .agence {
+  p a:hover {
+    text-decoration: underline;
+  }
+  .facebookAG, .twitterAG {
+    font-size: 0;
+    display: inline-block;
+    content: "";
+    background-image: url('../bundles/thirtyonefront/images/form/social_pictos.png');
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  .facebookAG {
+    background-position: bottom left;
+    &:hover {
+      background-position: top left;
+    }
+  }
+  .twitterAG {
+    background-position: bottom right;
+    &:hover {
+      background-position: top right;
+    }
+  }
+
   #content {
     padding-top: 0;
     text-align: center;
     p {
+      font-size: 14px;
       max-width: 50%;
       margin: 0 auto;
       @media (max-width: 640px) {
@@ -96,6 +121,7 @@ body {
       }
     }
   }
+
   h2 {
     padding-top: 1em;
     &:first-child {
@@ -107,30 +133,39 @@ body {
   .famille {
     background-image: url('../bundles/thirtyonefront/images/content/famille.jpg');
   }
+
   .tradition {
     background-image: url('../bundles/thirtyonefront/images/content/tradition.jpg');
   }
+
   .securite {
     background-image: url('../bundles/thirtyonefront/images/content/securite.jpg');
   }
+
   .education {
     background-image: url('../bundles/thirtyonefront/images/content/education.jpg');
   }
+
   .genealogie {
     background-image: url('../bundles/thirtyonefront/images/content/genealogie.jpg');
   }
+
   .voluptueux {
     background-image: url('../bundles/thirtyonefront/images/content/voluptueux.jpg');
   }
+
   .cercle {
     background-image: url('../bundles/thirtyonefront/images/content/cercle.jpg');
   }
+
   .rallye {
     background-image: url('../bundles/thirtyonefront/images/content/rallye.jpg');
   }
+
   .envols {
     background-image: url('../bundles/thirtyonefront/images/content/envols.jpg');
   }
+
 }
 
 // presse
