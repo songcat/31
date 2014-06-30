@@ -866,12 +866,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/DoctrineBehaviors.git",
-                "reference": "3b9c1e4255715e991f912e33308a704086038268"
+                "reference": "077b0f3c5300a3a45febf6008796cdeaf69e2ce9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/DoctrineBehaviors/zipball/3b9c1e4255715e991f912e33308a704086038268",
-                "reference": "3b9c1e4255715e991f912e33308a704086038268",
+                "url": "https://api.github.com/repos/KnpLabs/DoctrineBehaviors/zipball/077b0f3c5300a3a45febf6008796cdeaf69e2ce9",
+                "reference": "077b0f3c5300a3a45febf6008796cdeaf69e2ce9",
                 "shasum": ""
             },
             "require": {
@@ -915,7 +915,7 @@
                 "translatable",
                 "tree"
             ],
-            "time": "2014-06-17 07:02:24"
+            "time": "2014-06-29 19:38:25"
         },
         {
             "name": "kriswallsmith/assetic",
