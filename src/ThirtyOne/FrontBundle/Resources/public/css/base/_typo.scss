@@ -61,6 +61,12 @@ a.button {
       display: none;
     }
   }
+  @media (max-width:640px) {
+    &.download {
+      font-size: 11px;
+      padding:  0 15px;
+    }
+  }
 }
 
 button[type='submit'], a.button {

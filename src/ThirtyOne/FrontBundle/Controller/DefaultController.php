@@ -46,7 +46,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/l-agence")
+     * @Route("/l-agence.html")
      * @Template()
      */
     public
@@ -56,7 +56,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/decouvrir")
+     * @Route("/decouvrir.html")
      * @Template()
      */
     public
@@ -66,7 +66,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/presse")
+     * @Route("/presse.html")
      * @Template()
      */
     public
@@ -76,7 +76,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/mentions")
+     * @Route("/mentions.html")
      * @Template()
      */
     public
@@ -86,7 +86,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/cgu")
+     * @Route("/cgu.html")
      * @Template()
      */
     public
@@ -97,7 +97,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/contact")
+     * @Route("/contact.html")
      * @Template()
      */
     public
