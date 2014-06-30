@@ -292,3 +292,85 @@ body {
     margin-top: 50px;
   }
 }
+
+//famille
+.famTop {
+  position: relative;
+  height: 270px;
+  background-position: center center;
+  h1 {
+    margin-top: 200px;
+    font-size: 1.5em;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: $pink;
+    display: inline-block;
+    padding: 10px 80px;
+  }
+  .message {
+    position: absolute;
+    bottom: 22px;
+    right: 15px;
+  }
+}
+
+.general {
+  margin: 40px 0;
+  .history {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.ourFamily {
+  .row {
+    margin: 10px auto;
+    width: 100%;
+    [class*=col] {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+    &.gparents {
+      [class*=col]:nth-child(2) {
+        margin-right: 15%;
+      }
+      [class*=col]:first-child {
+        margin-left: 0;
+      }
+    }
+    &.parents {
+      [class*=col] {
+        &:first-child {
+          margin-right: 30%;
+        }
+        &:before {
+          display: block;
+          content: "";
+          background-image: url('../bundles/thirtyonefront/images/form/bigtree.jpg');
+          width: 343px;
+          height: 143px;
+          margin-left: -80%;
+          margin-bottom: 15px;
+        }
+      }
+      &:after {
+        display: block;
+        content: "";
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -70px;
+        background-image: url('../bundles/thirtyonefront/images/form/smalltree.jpg');
+        width: 215px;
+        height: 143px;
+      }
+    }
+    &.children {
+      [class*=col] {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+}

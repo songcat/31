@@ -1,27 +1,108 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
 {% block content %}
+    <div class="contentBlock">
 
-    {% if error is defined %}
-        {{ error }}
 
-    {% else %}
-        <a href="{{ path('thirtyone_member_message_new', {'slug': fam.slug}) }}">envoyer un message</a>
+        {% if error is defined %}
+            {{ error }}
 
-        <h2 class="nameForm">{{ fam.username }}</h2>
-        {% for p in fam.parents %}
-            {% for gp in p.gdparent %}
-                <p>{{ gp.firstname }}</p>
-            {% endfor %}
-        {% endfor %}
+        {% else %}
+            <div class="famTop center" style="background-image:url({{ asset('uploads/documents/'~info.path) }})">
+                <a class="message showMore" href="{{ path('thirtyone_member_message_new', {'slug': fam.slug}) }}">envoyer un message</a>
 
-        {% for p in fam.parents %}
-            <div>{{ p.firstname }} {{ p.birthname }}</div>
-        {% endfor %}
+                <h1 class="center">{{ fam.username }}</h1>
+            </div>
+            <div class="general center">
+                <h2>{{ fam.username }}</h2>
 
-        {% for c in fam.child %}
-            <p>{{ c.firstname }}</p>
-        {% endfor %}
-    {% endif %}
+                <div class="history">
+                    <p>{{ info.history }}</p>
+                </div>
+            </div>
+            <div class="ourFamily center">
+                <h2>Notre famille</h2>
+
+                <div class="row gparents clearfix">
+                    {% for p in fam.parents %}
+                        {% for gp in p.gdparent %}
+                            <div class="col2gp center">
+                                <img src="http://placekitten.com/140/140">
+
+                                <div class="name"><strong>{{ gp.firstname }} {{ gp.birthname }}</strong></div>
+                                <div class="dates">
+                                    {% if gp.gender == 'm' %}
+                                        Né
+                                    {% else %}
+                                        Née
+                                    {% endif %}
+                                    en {{ gp.birthyear }}
+                                    {% if gp.deathyear != 0 %}
+                                        {% if gp.gender == 'm' %}
+                                            mort
+                                        {% else %}
+                                            morte
+                                        {% endif %}
+                                        en {{ gp.deathyear }}
+                                    {% endif %}</div>
+                                {% if gp.job is not null %}
+                                    <div class="job">
+                                        {{ gp.job }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+
+                <div class="row parents">
+                    {% for p in fam.parents %}
+                        <div class="col2 center">
+                            <img src="http://placekitten.com/140/140">
+
+                            <div class="name"><strong>{{ p.firstname }} {{ p.birthname }}</strong></div>
+                            <div class="dates">
+                                {% if p.gender == 'm' %}
+                                    Né
+                                {% else %}
+                                    Née
+                                {% endif %}
+                                en {{ p.age }}
+                            </div>
+                            {% if p.job is not null %}
+                                <div class="job">
+                                    {{ p.job }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row children clearfix">
+                    {% for c in fam.child %}
+                        <div class="col2child center">
+                            <img src="{{ asset('uploads/documents/'~c.path) }}">
+
+                            <div class="name"><strong>{{ c.firstname }} {{ fam.username }}</strong></div>
+                            <div class="dates">{{ c.age|date("l j F") }}</div>
+                            <div class="school">Etudie à {{ c.school }}</div>
+
+                            <div class="stuff">
+                                {% if c.passion is not null %}Passions : {{ c.passion }}<br>{% endif %}
+                                {% if c.sport is not null %}Sports : {{ c.sport }}<br>{% endif %}
+                                {% if c.travel is not null %}Voyages : {{ c.travel }}<br>{% endif %}
+                                {% if c.price is not null%}Prix / distinctions : {{ c.price }}<br>{% endif %}
+                                {% if c.proambition is not null%}Métier visé : {{ c.proambition }}<br>{% endif %}
+                                {% if c.language is not null%}Langues : {{ c.language }}{% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+        {% endif %}
+    </div>
 
 {% endblock %}

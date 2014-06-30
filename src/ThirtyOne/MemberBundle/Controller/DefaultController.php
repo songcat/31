@@ -57,7 +57,11 @@ class DefaultController extends Controller
     public function profilAction(Family $fam)
     {
         if ($fam && $fam->getPublish() == 1) {
+            $em = $this->getDoctrine()->getManager();
+            $info = $em->getRepository('ThirtyOneMemberBundle:Informations')->findByFamily($fam)
+                ? $em->getRepository('ThirtyOneMemberBundle:Informations')->findByFamily($fam)[0] : null;
             return array(
+                'info' => $info,
                 'fam' => $fam,
             );
         } else {

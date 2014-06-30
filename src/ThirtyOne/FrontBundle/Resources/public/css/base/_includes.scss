@@ -50,3 +50,11 @@ $gutter: 20px;
 .col2 {
   @include col-width(100%, 20px, 6);
 }
+
+.col2gp {
+  @include col-width(100%, 35px, 6);
+}
+
+.col2child {
+  @include col-width(100%, 40px, 4);
+}
