@@ -256,5 +256,39 @@ body {
 .viewMore {
   clear: both;
   text-align: center;
-  padding: 30px 0 10px;
+  padding: 30px 0 20px;
+}
+
+.rallyeTable {
+  .row {
+    margin-top: 10px;
+  }
+  .date, .place {
+    display: inline-block;
+    font-weight: bold;
+    &:before {
+      display: inline-block;
+      margin-right: 5px;
+      height: 16px;
+      content: "";
+    }
+  }
+  .place:before {
+    margin-left: 20px;
+    width: 12px;
+    background-image: url('../bundles/thirtyonefront/images/form/position.jpg');
+  }
+  .date:before {
+    width: 14px;
+    background-image: url('../bundles/thirtyonefront/images/form/calendar.jpg');
+  }
+  .participants {
+    margin-bottom: 10px;
+  }
+  .description {
+    width: 80%;
+  }
+  .col2 {
+    margin-top: 50px;
+  }
 }

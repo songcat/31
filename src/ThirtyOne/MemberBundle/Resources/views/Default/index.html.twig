@@ -12,6 +12,7 @@
                 <img src="http://placekitten.com/g/300/165"/>
 
                 <h3 class="center">De la Bernarderie</h3>
+
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s</p>
                 <a class="showMore" href='#'>Rencontrer</a>
@@ -20,6 +21,7 @@
                 <img src="http://placekitten.com/g/300/165"/>
 
                 <h3 class="center">Vanssay</h3>
+
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s</p>
                 <a class="showMore" href='#'>Rencontrer</a>
@@ -28,6 +30,7 @@
                 <img src="http://placekitten.com/g/300/165"/>
 
                 <h3 class="center">De la Horie</h3>
+
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s</p>
                 <a class="showMore" href='#'>Rencontrer</a>
@@ -37,6 +40,7 @@
                     <img src="http://placekitten.com/g/300/165"/>
 
                     <h3 class="center">{{ fam.username }}</h3>
+
                     <p> {{ fam.informations.history }}</p>
                     <a class="showMore"
                        href='{{ path('thirtyone_member_default_profil', {'slug': fam.slug}) }}'>Rencontrer</a>
@@ -51,67 +55,80 @@
 
     <h2>Suggestions des rallyes</h2>
     <div class="contentBlock">
-        <div class="rallyeTable clearfix">
-            <div class="row">
+        <div class="rallyeTable">
+            {% for e in eventresult %}
+            <div class="row clearfix">
                 <div class="col3">
                     <img src="http://placekitten.com/g/300/165">
                 </div>
-                <div class="col6 description">
+                <div class="col6">
+                    <h3>{{ e.name }}</h3>
+
+                    <div class="description">
+                        <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
+                        <div class="place">{{ e.city }}</div>
+                        <p>{{ e.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="row clearfix">
+                <div class="col3">
+                    <img src="http://placekitten.com/g/300/165">
+                </div>
+                <div class="col6">
                     <h3>Rallye Bel Air</h3>
-                    <div class="summary">
+
+                    <div class="description">
                         <div class="date">Samedi 13 Septembre 2014 - 20h</div>
-                        <div class="place">Versailles (78)</div>
-                        <div class="text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        <div class="place">Versailles</div>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has
                             roots in
                             a piece of classical Latin literature fro years old. Richard McClintock, a Latin professor
                             at
                             Hampden-Sydney College in Virginia
-                        </div>
+                        </p>
                     </div>
                 </div>
                 <div class="col2">
-                    <div class="participants">
-                        75 participants
+                    <div class="participants pink">
+                        <strong>
+                            75 participants
+                        </strong>
                     </div>
                     <a class="showMore">Voir le rallye</a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row clearfix">
                 <div class="col3">
                     <img src="http://placekitten.com/g/300/165">
                 </div>
-                <div class="col6 description">
+                <div class="col6">
                     <h3>Rallye Bel Air</h3>
-                    <div class="summary">
+
+                    <div class="description">
                         <div class="date">Samedi 13 Septembre 2014 - 20h</div>
-                        <div class="place">Versailles (78)</div>
-                        <div class="text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        <div class="place">Versailles</div>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has
                             roots in
                             a piece of classical Latin literature fr 2000 years old. Richard McClintock, a Latin
                             professor
                             at Hampden-Sydney College in Virginia
-                        </div>
+                        </p>
                     </div>
                 </div>
                 <div class="col2">
-                    <div class="participants">
-                        75 participants
+                    <div class="participants pink">
+                        <strong>
+                            75 participants
+                        </strong>
                     </div>
                     <a class="showMore">Voir le rallye</a>
                 </div>
             </div>
             <div class="viewMore">
-                <a>Voir plus de rallyes</a>
+                <a class="button">Voir plus de rallyes</a>
             </div>
         </div>
     </div>
-
-
-
-
-
-    {% for e in eventresult %}
-        {{ e.name }} {{ e.region }}
-    {% endfor %}
 
 {% endblock %}
