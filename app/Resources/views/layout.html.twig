@@ -66,19 +66,21 @@
             {% else %}
                 href='{{ path('fos_user_security_login') }}'
                     {% endif %}><h1>logo</h1></a>
+            {% if app.user %}
+                <div class="navRigh">
+                    <ul>
+                        <li>
+                            <a href='{{ path('fos_user_profile_edit') }}' class="myaccount">mon compte</a>
+                        <li>
+                            {{ render(controller('ThirtyOneMemberBundle:Message:getUnreadMessage')) }}
+                        </li>
 
-            <div class="navRigh">
-                <ul>
-                    <li>
-                        <a href='{{ path('fos_user_profile_edit') }}'>mon compte</a>
-                    <li>
-                        <a href='{{ path('thirtyone_member_message_getthread') }}'>ma messagerie</a>
-                    </li>
-
-                </ul>
+                    </ul>
+                </div>
+            {% endif %}
 
 
-            </div>
+
             {% block navigation %}
                 <nav class="{% if app.user %}connect{% else %}disconnect{% endif %}">
                     <ul>

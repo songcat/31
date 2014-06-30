@@ -1,5 +1,5 @@
 {% if unreadMessage > 0 %}
-    <a href="" class="message newmsg">messagerie ({{ unreadMessage }})</a>
+    <a href='{{ path('thirtyone_member_message_getthread') }}' class="message new">ma messagerie</a>
 {% else %}
-    <a href="" class="message">messagerie (0)</a>
+    <a href='{{ path('thirtyone_member_message_getthread') }}' class="message">ma messagerie</a>
 {% endif %}

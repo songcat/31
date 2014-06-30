@@ -62,6 +62,13 @@ a.button {
       display: none;
     }
   }
+  @media (max-width:640px) {
+    &.download {
+      font-size: 11px;
+      padding:  0 15px;
+    }
+  }
+
 }
 
 
@@ -69,7 +76,7 @@ a.showMore {
   text-align: right;
   background-color: $dgrey;
   color: $white;
-  padding: 3px 50px 3px 20px;
+  padding: 1px 50px 1px 20px;
   position: relative;
   float: right;
   &:after {
@@ -97,6 +104,15 @@ button[type='submit'], a.button {
   padding: 0 30px;
   &:hover {
     background: url('../bundles/thirtyonefront/images/form/bouton_on.jpg');
+  }
+}
+
+.viewMore {
+  .button {
+    background: url('../bundles/thirtyonefront/images/form/bouton_on.jpg');
+    &:hover {
+      background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
+    }
   }
 }
 

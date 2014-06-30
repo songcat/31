@@ -3,73 +3,75 @@
 
 {% block content %}
 
-    <h2>Suggestions des familles</h2>
-    <div class="contentBlock clearfix">
-        <div class="familyTable">
+<h2>Suggestions des familles</h2>
+<div class="contentBlock clearfix">
+    <div class="familyTable">
 
-            <!-- a supprimer lorsqu'il y aura du vrai contenu -->
-            <div class="col3">
-                <img src="http://placekitten.com/g/300/165"/>
+        <!-- a supprimer lorsqu'il y aura du vrai contenu -->
+        <div class="col3">
+            <img src="http://placekitten.com/g/300/165"/>
 
-                <h3 class="center">De la Bernarderie</h3>
+            <h3 class="center">De la Bernarderie</h3>
 
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s</p>
-                <a class="showMore" href='#'>Rencontrer</a>
-            </div>
-            <div class="col3">
-                <img src="http://placekitten.com/g/300/165"/>
-
-                <h3 class="center">Vanssay</h3>
-
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s</p>
-                <a class="showMore" href='#'>Rencontrer</a>
-            </div>
-            <div class="col3">
-                <img src="http://placekitten.com/g/300/165"/>
-
-                <h3 class="center">De la Horie</h3>
-
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s</p>
-                <a class="showMore" href='#'>Rencontrer</a>
-            </div>
-            {% for fam in famresult %}
-                <div class="col3">
-                    <img src="http://placekitten.com/g/300/165"/>
-
-                    <h3 class="center">{{ fam.username }}</h3>
-
-                    <p> {{ fam.informations.history }}</p>
-                    <a class="showMore"
-                       href='{{ path('thirtyone_member_default_profil', {'slug': fam.slug}) }}'>Rencontrer</a>
-                </div>
-            {% endfor %}
-
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s</p>
+            <a class="showMore" href='#'>Rencontrer</a>
         </div>
-        <div class="viewMore">
-            <a class="button">Voir plus de familles</a>
+        <div class="col3">
+            <img src="http://placekitten.com/g/300/165"/>
+
+            <h3 class="center">Vanssay</h3>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s</p>
+            <a class="showMore" href='#'>Rencontrer</a>
         </div>
+        <div class="col3">
+            <img src="http://placekitten.com/g/300/165"/>
+
+            <h3 class="center">De la Horie</h3>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s</p>
+            <a class="showMore" href='#'>Rencontrer</a>
+        </div>
+        {% for fam in famresult %}
+            <div class="col3">
+                <img src="http://placekitten.com/g/300/165"/>
+
+                <h3 class="center">{{ fam.username }}</h3>
+
+                <p> {{ fam.informations.history }}</p>
+                <a class="showMore"
+                   href='{{ path('thirtyone_member_default_profil', {'slug': fam.slug}) }}'>Rencontrer</a>
+            </div>
+        {% endfor %}
+
     </div>
+    <div class="viewMore">
+        <a class="button"
+           href="{{ path('thirtyone_member_rechercher_getfamily')~'?famille=&region='~user.region }}">
+           Voir plus de familles</a>
+    </div>
+</div>
 
-    <h2>Suggestions des rallyes</h2>
-    <div class="contentBlock">
-        <div class="rallyeTable">
-            {% for e in eventresult %}
-            <div class="row clearfix">
-                <div class="col3">
-                    <img src="http://placekitten.com/g/300/165">
-                </div>
-                <div class="col6">
-                    <h3>{{ e.name }}</h3>
+<h2>Suggestions des rallyes</h2>
+<div class="contentBlock">
+    <div class="rallyeTable">
+        {% for e in eventresult %}
+        <div class="row clearfix">
+            <div class="col3">
+                <img src="http://placekitten.com/g/300/165">
+            </div>
+            <div class="col6">
+                <h3>{{ e.name }}</h3>
 
-                    <div class="description">
-                        <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
-                        <div class="place">{{ e.city }}</div>
-                        <p>{{ e.description }}</p>
-                    </div>
+                <div class="description">
+                    <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
+                    <div class="place">{{ e.city }}</div>
+                    <p>{{ e.description }}</p>
                 </div>
+            </div>
             {% endfor %}
             <div class="row clearfix">
                 <div class="col3">
@@ -122,13 +124,15 @@
                             75 participants
                         </strong>
                     </div>
-                    <a class="showMore">Voir le rallye</a>
+                    <a class="showMore" href="#">
+                        Voir le rallye</a>
                 </div>
             </div>
             <div class="viewMore">
-                <a class="button">Voir plus de rallyes</a>
+                <a class="button" href="{{ path('thirtyone_member_rechercher_getevent')~'?region='~user.region }}">
+                    Voir plus de rallyes</a>
             </div>
         </div>
     </div>
 
-{% endblock %}
+    {% endblock %}

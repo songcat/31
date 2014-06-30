@@ -45,7 +45,8 @@ class DefaultController extends Controller
             ->homeFamily($region, $fam->getId());
         return array(
             'famresult' => $famresult,
-            'eventresult' => $eventresult
+            'eventresult' => $eventresult,
+            'user' => $fam
         );
     }
 

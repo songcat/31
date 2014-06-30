@@ -22,6 +22,9 @@ a.logo {
 
 header {
   background-color: $white;
+  .wrapper {
+    position: relative;
+  }
 }
 
 nav {
@@ -41,7 +44,7 @@ nav {
   li {
     display: inline-block;
     width: 20%;
-    min-width: 100px;
+    min-width: 80px;
     font-size: 12px;
     a {
       display: block;
@@ -58,5 +61,47 @@ nav {
   }
   &.disconnect li {
     width: 13%
+  }
+
+  &.connect {
+    height: 45px;
+    a {
+      padding: 10px 0;
+    }
+  }
+}
+
+.navRigh {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  li {
+    display: inline-block;
+    &+li {
+      margin-left: 40px;
+    }
+    a:hover {
+      color: $pink;
+    }
+  }
+  .myaccount:before {
+    background-image:  url('../bundles/thirtyonefront/images/form/account.png');
+    display: inline-block;
+    content: "";
+    height: 18px;
+    width: 19px;
+    margin-right: 10px;
+  }
+  .message:before {
+    background-image:  url('../bundles/thirtyonefront/images/form/message.png');
+    background-position: top center;
+    display: inline-block;
+    content: "";
+    height: 20px;
+    width: 26px;
+    margin-right: 10px;
+  }
+  .new:before {
+    background-position: bottom center;
   }
 }
