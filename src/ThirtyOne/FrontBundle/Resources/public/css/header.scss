@@ -54,6 +54,21 @@ nav {
         background-color: $pink;
         color: $white;
       }
+      &.home {
+        position: relative;
+          &:after {
+            content: "";
+            width: 13px;
+            height: 15px;
+            background: url('../bundles/thirtyonefront/images/form/logo_home.png') no-repeat top center;
+            position: absolute;
+            display: inline-block;
+            left: 10px;
+          }
+        &.active:after, &:hover:after {
+          background-position: bottom center;
+        }
+      }
     }
     & + li {
       border-left: 1px solid $lgrey;

@@ -85,10 +85,10 @@
                 <nav class="{% if app.user %}connect{% else %}disconnect{% endif %}">
                     <ul>
                         {% if app.user %}
-                            <li><a href='{{ path('thirtyone_member_default_index') }}'
+                            <li><a href='{{ path('thirtyone_member_default_index') }}' class='
                                         {% if 'index' in app.request.attributes.get('_route') %}
-                                    class='active'
-                                        {% endif %}>Accueil</a></li>
+                                    active
+                                        {% endif %} home'>Accueil</a></li>
                             <li><a href='{{ path('thirtyone_member_ajouter_ajouter') }}'
                                         {% if 'ajouter' in app.request.attributes.get('_route') %}
                                     class='active'

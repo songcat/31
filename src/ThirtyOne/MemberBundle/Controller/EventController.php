@@ -71,7 +71,7 @@ class EventController extends Controller
             $rallye->setParticipant($fam);
             $em->persist($rallye);
             $em->flush();
-            return $this->redirect($this->generateUrl('thirtyone_member_event_create'), 301);
+            return $this->redirect($this->generateUrl('thirtyone_member_event_show', array('slug'=>$rallye->getSlug())), 301);
         }
 
         return array(
