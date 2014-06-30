@@ -1,0 +1,77 @@
+{% extends "::layout.html.twig" %}
+{% block title %}L'agence{% endblock %}
+{% block bodyClass %}class="agence"{% endblock %}
+{% block content %}
+    <div class="bgpic famille">
+        <h2>La famille avant tout</h2>
+
+        <p> Trente & Un propose à des familles partageant les mêmes valeurs de faire
+            se rencontrer leurs enfants, en
+            ayant
+            la possibilité de consulter les profils des autres foyers pour vérifier
+            leur ascendance ou leurs
+            influences.</p>
+    </div>
+
+    <div class="bgpic tradition">
+        <h2>La tradition comme fondement</h2>
+
+        <p> Trente & Un est un refuge pour toutes les familles effrayés par la
+            disparition de cet héritage
+            fondement de leur mode de vie. Vos coutumes sont ici les bienvenues,
+            elles sont même un gage de la prospérité de
+            votre lignée.
+        </p>
+    </div>
+
+    <div class="bgpic securite">
+        <h2>La sécurité comme principe</h2>
+
+        <p>Trente & Un s’engage à protéger vos précieuses données, conservant ainsi
+            l’intimité de votre douce famillle.
+            Vous pouvez donc dormir sur vos deux délicates oreilles, vous êtes ici
+            les seuls possesseurs des
+            informations de
+            votre élégante lignée.</p>
+    </div>
+
+
+    <div class="bgpic education">
+        <h2> Éducation </h2>
+
+        <p> Trente & Un se réserve le droit d’exiger de ses membres une attitude et
+            une politesse irréprochable. Les plus belles relations se créent sur des
+            bonnes bases pour lesquelles la courtoisie et les
+            bonnes manières sont requises.</p>
+    </div>
+
+    <div class="bgpic genealogie">
+        <h2> Généalogie </h2>
+
+        <p> Les signes de la richesse prodigieuse de votre patrimoine culturel et
+            intellectuel sont ceux de votre
+            ascendance, illuminant de sa lumière les générations futures qui se
+            languissent d’atteindre un jour leurs
+            magnificence.</p>
+    </div>
+
+    <div class="bgpic voluptueux">
+        <h2> Voluptueusement vôtre </h2>
+
+        <p> Rejoignez-nous dès à présent en vous inscrivant à l'avant-première, suivez-nous sur les réseaux sociaux, ou <a
+                    href='{{ path('thirtyone_front_default_decouvrir') }}'
+                    class="pink">découvrez nos services</a></p>
+
+        <a href="https://www.facebook.com/pages/Trente-Un/514075625389940"
+           class="facebookAG">Facebook</a>
+
+        <a href="https://twitter.com/TrentetUn" class="twitterAG">Twitter</a>
+
+
+        <a class="subscribe button"
+           href='{{ path('thirtyone_front_default_index') }}'>
+            S'inscrire
+        </a>
+    </div>
+
+{% endblock %}

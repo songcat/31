@@ -1,0 +1,172 @@
+@import 'variables';
+
+html,
+body {
+  font: 12px/1.5 $raleway, sans-serif;
+  color: $dgrey;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $ubuntu;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2em;
+  color: $pink;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: $pink;
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* form */
+input[type='text'], input[type='email'] {
+  height: 24px;
+  border: none;
+  padding: 0 5px;
+}
+
+input[type='radio'] {
+  margin-right: 10px;
+}
+
+
+input.teasing {
+  width: 260px;
+}
+
+// links & buttons
+a.button {
+  display: inline-block;
+  line-height: 30px;
+
+  &.subscribe {
+    margin-top: 20px;
+  }
+  &.download:before {
+    background: url('../bundles/thirtyonefront/images/form/download.png');
+    width: 20px;
+    height: 14px;
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+    @media (max-width:640px) {
+      display: none;
+    }
+  }
+}
+
+
+a.showMore {
+  text-align: right;
+  background-color: $dgrey;
+  color: $white;
+  padding: 3px 50px 3px 25px;
+  position: relative;
+  float: right;
+  &:after {
+    content: "";
+    width: 8px;
+    height: 21px;
+    background: url('../bundles/thirtyonefront/images/form/btn_arrow.png') no-repeat center -1px;
+    position: absolute;
+    display: inline-block;
+    right: 15px;
+  }
+  &:hover {
+    background-color: $pink;
+  }
+}
+
+button[type='submit'], a.button {
+  border: none;
+  background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
+  height: 30px;
+  text-transform: uppercase;
+  color: $white;
+  font: $raleway;
+  font-weight: bold;
+  padding: 0 30px;
+  &:hover {
+    background: url('../bundles/thirtyonefront/images/form/bouton_on.jpg');
+  }
+}
+
+/* pages */
+.social {
+  color: $grey;
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  a {
+    font-size: 0;
+    display: block;
+    background-image: url('../bundles/thirtyonefront/images/form/social_pictos.png');
+    width: 24px;
+    height: 24px;
+    &.facebook {
+      background-position: top left;
+      &:hover {
+        background-position: bottom left;
+      }
+    }
+    &.twitter {
+      background-position: top right;
+      &:hover {
+        background-position: bottom right;
+      }
+    }
+  }
+}
+
+.goagence:hover {
+  color: $pink;
+}
+
+.puce {
+  li:before {
+    content: ">";
+    color: $pink;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.pink {
+  color: $pink;
+}
+
+.familyTable {
+  h3 {
+    margin: 5px 0 0;
+  }
+  p {
+    padding: 0 10px;
+  }
+}
+
+.rallyeTable {
+  h3 {
+    margin-top: 0;
+  }
+}

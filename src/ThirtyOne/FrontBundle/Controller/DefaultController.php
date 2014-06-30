@@ -12,40 +12,6 @@ class DefaultController extends Controller
 {
 
     /**
-     * @Route("/")
-     * @Template()
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $mail = new mail();
-        $form = $this->createFormBuilder($mail)
-            ->add('mail', 'email', array(
-                'label' => false,
-                'attr' => array(
-                    'placeholder' => 'votre email',
-                    'class' => 'teasing'
-                )))
-            ->add("S'inscrire", 'submit')
-            ->getForm();
-
-        $request = $this->get('request');
-        $form->handleRequest($request);
-        if ($form->isValid()) {
-            $mail->setMail($form['mail']->getData());
-            $em->persist($mail);
-            $em->flush();
-            return array(
-                'success' => 'Votre inscription a bien été enregistrée',
-                'form' => $form->createView()
-            );
-        }
-        return array(
-            'form' => $form->createView()
-        );
-    }
-
-    /**
      * @Route("/l-agence")
      * @Template()
      */

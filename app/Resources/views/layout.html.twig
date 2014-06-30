@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8"/>
     <title>{% block title %}Trente & Un{% endblock %}</title>
-    <meta name="description" lang="fr" content="{% block description %}{% endblock %}">
+    <meta name="description" lang="fr"
+          content="{% block description %}{% endblock %}">
     {% block stylesheets %}
-        {% stylesheets filter="compass" output="css/vendor.css" "@ThirtyOneFrontBundle/Resources/public/css/*.scss" %}
+        {% stylesheets filter="compass" "@ThirtyOneFrontBundle/Resources/public/css/*.scss" %}
         <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
     {% endblock %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@TrentetUn">
-    <meta name="twitter:title" content="Trente & Un">
+    <meta name="twitter:title" content="{{ block('title') }}">
     <meta name="twitter:description"
-          content="Trente & Un est un site communautaire imprégné des traditions de la haute société française, permettant à des jeunes de bonne éducation de se rencontrer.">
+          content="{{ block('description') }}">
     <meta name="twitter:creator" content="@TrentetUn">
     <meta name="twitter:domain" content="trentetun.com">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <meta name="twitter:image:src" content="http://trentetun.com/img/trentetun.png">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Trente & Un"/>
+    <meta property="og:title" content="{{ block('title') }}"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content="https://www.facebook.com/pages/Trente-Un/514075625389940"/>
+    <meta property="og:url"
+          content="{% block url %}http://www.trentetun.com
+          {{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}
+          {% endblock %}"/>
     <meta property="og:image" content="logo.jpg"/>
     <meta property="og:description"
-          content="Trente & Un est un site communautaire imprégné des traditions de la haute société française, permettant à des jeunes de bonne éducation de se rencontrer."/>
+          content="{{ block('description') }}"/>
     <meta property="og:site_name" content="Trente & Un"/>
     <meta property="fb:admins" content="514075625389940"/>
 
@@ -49,41 +56,153 @@
     </script>
 </head>
 
-<body>
+<body {% block bodyClass %}{% endblock %}>
+<div id="container">
+    <header>
+        <div class="wrapper">
+            <a class="logo"
+                    {% if app.user %}
+                href='{{ path('thirtyone_member_default_index') }}'
+            {% else %}
+                href='{{ path('fos_user_security_login') }}'
+                    {% endif %}><h1>logo</h1></a>
 
-<header>
-    <a href='{{ path('fos_user_security_login') }}'><h1>logo</h1></a>
+            <div class="navRigh">
+                <ul>
+                    <li>
+                        <a href='{{ path('fos_user_profile_edit') }}'>mon compte</a>
+                    <li>
+                        <a href='{{ path('thirtyone_member_message_getthread') }}'>ma messagerie</a>
+                    </li>
 
-    {% if app.user %}
-        {{ render(controller('ThirtyOneMemberBundle:Message:getUnreadMessage')) }}
-    {% endif %}
-    {% block navigation %}
-        <nav>
+                </ul>
+
+
+            </div>
+            {% block navigation %}
+                <nav class="{% if app.user %}connect{% else %}disconnect{% endif %}">
+                    <ul>
+                        {% if app.user %}
+                            <li><a href='{{ path('thirtyone_member_default_index') }}'
+                                        {% if 'index' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>Accueil</a></li>
+                            <li><a href='{{ path('thirtyone_member_ajouter_ajouter') }}'
+                                        {% if 'ajouter' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>Ma
+                                    Famille</a>
+                            </li>
+                            <li>
+                                <a href='{{ path('thirtyone_member_event_home') }}'
+                                        {% if 'home' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>Rallye</a>
+                            </li>
+                            <li>
+                                <a href='{{ path('thirtyone_member_default_parrainage') }}'
+                                        {% if 'parrainage' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>parrainage</a>
+                            </li>
+
+                            <li>
+                                <a href='{{ path('thirtyone_member_rechercher_rechercher') }}'
+                                        {% if 'rechercher' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>recherche</a>
+                            </li>
+                        {% else %}
+                            <!-- <li><a href='{{ path('fos_user_registration_register') }}'>s'inscrire</a></li>-->
+                            <li><a href='{{ path('thirtyone_front_default_agence') }}'
+                                        {% if 'agence' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>L'agence</a>
+                            </li>
+                            <li>
+                                <a href='{{ path('thirtyone_front_default_presse') }}'
+                                        {% if 'presse' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>Presse</a>
+                            </li>
+                            <li><a href='{{ path('thirtyone_front_default_contact') }}'
+                                        {% if 'contact' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>Contact</a>
+                            </li>
+
+                        {% endif %}
+
+                    </ul>
+                </nav>
+            {% endblock %}
+        </div>
+
+    </header>
+
+    <section id="content" class="wrapper">
+        {% block content %}
+        {% endblock %}
+    </section>
+
+
+    <footer>
+        <div class="contact">
+            <a href='{{ path('thirtyone_front_default_contact') }}' class="center"><span
+                        class="pink"> Une question ? </span>N'hésitez pas à nous contacter</a>
+        </div>
+
+        <div class="wrapper">
+            <div class="dsp-t">
+                <div class="dsp-tr">
+                    <div class="left dsp-tc">
+                        <a class="logo"
+                                {% if app.user %}
+                            href='{{ path('thirtyone_member_default_index') }}'
+                        {% else %}
+                            href='{{ path('fos_user_security_login') }}'
+                                {% endif %}>
+                            <img src="{{ asset('bundles/thirtyonefront/images/form/trentetun-footer.png') }}" alt="">
+                        </a>
+                        <ul>
+                            <li><a href='{{ path('thirtyone_front_default_agence') }}'>L'agence</a>
+                            </li>
+                            <li>
+                                <a href='{{ path('thirtyone_front_default_presse') }}'>Presse</a>
+                            </li>
+                            <li><a href='{{ path('thirtyone_front_default_contact') }}'>Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="right dsp-tc">
+                        <p>Rejoignez-nous sur :</p>
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/pages/Trente-Un/514075625389940"
+                                   class="facebook">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/TrentetUn" class="twitter">Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
             <ul>
-                {% if app.user %}
-                    <li><a href='{{ path('thirtyone_member_ajouter_ajouter') }}'>ma famille</a></li>
-                    <li><a href='{{ path('fos_user_profile_edit') }}'>mon compte</a></li>
-                    <li><a href='{{ path('thirtyone_member_rechercher_rechercher') }}'>recherche</a></li>
-                    <li><a href='{{ path('thirtyone_member_event_home') }}'>rallye</a></li>
-                    <li><a href='{{ path('thirtyone_member_message_getthread') }}'>messagerie</a></li>
-                    <li><a href='{{ path('thirtyone_member_default_parrainage') }}'>parrainage</a></li>
-                    <li><a href='{{ path('fos_user_security_logout') }}'>deconnexion</a></li>
-                {% else %}
-                    <li><a href='{{ path('fos_user_registration_register') }}'>s'inscrire</a></li>
-
-                {% endif %}
-
+                <li><a href='{{ path('thirtyone_front_default_mentions') }}'>Mentions légales</a>
+                </li>
+                <li>
+                    <a href='{{ path('thirtyone_front_default_cgu') }}'>CGU</a>
+                </li>
             </ul>
-        </nav>
-    {% endblock %}
-</header>
+        </div>
 
-{% block content %}
-{% endblock %}
+    </footer>
+</div>
 
-<footer>
-    ©footer
-</footer>
 
 {% block javascripts %}
     {% javascripts '@ThirtyOneFrontBundle//Resources/public/js/*.js'  output="js/vendor.js" %}

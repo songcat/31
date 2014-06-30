@@ -1,0 +1,52 @@
+@import 'variables';
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.dsp-t {
+  display: table;
+  width: 100%;
+}
+
+.dsp-tr {
+  display: table-row;
+}
+
+.dsp-tc {
+  display: table-cell;
+}
+
+$row-width: 100% !default;
+
+$cols: 12;
+$gutter: 20px;
+
+@mixin col-width($row-width, $gutter, $cols) {
+  float: left;
+  $gutter-percent: $gutter/$wrapper*100;
+  /* calculer la taille en pourcentage des colonnes */
+  width: (($row-width - ($gutter-percent * ($cols - 1))) / $cols);
+  margin-left: $gutter-percent*1%;
+}
+
+.col3 {
+  @include col-width(100%, 20px, 3);
+  &:nth-child(3n+1) {
+    margin-left: 0;
+  }
+}
+
+.row {
+  clear: both;
+}
+
+.col6 {
+  @include col-width(100%, 20px, 2);
+}
+
+.col2 {
+  @include col-width(100%, 20px, 6);
+}

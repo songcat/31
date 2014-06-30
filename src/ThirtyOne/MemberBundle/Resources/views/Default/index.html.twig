@@ -1,10 +1,113 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
+
 {% block content %}
 
-    {% for fam in famresult %}
-        {{ fam.username }} {{ fam.region }}
-    {% endfor %}
+    <h2>Suggestions des familles</h2>
+    <div class="contentBlock clearfix">
+        <div class="familyTable">
+
+            <!-- a supprimer lorsqu'il y aura du vrai contenu -->
+            <div class="col3">
+                <img src="http://placekitten.com/g/300/165"/>
+
+                <h3 class="center">De la Bernarderie</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s</p>
+                <a class="showMore" href='#'>Rencontrer</a>
+            </div>
+            <div class="col3">
+                <img src="http://placekitten.com/g/300/165"/>
+
+                <h3 class="center">Vanssay</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s</p>
+                <a class="showMore" href='#'>Rencontrer</a>
+            </div>
+            <div class="col3">
+                <img src="http://placekitten.com/g/300/165"/>
+
+                <h3 class="center">De la Horie</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s</p>
+                <a class="showMore" href='#'>Rencontrer</a>
+            </div>
+            {% for fam in famresult %}
+                <div class="col3">
+                    <img src="http://placekitten.com/g/300/165"/>
+
+                    <h3 class="center">{{ fam.username }}</h3>
+                    <p> {{ fam.informations.history }}</p>
+                    <a class="showMore"
+                       href='{{ path('thirtyone_member_default_profil', {'slug': fam.slug}) }}'>Rencontrer</a>
+                </div>
+            {% endfor %}
+
+        </div>
+        <div class="viewMore">
+            <a class="button">Voir plus de familles</a>
+        </div>
+    </div>
+
+    <h2>Suggestions des rallyes</h2>
+    <div class="contentBlock">
+        <div class="rallyeTable clearfix">
+            <div class="row">
+                <div class="col3">
+                    <img src="http://placekitten.com/g/300/165">
+                </div>
+                <div class="col6 description">
+                    <h3>Rallye Bel Air</h3>
+                    <div class="summary">
+                        <div class="date">Samedi 13 Septembre 2014 - 20h</div>
+                        <div class="place">Versailles (78)</div>
+                        <div class="text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                            roots in
+                            a piece of classical Latin literature fro years old. Richard McClintock, a Latin professor
+                            at
+                            Hampden-Sydney College in Virginia
+                        </div>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="participants">
+                        75 participants
+                    </div>
+                    <a class="showMore">Voir le rallye</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col3">
+                    <img src="http://placekitten.com/g/300/165">
+                </div>
+                <div class="col6 description">
+                    <h3>Rallye Bel Air</h3>
+                    <div class="summary">
+                        <div class="date">Samedi 13 Septembre 2014 - 20h</div>
+                        <div class="place">Versailles (78)</div>
+                        <div class="text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                            roots in
+                            a piece of classical Latin literature fr 2000 years old. Richard McClintock, a Latin
+                            professor
+                            at Hampden-Sydney College in Virginia
+                        </div>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="participants">
+                        75 participants
+                    </div>
+                    <a class="showMore">Voir le rallye</a>
+                </div>
+            </div>
+            <div class="viewMore">
+                <a>Voir plus de rallyes</a>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
     {% for e in eventresult %}
