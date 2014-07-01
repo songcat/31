@@ -602,4 +602,13 @@ body {
   .services {
     padding: 20px;
   }
+  input[type='text'],
+  input[type='number'],
+  select {
+    width: 200px;
+    margin-right: 50px;
+  }
+  .date select {
+    width: auto;
+  }
 }
