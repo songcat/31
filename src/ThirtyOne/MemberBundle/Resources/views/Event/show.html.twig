@@ -1,10 +1,66 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
-
+{% block bodyClass %}class="showRallye"{% endblock %}
 {% block content %}
+    {% if event.date|date("m/d/Y") > "now"|date("m/d/Y") %}
+        {{ include('ThirtyOneMemberBundle:Event:eventNav.html.twig', {'path':'avenir'}) }}
+        <h2>Prochain rallye</h2>
+    {% else %}
+        {{ include('ThirtyOneMemberBundle:Event:eventNav.html.twig', {'path':'passe'}) }}
+        <h2>Rallye passé</h2>
+    {% endif %}
 
-    {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': event.id })) }}
+    <div class="contentBlock ">
+        <div class="rallyeTable">
 
-    <img src="{{ asset('uploads/documents/'~event.path) }}" alt=""/>
-    {{ event.name }}
+            <div class="row clearfix">
+                <div class="col3">
+                    <img src="http://placekitten.com/g/300/165">
+                </div>
+                <div class="col6">
+                    <h3>{{ event.name }}</h3>
+
+                    <div class="description">
+                        <div class="date">{{ event.date|date("l j F \\à\\ g:i") }}</div>
+                        <div class="place">{{ event.city }}</div>
+                        <p>{{ event.description }}</p>
+                    </div>
+                </div>
+                <div class="col2">
+                    {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': event.id, 'part':'1' })) }}
+
+                </div>
+            </div>
+
+            {% if event.date|date("m/d/Y") < "now"|date("m/d/Y") %}
+                <div class="row reportage">
+                    <h3>Reportage</h3>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="contentBlock clearfix row">
+        <h3 class="family">Familles participantes</h3>
+
+        <div class="familyTable">
+
+            {% for fam in event.participant %}
+
+                <div class="col3">
+                    <img src="http://placekitten.com/g/300/165"/>
+
+                    <h3 class="center">{{ fam.username }}</h3>
+
+                    <a class="showMore"
+                       href='{{ path('thirtyone_member_default_profil', {'slug': fam.slug}) }}'>Voir le profil</a>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
 
 {% endblock %}

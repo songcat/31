@@ -1,9 +1,11 @@
-{% if participe is not defined %}
-    <a href="{{ path('thirtyone_member_event_registerinevent', {'eventId':eventId}) }}"
-       class="participate">participer</a>
-{% endif %}
 <div class="participants pink">
     <strong>
         {{ participants|length }} participants
     </strong>
 </div>
+{% if part == 1 %}
+    {% if participe is not defined %}
+        <a class="showMore participate" href="{{ path('thirtyone_member_event_registerinevent', {'eventId':eventId, 'part':'1'}) }}"
+           class="participate">participer</a>
+    {% endif %}
+{% endif %}

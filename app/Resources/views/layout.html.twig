@@ -99,6 +99,8 @@
                                     class='active'
                                         {% elseif   'create' in app.request.attributes.get('_route') %}
                                     class='active'
+                                {% elseif   'show' in app.request.attributes.get('_route') %}
+                                    class='active'
                                         {% endif %}>Rallyes</a>
                             </li>
                             <li>

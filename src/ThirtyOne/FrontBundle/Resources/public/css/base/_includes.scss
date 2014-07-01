@@ -34,9 +34,10 @@ $gutter: 20px;
 
 .col3 {
   @include col-width(100%, 20px, 3);
-  &:nth-child(3n+1) {
-    margin-left: 0;
-  }
+}
+
+div.col3:nth-child(3n+1) {
+  margin-left: 0;
 }
 
 .row {
@@ -59,7 +60,6 @@ $gutter: 20px;
 .col9 {
   @include col-width(100%, 20px, (12/9));
 }
-
 
 .col2child {
   @include col-width(100%, 40px, 4);

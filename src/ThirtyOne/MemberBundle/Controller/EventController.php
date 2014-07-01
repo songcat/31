@@ -104,7 +104,7 @@ class EventController extends Controller
     /**
      * @Template()
      */
-    public function participateAction($eventId)
+    public function participateAction($eventId, $part)
     {
         $events = $this->getUser()->getEvents();
         $em = $this->getDoctrine()->getManager();
@@ -123,6 +123,7 @@ class EventController extends Controller
             );
 
         return array(
+            'part' => $part,
             'eventId' => $eventId,
             'participants' => $participants
         );

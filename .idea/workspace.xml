@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b75587af-0014-4250-b8a4-30c743296745" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/eventNav.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_includes.scss" afterPath="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_includes.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/header.scss" afterPath="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/header.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_typo.scss" afterPath="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_typo.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/participate.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/participate.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/show.html.twig" afterPath="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/style.scss" afterPath="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/style.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ThirtyOne.iws" />
@@ -36,49 +37,13 @@
     <favorites_list name="ThirtyOne" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7004505">
+    <splitter split-orientation="horizontal" split-proportion="0.5277778">
       <split-first>
         <leaf>
-          <file leaf-file-name="layout.html.twig" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="layout.html.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="101" column="59" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.6558753" vertical-offset="1170" max-vertical-offset="3774">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="home.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="82" selection-start="159" selection-end="159" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1921">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="eventNav.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/eventNav.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="0" selection-start="714" selection-end="714" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="425">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EventController.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="39" selection-start="1323" selection-end="1323" vertical-scroll-proportion="-26.153847" vertical-offset="0" max-vertical-offset="2890">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="create.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="44" selection-start="327" selection-end="327" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1275">
+                <state line="101" column="49" selection-start="4648" selection-end="4648" vertical-scroll-proportion="-42.615383" vertical-offset="609" max-vertical-offset="3808">
                   <folding />
                 </state>
               </provider>
@@ -87,16 +52,138 @@
           <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="5" selection-start="2281" selection-end="2281" vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="2533">
+                <state line="57" column="10" selection-start="2324" selection-end="2324" vertical-scroll-proportion="-11.115385" vertical-offset="680" max-vertical-offset="2669">
+                  <folding>
+                    <marker date="1404224842402" expanded="true" signature="58:6343" placeholder="{% block content ...%}" />
+                    <marker date="1404224842402" expanded="true" signature="155:2323" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="189:2087" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="287:683" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="429:604" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="714:1100" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="846:1021" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="1131:1521" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="1267:1442" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="1535:2072" placeholder="{% for fam in famresult ...%}" />
+                    <marker date="1404224842402" expanded="true" signature="1595:2046" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="1750:1872" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="1913:2023" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="2118:2312" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="2149:2297" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="2392:6326" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="2426:6315" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="2577:3586" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="2620:2724" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="2767:3160" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="2872:3129" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="3203:3559" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="3446:3528" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="3720:4864" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="3755:3843" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="3878:4538" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="3969:4515" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="4136:4488" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="4573:4845" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="4625:4763" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="4658:4736" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="4903:6085" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="4938:5026" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="5061:5725" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="5152:5702" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="5319:5675" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="5760:6066" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="5812:5950" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="5845:5923" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="6000:6043" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="6120:6300" placeholder="..." />
+                    <marker date="1404224842402" expanded="true" signature="6236:6281" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="show.html.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/show.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="28" column="116" selection-start="1234" selection-end="1234" vertical-scroll-proportion="-11.307693" vertical-offset="182" max-vertical-offset="1207">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="participate.html.twig" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="participate.html.twig" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/participate.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="26" selection-start="202" selection-end="202" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="255">
+                <state line="10" column="11" selection-start="376" selection-end="376" vertical-scroll-proportion="0.20706455" vertical-offset="0" max-vertical-offset="821">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.html.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="5.8846154" vertical-offset="153" max-vertical-offset="1904">
+                  <folding>
+                    <marker date="1404223120669" expanded="true" signature="314:1765" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="352:1750" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="556:1627" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="603:715" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="762:1183" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="875:1148" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="1230:1596" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="1471:1561" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="1833:3226" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="1871:3211" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="2060:3131" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="2107:2219" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="2266:2687" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="2379:2652" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="2734:3100" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="2975:3065" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="3480:4707" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="3518:4692" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="3605:4604" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="3648:3752" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="3795:4188" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="3900:4157" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="4231:4577" placeholder="..." />
+                    <marker date="1404223120669" expanded="true" signature="4464:4546" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="eventNav.html.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/eventNav.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="0" selection-start="714" selection-end="714" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="425">
+                  <folding>
+                    <marker date="1404219091388" expanded="true" signature="19:712" placeholder="..." />
+                    <marker date="1404219091388" expanded="true" signature="28:705" placeholder="..." />
+                    <marker date="1404219091388" expanded="true" signature="41:252" placeholder="..." />
+                    <marker date="1404219091388" expanded="true" signature="95:247" placeholder="..." />
+                    <marker date="1404219091388" expanded="true" signature="265:478" placeholder="..." />
+                    <marker date="1404219091388" expanded="true" signature="337:473" placeholder="..." />
+                    <marker date="1404219091388" expanded="true" signature="491:694" placeholder="..." />
+                    <marker date="1404219091388" expanded="true" signature="562:680" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EventController.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="125" column="28" selection-start="4188" selection-end="4188" vertical-scroll-proportion="-25.038462" vertical-offset="1406" max-vertical-offset="2907">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="create.html.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="44" selection-start="327" selection-end="327" vertical-scroll-proportion="9.807693" vertical-offset="408" max-vertical-offset="1275">
                   <folding />
                 </state>
               </provider>
@@ -106,10 +193,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="style.scss" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="style.scss" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/style.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="545" column="36" selection-start="9341" selection-end="9341" vertical-scroll-proportion="-0.9480519" vertical-offset="9192" max-vertical-offset="9996">
+                <state line="587" column="21" selection-start="10029" selection-end="10029" vertical-scroll-proportion="0.6561315" vertical-offset="9460" max-vertical-offset="10268">
                   <folding />
                 </state>
               </provider>
@@ -118,7 +205,7 @@
           <file leaf-file-name="_typo.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_typo.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="84" column="15" selection-start="1151" selection-end="1156" vertical-scroll-proportion="16.857143" vertical-offset="2726" max-vertical-offset="3519">
+                <state line="194" column="14" selection-start="3020" selection-end="3020" vertical-scroll-proportion="-7.4025974" vertical-offset="2728" max-vertical-offset="3587">
                   <folding />
                 </state>
               </provider>
@@ -127,16 +214,16 @@
           <file leaf-file-name="_includes.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_includes.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="43" column="14" selection-start="684" selection-end="684" vertical-scroll-proportion="-6.607843" vertical-offset="394" max-vertical-offset="1207">
+                <state line="47" column="7" selection-start="697" selection-end="697" vertical-scroll-proportion="-8.274509" vertical-offset="377" max-vertical-offset="1207">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="header.scss" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="header.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/header.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="138" column="3" selection-start="2572" selection-end="2572" vertical-scroll-proportion="0.8768844" vertical-offset="1648" max-vertical-offset="2465">
+                <state line="132" column="5" selection-start="2463" selection-end="2463" vertical-scroll-proportion="-11.686275" vertical-offset="1648" max-vertical-offset="2465">
                   <folding />
                 </state>
               </provider>
@@ -163,7 +250,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Entity/mail.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/views/Default/mentions.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/views/Default/cgu.html.twig" />
@@ -177,7 +263,6 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/views/Default/agence.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/footer.scss" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/getUnreadMessage.html.twig" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/getAjax.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/AjouterController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Ajouter/ajouter.html.twig" />
@@ -197,7 +282,6 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/parrainage.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/rechercher.html.twig" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_typo.scss" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/form.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/NewMessageFormType.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/new.html.twig" />
@@ -205,15 +289,18 @@
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/public/js/member.js" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/MessageController.php" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Message/getMessage.html.twig" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/participate.html.twig" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_includes.scss" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/eventNav.html.twig" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig" />
         <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/style.scss" />
-        <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/header.scss" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/header.scss" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_includes.scss" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/participate.html.twig" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_typo.scss" />
+        <option value="$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/style.scss" />
       </list>
     </option>
   </component>
@@ -1163,7 +1250,11 @@
       <created>1404216202386</created>
       <updated>1404216202386</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="starting rallyes">
+      <created>1404219953604</created>
+      <updated>1404219953604</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1226,7 +1317,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="before start chat" />
     <MESSAGE value="messaging and updated stuff" />
     <MESSAGE value="update &quot;ma famille&quot;. finally look like wireframe" />
     <MESSAGE value="entity service + update of others.&#10;&quot;ma famille&quot; seems ok" />
@@ -1251,7 +1341,8 @@
     <MESSAGE value="delete acme" />
     <MESSAGE value="search" />
     <MESSAGE value="messaging" />
-    <option name="LAST_COMMIT_MESSAGE" value="messaging" />
+    <MESSAGE value="starting rallyes" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting rallyes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1405,13 +1496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_typo.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="15" selection-start="1151" selection-end="1156" vertical-scroll-proportion="16.857143" vertical-offset="2726" max-vertical-offset="3519">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Form/Type/ParentFormType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="14" selection-start="721" selection-end="721" vertical-scroll-proportion="0.39673278" vertical-offset="0" max-vertical-offset="969">
@@ -1444,7 +1528,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="31" selection-start="758" selection-end="762" vertical-scroll-proportion="0.55672514" vertical-offset="0" max-vertical-offset="855">
           <folding>
-            <element signature="e#52#92#0" expanded="true" />
+            <element signature="e#52#92#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1470,13 +1554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="96" selection-start="81" selection-end="174" vertical-scroll-proportion="0.07953216" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/getEvent.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="80" selection-start="336" selection-end="395" vertical-scroll-proportion="0.25847954" vertical-offset="0" max-vertical-offset="855">
@@ -1491,44 +1568,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_includes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="14" selection-start="684" selection-end="684" vertical-scroll-proportion="-6.607843" vertical-offset="394" max-vertical-offset="1207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/participate.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="202" selection-end="202" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="5" selection-start="2281" selection-end="2281" vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="2533">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Rechercher/rechercher.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="86" selection-start="381" selection-end="468" vertical-scroll-proportion="0.24460432" vertical-offset="0" max-vertical-offset="834">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="82" selection-start="159" selection-end="159" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1921">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/eventNav.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="714" selection-end="714" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="425">
           <folding />
         </state>
       </provider>
@@ -1547,37 +1589,163 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="44" selection-start="327" selection-end="327" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="545" column="36" selection-start="9341" selection-end="9341" vertical-scroll-proportion="-0.9480519" vertical-offset="9192" max-vertical-offset="9996">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="3" selection-start="2572" selection-end="2572" vertical-scroll-proportion="0.8768844" vertical-offset="1648" max-vertical-offset="2465">
+        <state line="132" column="5" selection-start="2463" selection-end="2463" vertical-scroll-proportion="-11.686275" vertical-offset="1648" max-vertical-offset="2465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_includes.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="7" selection-start="697" selection-end="697" vertical-scroll-proportion="-8.274509" vertical-offset="377" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/eventNav.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="714" selection-end="714" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="425">
+          <folding>
+            <marker date="1404219091388" expanded="true" signature="19:712" placeholder="..." />
+            <marker date="1404219091388" expanded="true" signature="28:705" placeholder="..." />
+            <marker date="1404219091388" expanded="true" signature="41:252" placeholder="..." />
+            <marker date="1404219091388" expanded="true" signature="95:247" placeholder="..." />
+            <marker date="1404219091388" expanded="true" signature="265:478" placeholder="..." />
+            <marker date="1404219091388" expanded="true" signature="337:473" placeholder="..." />
+            <marker date="1404219091388" expanded="true" signature="491:694" placeholder="..." />
+            <marker date="1404219091388" expanded="true" signature="562:680" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="5.8846154" vertical-offset="153" max-vertical-offset="1904">
+          <folding>
+            <marker date="1404223120669" expanded="true" signature="314:1765" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="352:1750" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="556:1627" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="603:715" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="762:1183" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="875:1148" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="1230:1596" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="1471:1561" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="1833:3226" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="1871:3211" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="2060:3131" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="2107:2219" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="2266:2687" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="2379:2652" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="2734:3100" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="2975:3065" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="3480:4707" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="3518:4692" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="3605:4604" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="3648:3752" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="3795:4188" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="3900:4157" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="4231:4577" placeholder="..." />
+            <marker date="1404223120669" expanded="true" signature="4464:4546" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="49" selection-start="4648" selection-end="4648" vertical-scroll-proportion="-42.615383" vertical-offset="609" max-vertical-offset="3808">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/create.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="44" selection-start="327" selection-end="327" vertical-scroll-proportion="9.807693" vertical-offset="408" max-vertical-offset="1275">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Controller/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="39" selection-start="1323" selection-end="1323" vertical-scroll-proportion="-26.153847" vertical-offset="0" max-vertical-offset="2890">
+        <state line="125" column="28" selection-start="4188" selection-end="4188" vertical-scroll-proportion="-25.038462" vertical-offset="1406" max-vertical-offset="2907">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="59" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.6558753" vertical-offset="1170" max-vertical-offset="3774">
+        <state line="57" column="10" selection-start="2324" selection-end="2324" vertical-scroll-proportion="-11.115385" vertical-offset="680" max-vertical-offset="2669">
+          <folding>
+            <marker date="1404224842402" expanded="true" signature="58:6343" placeholder="{% block content ...%}" />
+            <marker date="1404224842402" expanded="true" signature="155:2323" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="189:2087" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="287:683" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="429:604" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="714:1100" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="846:1021" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="1131:1521" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="1267:1442" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="1535:2072" placeholder="{% for fam in famresult ...%}" />
+            <marker date="1404224842402" expanded="true" signature="1595:2046" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="1750:1872" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="1913:2023" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="2118:2312" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="2149:2297" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="2392:6326" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="2426:6315" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="2577:3586" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="2620:2724" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="2767:3160" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="2872:3129" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="3203:3559" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="3446:3528" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="3720:4864" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="3755:3843" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="3878:4538" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="3969:4515" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="4136:4488" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="4573:4845" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="4625:4763" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="4658:4736" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="4903:6085" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="4938:5026" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="5061:5725" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="5152:5702" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="5319:5675" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="5760:6066" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="5812:5950" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="5845:5923" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="6000:6043" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="6120:6300" placeholder="..." />
+            <marker date="1404224842402" expanded="true" signature="6236:6281" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="116" selection-start="1234" selection-end="1234" vertical-scroll-proportion="-11.307693" vertical-offset="182" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/base/_typo.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="14" selection-start="3020" selection-end="3020" vertical-scroll-proportion="-7.4025974" vertical-offset="2728" max-vertical-offset="3587">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/MemberBundle/Resources/views/Event/participate.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="11" selection-start="376" selection-end="376" vertical-scroll-proportion="0.20706455" vertical-offset="0" max-vertical-offset="821">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThirtyOne/FrontBundle/Resources/public/css/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="587" column="21" selection-start="10029" selection-end="10029" vertical-scroll-proportion="0.6561315" vertical-offset="9460" max-vertical-offset="10268">
           <folding />
         </state>
       </provider>

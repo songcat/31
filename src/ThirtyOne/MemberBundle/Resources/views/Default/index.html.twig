@@ -41,7 +41,9 @@
 
                     <h3 class="center">{{ fam.username }}</h3>
 
-                    <p> {{ fam.informations.history }}</p>
+                    <p>{% for info in fam.informations %}
+                            {{ info.history }}
+                        {% endfor %}</p>
                     <a class="showMore"
                        href='{{ path('thirtyone_member_default_profil', {'slug': fam.slug}) }}'>Rencontrer</a>
                 </div>
@@ -58,25 +60,31 @@
     <h2>Suggestions des rallyes</h2>
     <div class="contentBlock">
         <div class="rallyeTable">
+            {% set flag = 0 %}
             {% for e in eventresult %}
-                <div class="row clearfix">
-                    <div class="col3">
-                        <img src="http://placekitten.com/g/300/165">
-                    </div>
-                    <div class="col6">
-                        <h3>{{ e.name }}</h3>
+                {% if flag < 3 %}
+                    <div class="row clearfix">
+                        <div class="col3">
+                            <img src="http://placekitten.com/g/300/165">
+                        </div>
+                        <div class="col6">
+                            <h3>{{ e.name }}</h3>
 
-                        <div class="description">
-                            <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
-                            <div class="place">{{ e.city }}</div>
-                            <p>{{ e.description }}</p>
+                            <div class="description">
+                                <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
+                                <div class="place">{{ e.city }}</div>
+                                <p>{{ e.description }}</p>
+                            </div>
+                        </div>
+                        <div class="col2">
+                            {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id, 'part':0 })) }}
+                            <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir
+                                le
+                                rallye</a>
                         </div>
                     </div>
-                    <div class="col2">
-                        {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id })) }}
-                        <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir le rallye</a>
-                    </div>
-                </div>
+                {% endif %}
+                {% set flag = flag + 1 %}
             {% endfor %}
             <div class="row clearfix">
                 <div class="col3">
