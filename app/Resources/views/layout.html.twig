@@ -79,8 +79,6 @@
                 </div>
             {% endif %}
 
-
-
             {% block navigation %}
                 <nav class="{% if app.user %}connect{% else %}disconnect{% endif %}">
                     <ul>
@@ -159,11 +157,11 @@
                 <div class="dsp-tr">
                     <div class="left dsp-tc">
                         <a class="logo"
-                                {% if app.user %}
-                            href='{{ path('thirtyone_member_default_index') }}'
+                           href='{% if app.user %}
+                            {{ path('thirtyone_member_default_index') }}
                         {% else %}
-                            href='{{ path('fos_user_security_login') }}'
-                                {% endif %}>
+                           {{ path('fos_user_security_login') }}
+                        {% endif %}'>
                             <img src="{{ asset('bundles/thirtyonefront/images/form/trentetun-footer.png') }}" alt="">
                         </a>
                         <ul>

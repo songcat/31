@@ -1,32 +1,39 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
-
+{% block bodyClass %}class="homeLogin"{% endblock %}
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
     {% if error %}
         <div>{{ error|trans }}</div>
     {% endif %}
+    <div class="inscription">
+        <form action="{{ path("fos_user_security_check") }}" method="post" id="form">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
 
-    <form action="{{ path("fos_user_security_check") }}" method="post">
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <div class="bggrey">
+                <input type="text" id="email" placeholder="votre email" name="_username" value="{{ last_username }}"
+                       required="required"/>
+            
+                <input type="password" id="password" placeholder="votre mot de passe" name="_password"
+                       required="required"/>
+            </div>
+            <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"/>
+        </form>
 
-        <br>
+        <div class="alignLeft">
+            <p><a class="goagence" href='{{ path('thirtyone_front_default_decouvrir') }}'><strong>Pas encore inscrit ?
+                        Découvrez nos
+                        services </strong></a></p>
 
-        <label for="email">Email</label>
-        <input type="text" id="email" name="_username" value="{{ last_username }}" required="required" />
-
-        <br>
-
-        <label for="password">{{ 'security.login.password'|trans }}</label>
-        <input type="password" id="password" name="_password" required="required" />
-
-        <br>
-
-        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-
-        <br>
-
-        <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-    </form>
+            <div class="social">
+                <span>Suivez-nous sur :</span>
+                <ul>
+                    <li><a href="https://www.facebook.com/pages/Trente-Un/514075625389940" class="facebook">facebook</a>
+                    </li>
+                    <li><a href="https://twitter.com/TrentetUn" class="twitter">twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock fos_user_content %}

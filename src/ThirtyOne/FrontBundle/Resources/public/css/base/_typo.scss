@@ -28,7 +28,9 @@ a {
 
 
 /* form */
-input[type='text'], input[type='email'] {
+input[type='text'],
+input[type='email'],
+input[type='password']{
   height: 24px;
   border: none;
   padding: 0 5px;
@@ -92,7 +94,9 @@ a.showMore {
   }
 }
 
-button[type='submit'], a.button {
+input[type='submit'],
+button[type='submit'],
+a.button {
   border: none;
   background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
   height: 30px;
@@ -183,5 +187,13 @@ button[type='submit'], a.button {
 .rallyeTable {
   h3 {
     margin-top: 0;
+  }
+}
+
+.addForm {
+  color: $pink;
+  text-decoration: underline;
+  &:hover {
+    opacity: 0.5;
   }
 }

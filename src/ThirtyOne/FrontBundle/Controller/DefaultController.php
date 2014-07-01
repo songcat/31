@@ -51,6 +51,15 @@ class DefaultController extends Controller
         return array();
     }
 
+    /**
+     * @Route("/decouvrir.html")
+     * @Template()
+     */
+    public
+    function decouvrirAction()
+    {
+        return array();
+    }
 
     /**
      * @Route("/contact.html")

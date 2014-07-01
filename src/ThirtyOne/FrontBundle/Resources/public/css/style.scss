@@ -37,7 +37,7 @@ body {
 }
 
 // home
-.inscriptionAP {
+.inscriptionAP, .homeLogin {
   #content {
     text-align: center;
     margin-top: 8%;
@@ -50,7 +50,7 @@ body {
 }
 
 .inscription {
-  #form > div:first-child {
+  #form > div:first-child, .bggrey {
     background-color: $lgrey;
     padding: 4px 20px;
   }
@@ -308,7 +308,7 @@ body {
     display: inline-block;
     padding: 10px 80px;
   }
-  .message {
+  .message, .addForm {
     position: absolute;
     bottom: 22px;
     right: 15px;
@@ -376,4 +376,24 @@ body {
 
 .edit {
   background-color: $lgrey;
+}
+
+
+
+.homeLogin {
+  #content.wrapper {
+    & > div:not(.fos) {
+      display: none;
+    }
+    input[type='text'], input[type='password'] {
+      width: 200px;
+    }
+  }
+  input[type="submit"], input[type="password"] {
+    margin-left: 20px;
+    @media (max-width: 640px) {
+      margin-left:0;
+      margin-top: 25px;
+    }
+  }
 }
