@@ -30,6 +30,7 @@ a {
 /* form */
 input[type='text'],
 input[type='email'],
+input[type='number'],
 input[type='password']{
   height: 24px;
   border: none;
@@ -190,7 +191,7 @@ a.button {
   }
 }
 
-.addForm {
+.addForm, .editEntity {
   color: $pink;
   text-decoration: underline;
   &:hover {
