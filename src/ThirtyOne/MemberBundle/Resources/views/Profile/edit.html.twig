@@ -3,36 +3,49 @@
 {% block fos_user_content %}
     {% trans_default_domain 'FOSUserBundle' %}
 
-    <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
-        <h2>Informations</h2>
-        {{ form_row(form.username) }}
-        {{ form_row(form.nbChildren) }}
-        <br>
-        {{ form_row(form.address) }}
-        {{ form_row(form.zipcode) }}
-        {{ form_row(form.city) }}
-        {{ form_row(form.region) }}
+    <div class="contentBlock myAccount">
+        <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST"
+              class="fos_user_profile_edit">
+            <h2>Informations personnelles</h2>
 
-        <h2>Contact</h2>
-        {{ form_row(form.email) }}
-        {{ form_row(form.phonenumber) }}
+            <div class="dsp-tc first">
+                {{ form_row(form.username) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.phonenumber) }}
+                <a class="pinklink" href='{{ path('fos_user_change_password') }}'>Modifier votre mot de passe</a>
+            </div>
 
+            <div class="dsp-tc">
+                {{ form_row(form.address) }}
+                {{ form_row(form.zipcode) }}
+                {{ form_row(form.city) }}
+                {{ form_row(form.region) }}
+            </div>
 
-        <h2>carte bancaire</h2>
+            <h2>carte bancaire</h2>
+            <!--coming later-->
+            <p>
+                Numéro de carte : XXXX XXXX XXXX 4789<br>
+                Date expiration : 09/16<br>
+                Code de sécurité : XXX
+            </p>
+            <a class="pinklink" href='#'>Supprimer cette carte</a>
 
+            <div>
+                <strong>Merci de saisir votre mot de passe pour enregistrer vos modifications.</strong>
 
-        <h2>Pour enregistrer, saisir votre mot de passe</h2>
-        {{ form_rest(form) }}
-        <div>
-            <input type="submit" value="{{ 'registration.submit'|trans }}"/>
-        </div>
+                <div class="dsp-tc">{{ form_rest(form) }}</div>
+            </div>
 
-    </form>
+            <div class="submit">
+                <input type="submit" value="{{ 'registration.submit'|trans }}"/>
+            </div>
 
-    <h2>Modifier mot de passe</h2>
-    <a href='{{ path('fos_user_change_password') }}'>Modifier votre mot de passe</a>
+        </form>
+    </div>
 
-    <h2>mes commandes</h2>
-    {{ render(controller('ThirtyOneMemberBundle:Event:getCmd')) }}
-
+    <div class="contentBlock myAccount">
+        <h2>mes commandes</h2>
+        {{ render(controller('ThirtyOneMemberBundle:Event:getCmd')) }}
+    </div>
 {% endblock fos_user_content %}

@@ -1,5 +1,15 @@
-<ul>
+<div class="dsp-t">
     {% for c in cmd %}
-        <li>Commande #{{ c.id }} - {{ c.date|date("d m Y") }}</li>
+        <div class="dsp-tr">
+            <div class="dsp-tc">
+                Commande #{{ c.id }}
+            </div>
+            <div class="dsp-tc">
+                {{ c.date|date("d m Y") }}
+            </div>
+        </div>
+
     {% endfor %}
-</ul>
+</div>
+
+

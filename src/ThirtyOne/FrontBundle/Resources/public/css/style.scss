@@ -419,3 +419,30 @@ body {
     }
   }
 }
+
+.myAccount {
+  margin-top: 20px;
+  padding: 20px;
+  .dsp-tc.first {
+    padding-right: 120px;
+  }
+  div {
+    margin-top: 10px;
+  }
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  select {
+    border: 1px solid #ccc;
+    width: 40%;
+  }
+  label {
+    width: 200px;
+    display: inline-block;
+  }
+  .submit {
+    text-align: right;
+    margin-top: 25px;
+  }
+}

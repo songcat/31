@@ -20,17 +20,17 @@ class ProfileFormType extends BaseType
             'label' => 'Civilité',
 
             ))
-            ->add('username', 'hidden', array(
-                'label' => 'Nom de famille',
+            ->add('username', 'text', array(
+                'label' => 'Nom de famille : ',
                 'read_only' => true
             ))
             ->add('firstname', 'hidden', array(
                 'required' => false,
                 'label' => 'Prénom'
             ))
-            ->add('nbChildren', 'integer', array(
+            /*->add('nbChildren', 'integer', array(
                 'label' => 'Nombre d\'enfants'
-            ))
+            ))*/
             ->add('region', 'choice', array(
                 'choices' => array(
                     'Alsace' => 'Alsace',
