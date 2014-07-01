@@ -1,70 +1,110 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
-
+{% block bodyClass %}class="createRallye"{% endblock %}
 {% block content %}
     {{ include('ThirtyOneMemberBundle:Event:eventNav.html.twig', {'path':'null'}) }}
 
     <h2>Créer un rallye</h2>
-    {% if error is defined %}
-        <div class="error">{{ error }}</div>
-    {% endif %}
-    <form action="#" method="post" {{ form_enctype(form) }}>
-        {{ form_start(form) }}
-        {{ form_errors(form) }}
-
-        {{ form_row(form.file) }}
-        {{ form_row(form.name) }}
-        {{ form_row(form.date) }}
-        {{ form_row(form.adress) }}
-        {{ form_row(form.city) }}
-        {{ form_row(form.region) }}
-        {{ form_row(form.description) }}
+    <div class="contentBlock">
 
 
-        <div class="service">
-            {% for s in service %}
-                {% if s.type == 1 %}
+        {% if error is defined %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <form action="#" method="post" {{ form_enctype(form) }}>
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
 
-                    <div>
-                        {{ s.name }}
-                        <a class="reserve" href="" data-type="place"
-                           data-price="{{ s.price }}" data-id="{{ s.id }}">
-                            réserver
-                        </a>
+            {{ form_row(form.file) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.date) }}
+            {{ form_row(form.adress) }}
+            {{ form_row(form.city) }}
+            {{ form_row(form.region) }}
+            {{ form_row(form.description) }}
 
-                    </div>
-                {% elseif s.type == 2 %}
-                    <div>
-                        {{ s.name }}
-                        <a class="reserve" data-type="food" href=""
-                           data-price="{{ s.price }}" data-id="{{ s.id }}">
-                            réserver
-                        </a>
-                    </div>
-                {% else %}
-                    <div>
-                        {{ s.name }}
-                        <a class="reserve" data-type="music"
-                           data-price="{{ s.price }}" href="" data-id="{{ s.id }}">
-                            réserver
-                        </a>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
+            <div class="includes">
+                √  Reportage live
+                √ Bornes interactives
+            </div>
 
 
-        {{ form_row(form.private) }}
-        {{ form_row(form.place) }}
-        {{ form_row(form.food) }}
-        {{ form_row(form.music) }}
+            <div class="services">
+                <div id="place" class="row">
+                    {% for s in service %}
+                        {% if s.type == 1 %}
 
-        <div class="resume">
-            lieu : <span class="place"></span>
-            traiteur : <span class="food"></span>
-            dj : <span class="music"></span>
-        </div>
+                            <div class="col3">
+                                <img src="http://placekitten.com/250/150">
 
-        {{ form_row(form.enregistrer) }}
-        {{ form_rest(form) }}
-    </form>
+                                <h3> {{ s.name }} </h3>
+
+                                <p> {{ s.description }}</p>
+                                <a class="reserve button" href="" data-type="place"
+                                   data-price="{{ s.price }}" data-id="{{ s.id }}">
+                                    réserver
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <a href="#food" class="pinklink">Passer cette étape ></a>
+                </div>
+
+                <div id="food" class="row">
+                    {% for s in service %}
+                        {% if s.type == 2 %}
+
+                            <div class="col3">
+                                <img src="http://placekitten.com/250/150">
+
+                                <h3> {{ s.name }} </h3>
+
+                                <p> {{ s.description }}</p>
+                                <a class="reserve button" href="" data-type="place"
+                                   data-price="{{ s.price }}" data-id="{{ s.id }}">
+                                    réserver
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <a href="#music" class="pinklink">Passer cette étape ></a>
+                </div>
+                <div id="music" class="row">
+                    {% for s in service %}
+                        {% if s.type == 3 %}
+
+                            <div class="col3">
+                                <img src="http://placekitten.com/250/150">
+
+                                <h3> {{ s.name }} </h3>
+
+                                <p> {{ s.description }}</p>
+                                <a class="reserve button" href="" data-type="place"
+                                   data-price="{{ s.price }}" data-id="{{ s.id }}">
+                                    réserver
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <a href="#resume" class="pinklink">Passer cette étape ></a>
+                </div>
+
+
+            </div>
+
+
+            {{ form_row(form.private) }}
+            {{ form_row(form.place) }}
+            {{ form_row(form.food) }}
+            {{ form_row(form.music) }}
+
+            <div id="resume" class="resume">
+                lieu : <span class="place"></span>
+                traiteur : <span class="food"></span>
+                dj : <span class="music"></span>
+            </div>
+
+            {{ form_row(form.enregistrer) }}
+            {{ form_rest(form) }}
+        </form>
+    </div>
 {% endblock %}
