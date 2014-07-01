@@ -1,12 +1,15 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
 {% block content %}
+    <div class="breadcrumb">recherche</div>
+    <div class="contentBlock recherche">
+        <h2>Rechercher une famille</h2>
+        {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':1}) }}
 
-    <h2>Par famille</h2>
-    {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':1}) }}
+    </div>
+    <div class="contentBlock recherche">
 
-
-    <h2>Par rallye</h2>
-    {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':0}) }}
-
+        <h2>Rechercher un rallye</h2>
+        {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':0}) }}
+    </div>
 {% endblock %}

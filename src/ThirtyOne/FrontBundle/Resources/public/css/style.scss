@@ -418,7 +418,9 @@ body {
   }
 }
 
-.myAccount, .parrainage {
+.myAccount,
+.parrainage,
+.recherche {
   margin-top: 20px;
   padding: 25px 60px;
   .dsp-tc.first {
@@ -446,7 +448,7 @@ body {
 
 .myAccount {
   label {
-    width: 100px;
+    width: 180px;
   }
 }
 
@@ -465,4 +467,26 @@ body {
       height: 150px;
     }
   }
+}
+
+.recherche {
+  padding-bottom: 35px;
+  form {
+    div {
+      margin-top: 0;
+      display: inline-block;
+      &#form {
+        background-color: $lgrey;
+        padding: 4px;
+      }
+      input[type='text'], select {
+        width: 200px;
+        margin-right: 50px;
+      }
+      button {
+        margin-left: 20px;
+      }
+    }
+  }
+
 }
