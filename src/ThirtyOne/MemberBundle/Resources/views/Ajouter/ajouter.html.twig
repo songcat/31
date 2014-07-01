@@ -83,7 +83,7 @@
                     {% endfor %}
                     {% if gdparent|length < 4 %}
                         {% for i in gdparent|length+1..4 %}
-                            <div class="col2gp center">
+                            <div class="col2 GdParent center">
                                 <div class="form {{ i }}">
                                     <div class="addForm">
                                         <a href="" id="GdParent" class="{{ i }}">Ajouter gd
@@ -128,10 +128,11 @@
                 {% endfor %}
                 {% if parent|length < 2 %}
                     {% for i in parent|length+1..2 %}
-
-                        <div class="form 2">
-                            <div class="addForm">
-                                <a href="" id="Parent" class="2">Ajouter un parent</a>
+                        <div class="col2 Parent center">
+                            <div class="form 2">
+                                <div class="addForm">
+                                    <a href="" id="Parent" class="2">Ajouter un parent</a>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
@@ -165,10 +166,12 @@
 
                 {% if child|length < nbChildren %}
                     {% for i in child|length+1..nbChildren %}
-                        <div class="form {{ i }}">
-                            <div class="addForm">
-                                <a href="#" id="Child" class="{{ i }}">Ajouter un
-                                    enfant</a>
+                        <div class="col2child Child center">
+                            <div class="form {{ i }}">
+                                <div class="addForm">
+                                    <a href="#" id="Child" class="{{ i }}">Ajouter un
+                                        enfant</a>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}

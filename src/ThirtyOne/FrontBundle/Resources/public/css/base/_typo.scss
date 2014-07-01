@@ -26,12 +26,11 @@ a {
   text-decoration: none;
 }
 
-
 /* form */
 input[type='text'],
 input[type='email'],
 input[type='number'],
-input[type='password']{
+input[type='password'] {
   height: 24px;
   border: none;
   padding: 0 5px;
@@ -45,7 +44,6 @@ select {
 input[type='radio'] {
   margin-right: 10px;
 }
-
 
 input.teasing {
   width: 260px;
@@ -66,14 +64,14 @@ a.button {
     content: "";
     display: inline-block;
     margin-right: 10px;
-    @media (max-width:640px) {
+    @media (max-width: 640px) {
       display: none;
     }
   }
-  @media (max-width:640px) {
+  @media (max-width: 640px) {
     &.download {
       font-size: 11px;
-      padding:  0 15px;
+      padding: 0 15px;
     }
   }
 
@@ -219,5 +217,13 @@ a.button {
   }
   div {
     margin-top: 10px;
+  }
+}
+
+.ourFamily,
+.general {
+  .addForm {
+    border: 1px solid #ccc;
+    padding: 100px 10px;
   }
 }
