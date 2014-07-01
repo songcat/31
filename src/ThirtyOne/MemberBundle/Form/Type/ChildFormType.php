@@ -22,7 +22,7 @@ class ChildFormType extends AbstractType
                 'choices'   => array('m' => 'homme', 'f' => 'femme'),
                 'multiple'  => false,
                 'expanded'  => true,
-                'label'     => 'sexe*'
+                'label'     => false
             ))
             ->add('age', 'date', array(
                 'years' => range(date('Y') - 30, date('Y')),

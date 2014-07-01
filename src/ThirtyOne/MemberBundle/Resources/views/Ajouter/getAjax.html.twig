@@ -1,27 +1,29 @@
-<h2 class="nameForm">Ajouter un {{ formType }}</h2>
-{% if error is defined %}
-    {{ error }}
+<div class="edit">{% if error is defined %}
+        {{ error }}
 
-{% else %}
-    <form action="#" method="post" {{ form_enctype(form) }}>
-        {{ form_start(form) }}
-        {{ form_errors(form) }}
-        <div class="family">
+    {% else %}
 
-            {% for champs in form %}
-                {% if champs.errors is defined %}
-                    {{ form_label(champs) }}
+        <form action="#" method="post" {{ form_enctype(form) }}>
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <div class="family">
+
+                {% for champs in form %}
                     {% if champs.errors is defined %}
-                        {{ form_errors(champs) }}
+                        {{ form_label(champs) }}
+                        {% if champs.errors is defined %}
+                            {{ form_errors(champs) }}
+                        {% endif %}
+                        {{ form_widget(champs) }}
                     {% endif %}
-                    {{ form_widget(champs) }}
-                {% endif %}
-            {% endfor %}
-            <input type="hidden" name="formType" value="{{ formType }}">
-            <input type="hidden" name="edit" value="{{ edit }}">
+                {% endfor %}
+                <input type="hidden" name="formType" value="{{ formType }}">
+                <input type="hidden" name="edit" value="{{ edit }}">
 
-            {{ form_end(form) }}
+                {{ form_end(form) }}
 
-        </div>
-    </form>
-{% endif %}
+            </div>
+        </form>
+
+    {% endif %}
+</div>

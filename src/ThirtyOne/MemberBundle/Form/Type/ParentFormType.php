@@ -19,7 +19,7 @@ class ParentFormType extends AbstractType
                 'choices'   => array('m' => 'homme', 'f' => 'femme'),
                 'multiple'  => false,
                 'expanded'  => true,
-                'label'     => 'sexe*'
+                'label'     => false
             ))
             ->add('firstname', 'text', array(
                 'label' => 'Prénom*'

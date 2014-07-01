@@ -142,8 +142,10 @@ class AjouterController extends Controller
                         $informations->upload();
                         $informations->setFamily($fam);
                         $em->persist($informations);
-                    } else
+                    } else {
+
                         $info->upload();
+                    }
                     $em->flush();
                 }
                 return $this->redirect($this->generateUrl('thirtyone_member_ajouter_ajouter'), 301);
@@ -158,6 +160,7 @@ class AjouterController extends Controller
         }
 
         return array(
+            'fam' => $fam,
             'info' => $info,
             'parent' => $parent,
             'nbChildren' => $nbChildren,
@@ -206,7 +209,6 @@ class AjouterController extends Controller
                 $edit = $id;
             }
         } else {
-            //$informations = new Informations();
             $informations = $em->getRepository('ThirtyOneMemberBundle:Informations')->findByFamily($famId)
                 ? $em->getRepository('ThirtyOneMemberBundle:Informations')->findByFamily($famId)[0] : new Informations();
             $num = $this->get('request')->request->get('num');

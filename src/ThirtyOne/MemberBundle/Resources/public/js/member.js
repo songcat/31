@@ -14,7 +14,7 @@ $('.addForm a, a.editEntity').click(function (event) {
         url: '/ThirtyOne/web/app_dev.php/profil/getAjax',
         data: {form: formType, id: id, num: num}
     }).done(function (data) {
-         $('.'+formType+' .form .' + num).replaceWith(data);
+         $('.'+formType+' .form.' + num).replaceWith(data);
     });
 });
 
