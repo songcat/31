@@ -31,7 +31,7 @@ class ParrainageFormType extends AbstractType
                 'required' => false
             ))
             ->add('message', 'textarea', array(
-                "label" => 'joignez un message personnel à votre invitation',
+                "label" => 'Votre message',
                 "required" => false
             ))
             ->add('envoyer', 'submit', array(

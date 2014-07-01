@@ -400,8 +400,6 @@ body {
   }
 }
 
-
-
 .homeLogin {
   #content.wrapper {
     & > div:not(.fos) {
@@ -414,15 +412,15 @@ body {
   input[type="submit"], input[type="password"] {
     margin-left: 20px;
     @media (max-width: 640px) {
-      margin-left:0;
+      margin-left: 0;
       margin-top: 25px;
     }
   }
 }
 
-.myAccount {
+.myAccount, .parrainage {
   margin-top: 20px;
-  padding: 20px;
+  padding: 20px 40px;
   .dsp-tc.first {
     padding-right: 120px;
   }
@@ -438,11 +436,33 @@ body {
     width: 40%;
   }
   label {
-    width: 200px;
     display: inline-block;
   }
   .submit {
     text-align: right;
     margin-top: 25px;
+  }
+}
+
+.myAccount {
+  label {
+    width: 100px;
+  }
+}
+
+.parrainage {
+  label {
+    width: 100px;
+  }
+  .persMessage {
+    margin-top: 30px;
+    label {
+      display: block;
+      width: 100%;
+    }
+    textarea {
+      width: 70%;
+      height: 150px;
+    }
   }
 }
