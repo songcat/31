@@ -1,41 +1,108 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
 {% block content %}
-
-    <ul>
-        <li><a href='{{ path('thirtyone_member_event_create') }}'>nouveau</a></li>
-        <li><a href='{{ path('thirtyone_member_event_home', {'path': 'avenir'}) }}'>a
-                venir</a></li>
-        <li><a href='{{ path('thirtyone_member_event_home', {'path': 'passe'}) }}'>passés</a>
-        </li>
-
-    </ul>
-
+    {{ include('ThirtyOneMemberBundle:Event:eventNav.html.twig', {'path':path}) }}
+    <!-- if it is the home -->
     {% if path == "null" %}
         {% set flag = 0 %}
-        {% for e in events %}
-            {% if (e.date|date("m/d/Y") > "now"|date("m/d/Y")) and (flag == 0) and (e.private == false) %}
-                <a href='{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}'>{{ e.name }}</a>
-                {% set flag = 1 %}
-            {% endif %}
-        {% endfor %}
+        <h2>Le prochain rallye</h2>
+        <div class="contentBlock">
+            <div class="rallyeTable">
+                {% for e in events %}
+                    {% if (e.date|date("m/d/Y") > "now"|date("m/d/Y")) and (flag == 0) and (e.private == false) %}
+                        <div class="row clearfix">
+                            <div class="col3">
+                                <img src="http://placekitten.com/g/300/165">
+                            </div>
+                            <div class="col6">
+                                <h3>{{ e.name }}</h3>
 
-        <h2>Events Passé</h2>
-        {% for e in events %}
-            {% if (e.date|date("m/d/Y") <= "now"|date("m/d/Y")) and (e.private == false) %}
-                <a href="">{{ e.name }}</a>
-            {% endif %}
-        {% endfor %}
+                                <div class="description">
+                                    <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
+                                    <div class="place">{{ e.city }}</div>
+                                    <p>{{ e.description }}</p>
+                                </div>
+                            </div>
+                            <div class="col2">
+                                {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id })) }}
+                                <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir
+                                    le
+                                    rallye</a>
+                            </div>
+                        </div>
+                        {% set flag = 1 %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
 
+        <h2>Rallyes passés</h2>
+        <div class="contentBlock">
+            <div class="rallyeTable">
+                {% for e in events %}
+                    {% if (e.date|date("m/d/Y") <= "now"|date("m/d/Y")) and (e.private == false) %}
+                        <div class="row clearfix">
+                            <div class="col3">
+                                <img src="http://placekitten.com/g/300/165">
+                            </div>
+                            <div class="col6">
+                                <h3>{{ e.name }}</h3>
+
+                                <div class="description">
+                                    <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
+                                    <div class="place">{{ e.city }}</div>
+                                    <p>{{ e.description }}</p>
+                                </div>
+                            </div>
+                            <div class="col2">
+                                {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id })) }}
+                                <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir
+                                    le
+                                    rallye</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- if it i'm in pastevent or futurevent -->
     {% else %}
-        {% for e in events %}
+        {% if path == 'avenir' %}
+            <h2>Prochaines rallyes</h2>
+        {% else %}
+            <h2>Rallyes passés</h2>
+        {% endif %}
+        <div class="contentBlock">
+            <div class="rallyeTable">
 
-            <a href='{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}'>{{ e.name }}</a>
-            {% set flag = 1 %}
+                {% for e in events %}
 
-        {% endfor %}
+                    <div class="row clearfix">
+                        <div class="col3">
+                            <img src="http://placekitten.com/g/300/165">
+                        </div>
+                        <div class="col6">
+                            <h3>{{ e.name }}</h3>
 
+                            <div class="description">
+                                <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
+                                <div class="place">{{ e.city }}</div>
+                                <p>{{ e.description }}</p>
+                            </div>
+                        </div>
+                        <div class="col2">
+                            {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id })) }}
+                            <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir
+                                le
+                                rallye</a>
+                        </div>
+                    </div>
+                    {% set flag = 1 %}
+
+                {% endfor %}
+            </div>
+        </div>
     {% endif %}
-
 
 {% endblock %}

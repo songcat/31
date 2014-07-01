@@ -1,7 +1,9 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
 {% block content %}
+    {{ include('ThirtyOneMemberBundle:Event:eventNav.html.twig', {'path':'null'}) }}
 
+    <h2>Créer un rallye</h2>
     {% if error is defined %}
         <div class="error">{{ error }}</div>
     {% endif %}

@@ -97,7 +97,9 @@
                                 <a href='{{ path('thirtyone_member_event_home') }}'
                                         {% if 'home' in app.request.attributes.get('_route') %}
                                     class='active'
-                                        {% endif %}>Rallye</a>
+                                        {% elseif   'create' in app.request.attributes.get('_route') %}
+                                    class='active'
+                                        {% endif %}>Rallyes</a>
                             </li>
                             <li>
                                 <a href='{{ path('thirtyone_member_default_parrainage') }}'

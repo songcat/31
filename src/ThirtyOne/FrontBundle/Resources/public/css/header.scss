@@ -56,15 +56,15 @@ nav {
       }
       &.home {
         position: relative;
-          &:after {
-            content: "";
-            width: 13px;
-            height: 15px;
-            background: url('../bundles/thirtyonefront/images/form/logo_home.png') no-repeat top center;
-            position: absolute;
-            display: inline-block;
-            left: 10px;
-          }
+        &:after {
+          content: "";
+          width: 13px;
+          height: 15px;
+          background: url('../bundles/thirtyonefront/images/form/logo_home.png') no-repeat top center;
+          position: absolute;
+          display: inline-block;
+          left: 10px;
+        }
         &.active:after, &:hover:after {
           background-position: bottom center;
         }
@@ -92,7 +92,7 @@ nav {
   right: 0;
   li {
     display: inline-block;
-    &+li {
+    & + li {
       margin-left: 40px;
     }
     a:hover {
@@ -100,7 +100,7 @@ nav {
     }
   }
   .myaccount:before {
-    background-image:  url('../bundles/thirtyonefront/images/form/account.png');
+    background-image: url('../bundles/thirtyonefront/images/form/account.png');
     display: inline-block;
     content: "";
     height: 18px;
@@ -108,7 +108,7 @@ nav {
     margin-right: 10px;
   }
   .message:before {
-    background-image:  url('../bundles/thirtyonefront/images/form/message.png');
+    background-image: url('../bundles/thirtyonefront/images/form/message.png');
     background-position: top center;
     display: inline-block;
     content: "";
@@ -118,5 +118,23 @@ nav {
   }
   .new:before {
     background-position: bottom center;
+  }
+}
+
+nav.rallye {
+  background-color: $lgrey;
+  line-height: 25px;
+  margin-top: -40px;
+  text-align: center;
+  li {
+    width: 15%;
+    & + li {
+      border-left: 1px solid $white;
+    }
+  }
+  .active, a:hover {
+    background-color: $lgrey;
+    color: $grey;
+    text-decoration: underline;
   }
 }

@@ -1,0 +1,19 @@
+<nav class="rallye">
+    <ul>
+        <li><a href='{{ path('thirtyone_member_event_create') }}'
+                    {% if 'create' in app.request.attributes.get('_route') %}
+                class="active"
+                    {% endif %}>nouveau</a></li>
+        <li><a href='{{ path('thirtyone_member_event_home', {'path': 'avenir'}) }}'
+                    {% if path == 'avenir' %}
+                class="active"
+                    {% endif %}>a
+                venir</a></li>
+        <li><a href='{{ path('thirtyone_member_event_home', {'path': 'passe'}) }}'
+                    {% if path == 'passe' %}
+                class="active"
+                    {% endif %}>passés</a>
+        </li>
+
+    </ul>
+</nav>

@@ -1,4 +1,9 @@
 {% if participe is not defined %}
-<a href="{{ path('thirtyone_member_event_registerinevent', {'eventId':eventId}) }}" class="participate">participer</a>
+    <a href="{{ path('thirtyone_member_event_registerinevent', {'eventId':eventId}) }}"
+       class="participate">participer</a>
 {% endif %}
-{{ participants|length }}
+<div class="participants pink">
+    <strong>
+        {{ participants|length }} participants
+    </strong>
+</div>
