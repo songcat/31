@@ -1,23 +1,48 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
 {% block content %}
+    <div class="breadcrumb">
+        <a href='{{ path('thirtyone_member_rechercher_rechercher') }}'>
+            recherche
+        </a> > <a href='#'>
+            résultat de la recherche
+        </a>
+    </div>
+    <div class="contentBlock recherche result">
+        <h2>Rechercher un rallye</h2>
 
-    <p>Résultats de la recherche : "région: {{ search }}"</p>
-    {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':0}) }}
+        <p>Résultats de la recherche : "région: {{ search }}"</p>
+        {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':0}) }}
+    </div>
+    <div class="contentBlock">
+        {% if error is defined %}
+            <p>{{ error }}</p>
 
-{% if error is defined %}
-   <p>{{ error }}</p>
+        {% else %}
+            <div class="rallyeTable">
+                {% for e in result %}
+                    <div class="row clearfix">
+                        <div class="col3">
+                            <img src="http://placekitten.com/g/300/165">
+                        </div>
+                        <div class="col6">
+                            <h3>{{ e.name }}</h3>
 
-{% else %}
-<ul>
-    {% for r in result %}
-        <li><a href="{{ path('thirtyone_member_event_show', {'slug': r.slug}) }}">{{ r.name }}</a><br>
-        {{ r.region }}
-        <br>
-            {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': r.id })) }}
-        </li>
-    {% endfor %}
-</ul>
-{% endif %}
-
+                            <div class="description">
+                                <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
+                                <div class="place">{{ e.city }}</div>
+                                <p>{{ e.description }}</p>
+                            </div>
+                        </div>
+                        <div class="col2">
+                            {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id, 'part':0 })) }}
+                            <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir
+                                le
+                                rallye</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

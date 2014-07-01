@@ -6,6 +6,9 @@
         {% set flag = 0 %}
         <h2>Le prochain rallye</h2>
         <div class="contentBlock">
+            {% if events|length < 1 %}
+                <p>Pas de rallyes</p>
+            {% endif %}
             <div class="rallyeTable">
                 {% for e in events %}
                     {% if (e.date|date("m/d/Y") > "now"|date("m/d/Y")) and (flag == 0) and (e.private == false) %}
@@ -37,6 +40,9 @@
 
         <h2>Rallyes passés</h2>
         <div class="contentBlock">
+            {% if events|length < 1 %}
+                <p>Pas de rallyes</p>
+            {% endif %}
             <div class="rallyeTable">
                 {% for e in events %}
                     {% if (e.date|date("m/d/Y") <= "now"|date("m/d/Y")) and (e.private == false) %}
@@ -73,6 +79,9 @@
             <h2>Rallyes passés</h2>
         {% endif %}
         <div class="contentBlock">
+            {% if events|length < 1 %}
+                <p>Pas de rallyes</p>
+            {% endif %}
             <div class="rallyeTable">
 
                 {% for e in events %}

@@ -24,6 +24,9 @@
             </ul>
         </div>
         <div class="whitebg col9">
+            {% if thread|length < 1 %}
+                <p>Vous n'avez aucun message</p>
+            {% endif %}
             <a class="pinklink" href="{{ path('thirtyone_member_message_new') }}">Nouveau message</a>
 
             <div class="threadMessages">

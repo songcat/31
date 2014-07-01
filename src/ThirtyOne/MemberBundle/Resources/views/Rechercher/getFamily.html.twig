@@ -1,20 +1,31 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
 {% block content %}
+    <div class="breadcrumb">
+        <a href='{{ path('thirtyone_member_rechercher_rechercher') }}'>
+            recherche
+        </a> > <a href='#'>
+            résultat de la recherche
+        </a>
+    </div>
+    <div class="contentBlock recherche result">
+        <h2>Rechercher une famille</h2>
 
-    <p>Résultats de la recherche : "famille:{{ searchFam }}. région: {{ searchRegion }}"</p>
-    {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':1}) }}
+        <p>Résultats de la recherche : "famille:{{ searchFam }}. région: {{ searchRegion }}"</p>
+        {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':1}) }}
+    </div>
+    <div class="contentBlock">
+    {% if error is defined %}
+        <p>{{ error }}</p>
 
-{% if error is defined %}
-   <p>{{ error }}</p>
-
-{% else %}
-<ul>
-    {% for r in result %}
-        <li><a href="{{ path('thirtyone_member_default_profil', {'slug': r.slug}) }}">{{ r.username }}</a><br>
-        {{ r.region }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+    {% else %}
+        <ul>
+            {% for r in result %}
+                <li><a href="{{ path('thirtyone_member_default_profil', {'slug': r.slug}) }}">{{ r.username }}</a><br>
+                    {{ r.region }}</li>
+            {% endfor %}
+        </ul>
+        </div>
+    {% endif %}
 
 {% endblock %}
