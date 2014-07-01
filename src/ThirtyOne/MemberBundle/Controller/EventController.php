@@ -118,6 +118,7 @@ class EventController extends Controller
 
         if (in_array($eventId, $id))
             return array(
+                'part' => $part,
                 'participe' => true,
                 'participants' => $participants
             );

@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col2">
-                                {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id })) }}
+                                {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id, 'part':'0' })) }}
                                 <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir
                                     le
                                     rallye</a>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                             <div class="col2">
-                                {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id })) }}
+                                {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id, 'part':'0' })) }}
                                 <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir
                                     le
                                     rallye</a>
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                         <div class="col2">
-                            {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id })) }}
+                            {{ render(controller('ThirtyOneMemberBundle:Event:participate', { 'eventId': e.id, 'part':'0' })) }}
                             <a class="showMore" href="{{ path('thirtyone_member_event_show', {'slug': e.slug}) }}">Voir
                                 le
                                 rallye</a>
