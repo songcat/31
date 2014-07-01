@@ -98,7 +98,7 @@ class MessageController extends Controller
 
         $form = $this->createFormBuilder(array())
             ->add('Message', 'textarea')
-            ->add('Répondre', 'submit')
+            ->add('Repondre', 'submit')
             ->add('Thread', 'hidden', array(
                 'data' => $id,
             ))

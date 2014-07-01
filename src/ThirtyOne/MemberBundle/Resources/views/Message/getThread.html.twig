@@ -1,15 +1,21 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
 
 {% block content %}
-<h2>Messagerie</h2>
-    <ul class="thread">
-        {% for t in thread %}
-            {% if not fos_message_is_read(t) %}Nouveau message {% endif %}
-            <li><a href="" data-info="{{ t.id }}">{{ t.subject }}</a></li>
-        {% endfor %}
-    </ul>
-    <div class="threadMessages">
-
+    <h2>Messagerie</h2>
+    <div class="messageBlock">
+        <div class="whitebg col3">
+            <ul class="thread">
+                {% for t in thread %}
+                    {% if not fos_message_is_read(t) %}Nouveau message {% endif %}
+                    <li><a href="" data-info="{{ t.id }}">{{ t.subject }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="whitebg col6">
+            <div class="threadMessages">
+            </div>
+        </div>
     </div>
+
 
 {% endblock %}
