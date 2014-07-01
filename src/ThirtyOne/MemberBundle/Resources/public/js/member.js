@@ -51,3 +51,7 @@ $('.thread a').click(function(event) {
     event.preventDefault();
     getThreadMessage($(this));
 });
+
+$('ul.thread li').click(function() {
+    $(this).find('h4').removeClass('new');
+});

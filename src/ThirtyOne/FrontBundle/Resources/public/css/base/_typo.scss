@@ -96,7 +96,11 @@ a.showMore {
     right: 15px;
   }
   &:hover {
-    background-color: $pink;
+    background-color: $lgrey;
+    color: #a1a1a1;
+    &:after {
+      background: url('../bundles/thirtyonefront/images/form/btn_arrow_on.png') no-repeat center -1px;
+    }
   }
 }
 
@@ -104,7 +108,7 @@ input[type='submit'],
 button[type='submit'],
 a.button {
   border: none;
-  background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
+  background: url('../bundles/thirtyonefront/images/form/bouton_on.jpg');
   height: 30px;
   text-transform: uppercase;
   color: $white;
@@ -112,16 +116,7 @@ a.button {
   font-weight: bold;
   padding: 0 30px;
   &:hover {
-    background: url('../bundles/thirtyonefront/images/form/bouton_on.jpg');
-  }
-}
-
-.viewMore {
-  .button {
-    background: url('../bundles/thirtyonefront/images/form/bouton_on.jpg');
-    &:hover {
-      background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
-    }
+    background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
   }
 }
 

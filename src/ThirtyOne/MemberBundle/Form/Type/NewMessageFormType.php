@@ -26,7 +26,10 @@ class NewMessageFormType extends AbstractType
                 "label" => "Sujet"
             ))
             ->add('Message', 'textarea', array(
-                "label" => "Message"
+                "label" => false,
+                 'attr' => array(
+                     'placeholder' => 'Votre message'
+                 )
             ))
             ->add('Envoyer', 'submit', array(
                 'attr' => array('class' => 'save'),

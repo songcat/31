@@ -1,10 +1,22 @@
-{% for m in thread.messages %}
-<p>
-    by {{ m.sender.username }}
-    {{ m.createdAt|date("d/m/Y H:i:s")}}<br>
-    {{ m.body }}
-
-</p>
-
-{% endfor %}
-{{ form(form) }}
+<h3>{{ thread.subject }}</h3>
+<div class="inbox">
+    {% if thread is not null %}
+        {% for m in thread.messages %}
+            <div class="infos">
+                De : {{ m.sender.firstname }} {{ m.sender.username }}<br>
+                reçu le {{ m.createdAt|date("d/m/Y \\à\\ H:i:s") }}
+            </div>
+            <p  {% if not fos_message_is_read(m) %}
+                {% if  m.sender.username != user.username %}
+                    class="unread"
+                {% endif %}
+                    {% endif %}>
+                {{ m.body }}
+            </p>
+        {% endfor %}
+    {% endif %}
+</div>
+<div class="response">
+    <h3>Répondre</h3>
+    {{ form(form) }}
+</div>

@@ -488,5 +488,95 @@ body {
       }
     }
   }
-
 }
+
+.whitebg {
+  padding: 20px;
+  background-color: $white;
+}
+
+.messageBlock {
+  display: block;
+  .col4 {
+    margin-left: 0;
+  }
+  .col9 {
+    position: relative;
+    .pinklink {
+      left: 0;
+      position: absolute;
+      top: -25px;
+    }
+    p {
+      border-bottom: 1px solid $lgrey;
+      padding: 15px 0 30px;
+      &.unread:before {
+        background-color: $pink;
+        border-radius: 100%;
+        content: "";
+        display: inline-block;
+        height: 10px;
+        margin-right: 10px;
+        width: 10px;
+      }
+    }
+  }
+  .infos {
+    font-size: 10px;
+  }
+
+  .inbox {
+    padding: 20px;
+  }
+
+  .response {
+    margin-top: 30px;
+    textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      height: 150px;
+    }
+    button {
+      float: right;
+      margin-top: 15px;
+    }
+  }
+
+  li {
+    border-bottom: 1px solid $lgrey;
+    padding: 10px 0;
+    h4 {
+      margin-bottom: 0;
+      &.new:before {
+        background-color: $pink;
+        border-radius: 100%;
+        content: "";
+        display: inline-block;
+        height: 10px;
+        margin-right: 10px;
+        width: 10px;
+      }
+    }
+  }
+  .newThread {
+    &.response {
+      margin-top: 0;
+    }
+    label {
+      display: inline-block;
+      width: 100px;
+    }
+    input[type='text'] {
+      border: 1px solid #ccc;
+      width: 40%;
+    }
+    textarea {
+      margin-left: 100px;
+      width: 89%;
+    }
+    form div {
+      margin-top: 15px;
+    }
+  }
+}
+

@@ -2,6 +2,17 @@
 
 {% block content %}
 
-{{ form(form) }}
+    <h2>Messagerie</h2>
+
+    <div class="messageBlock clearfix">
+        <div class="whitebg response newThread">
+            <h3>Nouveau message</h3>
+            {{ form(form) }}
+        </div>
+    </div>
+
+
+
+    {{ form(form) }}
 
 {% endblock %}

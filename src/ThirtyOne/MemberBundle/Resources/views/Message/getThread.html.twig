@@ -2,16 +2,30 @@
 
 {% block content %}
     <h2>Messagerie</h2>
-    <div class="messageBlock">
-        <div class="whitebg col3">
+
+    <div class="messageBlock clearfix">
+        <div class="whitebg col4">
             <ul class="thread">
                 {% for t in thread %}
-                    {% if not fos_message_is_read(t) %}Nouveau message {% endif %}
-                    <li><a href="" data-info="{{ t.id }}">{{ t.subject }}</a></li>
+
+                    <li>
+                        <a href="" data-info="{{ t.id }}">
+                            <h4
+                                    {% if not fos_message_is_read(t) %}
+                                class="new"
+                                    {% endif %}>{{ t.subject }}</h4>
+                            <span> {% if user.username != t.participants.0.username %}
+                                    {{ t.participants.0.firstname }} {{ t.participants.0.username }}
+                                {% else %}
+                                    {{ t.participants.1.firstname }} {{ t.participants.1.username }}
+                                {% endif %}</span></a>
+                    </li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="whitebg col6">
+        <div class="whitebg col9">
+            <a class="pinklink" href="{{ path('thirtyone_member_message_new') }}">Nouveau message</a>
+
             <div class="threadMessages">
             </div>
         </div>

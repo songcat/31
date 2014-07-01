@@ -41,6 +41,7 @@ class MessageController extends Controller
 
             $sender = $this->get('fos_message.sender');
             $sender->send($message);
+            return $this->redirect($this->generateUrl('thirtyone_member_message_getthread'), 301);
         }
 
         return array(
@@ -82,6 +83,7 @@ class MessageController extends Controller
             return $this->redirect($this->generateUrl('thirtyone_member_message_getthread'), 301);
         }
         return array(
+            'user' => $this->getUser(),
             'thread' => $thread
         );
     }
@@ -97,7 +99,12 @@ class MessageController extends Controller
         $thread = $provider->getThread($id);
 
         $form = $this->createFormBuilder(array())
-            ->add('Message', 'textarea')
+            ->add('Message', 'textarea', array(
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Votre message'
+                )
+            ))
             ->add('Repondre', 'submit')
             ->add('Thread', 'hidden', array(
                 'data' => $id,
@@ -105,6 +112,7 @@ class MessageController extends Controller
             ->getForm();
 
         return array(
+            'user' => $this->getUser(),
             'thread' => $thread,
             'form' => $form->createView()
         );
