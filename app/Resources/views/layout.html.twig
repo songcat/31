@@ -81,6 +81,11 @@
 
             {% block navigation %}
                 <nav class="{% if app.user %}connect{% else %}disconnect{% endif %}">
+                    {% if app.user %}
+                        <div id="btn-nav">
+                            <div class="burger"></div>
+                        </div>
+                    {% endif %}
                     <ul>
                         {% if app.user %}
                             <li><a href='{{ path('thirtyone_member_default_index') }}' class='
@@ -97,7 +102,7 @@
                                 <a href='{{ path('thirtyone_member_event_home') }}'
                                         {% if 'home' in app.request.attributes.get('_route') %}
                                     class='active'
-                                        {% elseif   'create' in app.request.attributes.get('_route') %}
+                                {% elseif   'create' in app.request.attributes.get('_route') %}
                                     class='active'
                                 {% elseif   'show' in app.request.attributes.get('_route') %}
                                     class='active'

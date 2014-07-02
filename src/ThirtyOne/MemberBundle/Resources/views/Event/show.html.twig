@@ -2,7 +2,7 @@
 {% block title %}Voir rallye{% endblock %}
 {% block bodyClass %}class="showRallye"{% endblock %}
 {% block content %}
-    {% if event.date|date("m/d/Y") > "now"|date("m/d/Y") %}
+    {% if (event.date|date("Y") > "now"|date("Y")) or (event.date|date("m/d/Y") > "now"|date("m/d/Y")) %}
         {{ include('ThirtyOneMemberBundle:Event:eventNav.html.twig', {'path':'avenir'}) }}
         <h2>Prochain rallye</h2>
     {% else %}
@@ -15,13 +15,13 @@
 
             <div class="row clearfix">
                 <div class="col3">
-                    <img src="http://placekitten.com/g/300/165">
+                    <img src="{{ asset('uploads/documents/'~event.path) }}">
                 </div>
                 <div class="col6">
                     <h3>{{ event.name }}</h3>
 
                     <div class="description">
-                        <div class="date">{{ event.date|date("l j F \\à\\ g:i") }}</div>
+                        <div class="date">{{ event.date|date("d/m/Y \\à\\ g:i") }}</div>
                         <div class="place">{{ event.city }}</div>
                         <p>{{ event.description }}</p>
                     </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            {% if event.date|date("m/d/Y") < "now"|date("m/d/Y") %}
+            {% if (event.date|date("Y") < "now"|date("Y")) and (event.date|date("m/d/Y") < "now"|date("m/d/Y")) %}
                 <div class="row reportage">
                     <h3>Reportage</h3>
                 </div>
@@ -48,7 +48,10 @@
             {% for fam in event.participant %}
 
                 <div class="col3">
-                    <img src="http://placekitten.com/g/300/165"/>
+                    {% for info in fam.informations %}
+                        <img src="{{ asset('uploads/documents/'~info.path|split('.').0~'-1.jpg') }}
+                    "/>
+                    {% endfor %}
 
                     <h3 class="center">{{ fam.username }}</h3>
 

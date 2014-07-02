@@ -138,3 +138,99 @@ nav.rallye {
     text-decoration: underline;
   }
 }
+
+#btn-nav {
+  padding: 23px 10px;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  background: $pink;
+  transition: 0.5s all ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .navRigh {
+    top: 115px;
+  }
+  nav {
+    &.rallye {
+      height: 105px;
+      ul {
+        display: block;
+        li {
+          border-bottom: 1px solid #ccc;
+          width: 100%;
+        }
+      }
+    }
+    ul {
+      display: none;
+      background-color: $white;
+      margin-top: 70px;
+      li {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  #btn-nav {
+    display: block;
+  }
+
+  .burger:before,
+  .burger:after,
+  .burger {
+    height: 4px;
+    background-color: $white;
+    border-radius: 2px;
+    transition: all .3s ease-in-out;
+  }
+
+  .burger:after,
+  .burger:before {
+    content: '';
+    display: block;
+    position: relative;
+  }
+
+  .burger:before {
+    top: -10px;
+  }
+  .burger:after {
+    top: 6px;
+  }
+
+  .is-open .burger {
+    background-color: transparent;
+  }
+
+  .is-open .burger:before,
+  .is-open .burger:after {
+    background-color: $white;
+  }
+
+  .is-open .burger:before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .is-open .burger:after {
+    top: -4px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .is-open:hover .burger:after {
+    top: -4px;
+  }
+  .is-open:hover .burger:before {
+    top: 0;
+  }
+}

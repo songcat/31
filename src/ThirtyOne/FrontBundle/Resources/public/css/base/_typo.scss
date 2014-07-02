@@ -203,6 +203,13 @@ a.button {
   }
 }
 
+@media (max-width: 770px) {
+  .addForm,
+  .editEntity {
+    display: none;
+  }
+}
+
 //fosmdp
 .fos_user_change_password {
   background-color: $white;
@@ -220,11 +227,17 @@ a.button {
   }
 }
 
-.ourFamily,
-.general {
+.ourFamily {
   .addForm {
     border: 1px solid #ccc;
     padding: 100px 10px;
+  }
+}
+
+.general .history {
+  textarea {
+    width: 100%;
+    height: 100px;
   }
 }
 

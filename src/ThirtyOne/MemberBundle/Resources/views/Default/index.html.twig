@@ -37,13 +37,14 @@
             </div>
             {% for fam in famresult %}
                 <div class="col3">
-                    <img src="http://placekitten.com/g/300/165"/>
+                    {% for info in fam.informations %}
+                        <img src="{{ asset('uploads/documents/'~info.path|split('.').0~'-1.jpg') }}
+                    "/>
+                        <h3 class="center">{{ fam.username }}</h3>
 
-                    <h3 class="center">{{ fam.username }}</h3>
+                        <p>{{ info.history }} </p>
+                    {% endfor %}
 
-                    <p>{% for info in fam.informations %}
-                            {{ info.history }}
-                        {% endfor %}</p>
                     <a class="showMore"
                        href='{{ path('thirtyone_member_default_profil', {'slug': fam.slug}) }}'>Rencontrer</a>
                 </div>
@@ -71,7 +72,7 @@
                             <h3>{{ e.name }}</h3>
 
                             <div class="description">
-                                <div class="date">{{ e.date|date("l j F \\à\\ g:i") }}</div>
+                                <div class="date">{{ e.date|date("d/m/Y \\à\\ g:i") }}</div>
                                 <div class="place">{{ e.city }}</div>
                                 <p>{{ e.description }}</p>
                             </div>
