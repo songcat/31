@@ -616,6 +616,7 @@ body {
   }
   .date select {
     width: auto;
+    margin-right: 5px;
   }
   .reserve {
     cursor: pointer;
@@ -624,5 +625,55 @@ body {
     clear: both;
     padding-top: 30px;
     text-align: center;
+  }
+  .submit {
+    text-align: center;
+    margin: 30px 0 60px;
+  }
+  .rallyeGen {
+    padding: 40px;
+    .dsp-tc {
+      vertical-align: top;
+      &.generals {
+        padding-left: 20px;
+        input {
+          border: 1px solid #ccc;
+        }
+        div {
+          margin-top: 10px;
+        }
+        label {
+          width: 150px;
+          display: inline-block;
+        }
+        textarea {
+          width: 60%;
+          height: 150px;
+        }
+      }
+    }
+    .includes {
+      padding: 10px;
+      background-color: $lgrey;
+      span {
+        display: block;
+        &:before {
+          content: "√";
+          font-weight: bold;
+          color: $pink;
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+    }
+    .img {
+      background-color: $grey;
+      width: 300px;
+      height: 165px;
+      text-align: center;
+      input {
+        margin-top: 75px;
+      }
+    }
   }
 }

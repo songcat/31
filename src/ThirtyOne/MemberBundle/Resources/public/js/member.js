@@ -18,7 +18,7 @@ $('.addForm a, a.editEntity').click(function (event) {
     });
 });
 
-$('.service a.reserve').click(function(event) {
+$('.services a.reserve').click(function(event) {
     event.preventDefault();
     if($(this).attr('data-type')=='place') {
         $('.placeValue').val($(this).attr('data-id'));

@@ -12,26 +12,40 @@
             <div class="error">{{ error }}</div>
         {% endif %}
         <form action="#" method="post" {{ form_enctype(form) }}>
-            {{ form_start(form) }}
-            {{ form_errors(form) }}
+            <div class="rallyeGen">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
 
-            {{ form_row(form.file) }}
-            {{ form_row(form.name) }}
-            <div class="date">
-                {{ form_row(form.date) }}
-            </div>
-            {{ form_row(form.adress) }}
-            {{ form_row(form.city) }}
-            {{ form_row(form.region) }}
-            {{ form_row(form.description) }}
+                <div class="dsp-tc">
+                    <div class="img">
+                        {{ form_row(form.file) }}
+                    </div>
 
-            <div class="includes">
+                </div>
+
+                <div class="dsp-tc generals">
+                    {{ form_row(form.name) }}
+                    <div class="date">
+                        {{ form_row(form.date) }}
+                    </div>
+                    {{ form_row(form.adress) }}
+                    {{ form_row(form.city) }}
+                    {{ form_row(form.region) }}
+                    {{ form_row(form.description) }}
+
+                    {{ form_row(form.private) }}
+
+                    <div class="includes">
+                        <strong>Inclus dans la prestation</strong>
                 <span>
                     Reportage live
                 </span>
                 <span>
                     Bornes interactives
                 </span>
+                    </div>
+                </div>
+
             </div>
 
 
@@ -74,7 +88,7 @@
                                     <h3> {{ s.name }} </h3>
 
                                     <p> {{ s.description }}</p>
-                                    <a class="reserve button" data-type="place"
+                                    <a class="reserve button" data-type="food"
                                        data-price="{{ s.price }}" data-id="{{ s.id }}">
                                         réserver
                                     </a>
@@ -99,7 +113,7 @@
                                     <h3> {{ s.name }} </h3>
 
                                     <p> {{ s.description }}</p>
-                                    <a class="reserve button" data-type="place"
+                                    <a class="reserve button" data-type="music"
                                        data-price="{{ s.price }}" data-id="{{ s.id }}">
                                         réserver
                                     </a>
@@ -109,27 +123,43 @@
                     </div>
 
                     <div class="skip">
-                        <a href="#resume" class="pinklink">Passer cette étape ></a>
+                        <a href="#recap" class="pinklink">Passer cette étape ></a>
+                    </div>
+                </div>
+                {{ form_row(form.place) }}
+                {{ form_row(form.food) }}
+                {{ form_row(form.music) }}
+
+                <div id="recap" class="row">
+                    {{ include('ThirtyOneMemberBundle:Event:getPosition.html.twig', {'pos':4}) }}
+
+                    <h3>Récapitulatif de la commande </h3>
+
+                    <div id="resume" class="resume">
+                        <strong>Inclus dans la prestation:</strong> <br>
+                        Live Reportage du rallye <br>
+                        Bornes interactives <br>
+                        Envois et Impressions des invitations <br>
+                        Gestion des invités <br>
+                        Total : XXXX€ prélevé sur votre carte bancaire <br> <br>
+
+                        <strong>Options supplémentaires :</strong><br>
+                        Choix du lieu : <span class="place"></span> € <br>
+                        Choix du traiteur : <span class="food"></span> € <br>
+                        Choix du DJ : <span class="music"></span> €<br>
+                        A régler directement auprès de nos partenaires
                     </div>
                 </div>
 
-
             </div>
 
 
-            {{ form_row(form.private) }}
-            {{ form_row(form.place) }}
-            {{ form_row(form.food) }}
-            {{ form_row(form.music) }}
-
-            <div id="resume" class="resume">
-                lieu : <span class="place"></span>
-                traiteur : <span class="food"></span>
-                dj : <span class="music"></span>
+            <div class="submit">
+                {{ form_row(form.enregistrer) }}
+                {{ form_rest(form) }}
             </div>
 
-            {{ form_row(form.enregistrer) }}
-            {{ form_rest(form) }}
+
         </form>
     </div>
 {% endblock %}

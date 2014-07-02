@@ -12,7 +12,7 @@ class EventFormType extends AbstractType
     {
         $builder
             ->add('file', 'file', array(
-                "label" => "ajouter une photo de couverture*"
+                "label" => false
             ))
             ->add('name', 'text', array(
                 "label" => "nom du rallye*"
