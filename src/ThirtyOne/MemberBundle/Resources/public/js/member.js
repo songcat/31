@@ -83,3 +83,10 @@ $(window).resize(function () {
         $('p.resolution').remove();
     }
 })
+$("#btn-nav").click(function(e){
+        e.preventDefault();
+        $(this).toggleClass("is-open");
+        $('header nav > ul').stop().slideToggle("600");
+        if(linkNavH == null) linkNavH = $('nav .has-sub-nav').height();
+        $(".btn-sub-nav").css("height", linkNavH);
+    });

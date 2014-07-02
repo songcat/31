@@ -14,7 +14,7 @@
                     "/>
                         <h3 class="center">{{ fam.username }}</h3>
 
-                        <p>{{ info.history }} </p>
+                        <p>{{ info.history|length > 250 ? info.history|slice(0, 250) ~ '...' : info.history  }} </p>
                     {% endfor %}
 
                     <a class="showMore"

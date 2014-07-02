@@ -27,7 +27,7 @@
                     {% for p in fam.parents %}
                         {% for gp in p.gdparent %}
                             <div class="col2 center">
-                                <img src="http://placekitten.com/140/140">
+                                <img src="{{ asset('uploads/documents/'~gp.path) }}">
 
                                 <div class="name"><strong>{{ gp.firstname }} {{ gp.birthname }}</strong></div>
                                 <div class="dates">
@@ -58,7 +58,7 @@
                 <div class="row parents">
                     {% for p in fam.parents %}
                         <div class="col2 center">
-                            <img src="http://placekitten.com/140/140">
+                            <img src="{{ asset('uploads/documents/'~p.path) }}">
 
                             <div class="name"><strong>{{ p.firstname }} {{ p.birthname }}</strong></div>
                             <div class="dates">
