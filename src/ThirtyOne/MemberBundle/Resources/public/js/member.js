@@ -11,7 +11,7 @@ $('.addForm a, a.editEntity').click(function (event) {
     }
     $.ajax({
         type: "POST",
-        url: '/ThirtyOne/web/app_dev.php/profil/getAjax',
+        url: '/presentation/profil/getAjax',
         data: {form: formType, id: id, num: num}
     }).done(function (data) {
         $('.' + formType + ' .form.' + num).replaceWith(data);
@@ -32,13 +32,14 @@ $('.services a.reserve').click(function (event) {
         $('.musicValue').val($(this).attr('data-id'));
         $('.resume .music').html($(this).attr('data-price'));
     }
+$(this).addClass('active');
 });
 
 var getThreadMessage = function ($this) {
     var thread = $this.attr('data-info');
     $.ajax({
         type: "POST",
-        url: '/ThirtyOne/web/app_dev.php/message/getMessage',
+        url: '/presentation/message/getMessage',
         data: {thread: thread}
     }).done(function (data) {
         $('.threadMessages').html(data);

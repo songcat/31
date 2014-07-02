@@ -38,9 +38,9 @@
                 {% if flag < 3 %}
                     <div class="row clearfix">
                         <div class="col3">
-                            <img src="http://placekitten.com/g/300/165">
+				<img src="{{ asset('uploads/documents/'~e.path) }}">      
                         </div>
-                        <div class="col6">
+			<div class="col6">
                             <h3>{{ e.name }}</h3>
 
                             <div class="description">

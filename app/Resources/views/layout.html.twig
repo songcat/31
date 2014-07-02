@@ -214,7 +214,11 @@
 
 
 {% block javascripts %}
-    {% javascripts '@ThirtyOneFrontBundle//Resources/public/js/*.js'  output="js/vendor.js" %}
+   
+ {% javascripts '@ThirtyOneFrontBundle//Resources/public/js/*.js'  output="js/vendorfront.js" %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+ {% javascripts '@ThirtyOneMemberBundle//Resources/public/js/*.js'  output="js/vendor.js" %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}

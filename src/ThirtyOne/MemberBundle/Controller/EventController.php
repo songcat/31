@@ -141,7 +141,7 @@ class EventController extends Controller
         $rallye->setParticipant($this->getUser());
         $em->flush();
 
-        return new \Symfony\Component\HttpFoundation\Response(null);
+        return $this->redirect($this->generateUrl('thirtyone_member_event_show', array('slug'=>$rallye->getSlug())), 301);
     }
 
     /**

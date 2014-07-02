@@ -113,7 +113,7 @@ a.button {
   font: $raleway;
   font-weight: bold;
   padding: 0 30px;
-  &:hover {
+  &:hover, &.active {
     background: url('../bundles/thirtyonefront/images/form/bouton_off.jpg');
   }
 }
