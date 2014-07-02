@@ -604,6 +604,9 @@ body {
 .createRallye {
   .services {
     padding: 20px;
+    .row {
+      padding-top: 50px;
+    }
   }
   input[type='text'],
   input[type='number'],
@@ -613,5 +616,13 @@ body {
   }
   .date select {
     width: auto;
+  }
+  .reserve {
+    cursor: pointer;
+  }
+  .skip {
+    clear: both;
+    padding-top: 30px;
+    text-align: center;
   }
 }

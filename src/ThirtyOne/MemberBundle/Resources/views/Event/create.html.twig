@@ -39,62 +39,78 @@
 
                 <div id="place" class="row">
                     {{ include('ThirtyOneMemberBundle:Event:getPosition.html.twig', {'pos':1}) }}
-                    {% for s in service %}
-                        {% if s.type == 1 %}
+                    <div>
+                        {% for s in service %}
+                            {% if s.type == 1 %}
 
-                            <div class="col3">
-                                <img src="{{ asset('uploads/services/'~s.path) }}">
+                                <div class="col3 center">
+                                    <img src="{{ asset('uploads/services/'~s.path) }}">
 
-                                <h3> {{ s.name }} </h3>
+                                    <h3> {{ s.name }} </h3>
 
-                                <p> {{ s.description }}</p>
-                                <a class="reserve button" href="" data-type="place"
-                                   data-price="{{ s.price }}" data-id="{{ s.id }}">
-                                    réserver
-                                </a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                    <a href="#food" class="pinklink">Passer cette étape ></a>
+                                    <p> {{ s.description }}</p>
+                                    <a class="reserve button" data-type="place"
+                                       data-price="{{ s.price }}" data-id="{{ s.id }}">
+                                        réserver
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="skip">
+                        <a href="#food" class="pinklink">Passer cette étape ></a>
+                    </div>
                 </div>
 
                 <div id="food" class="row">
-                    {% for s in service %}
-                        {% if s.type == 2 %}
+                    {{ include('ThirtyOneMemberBundle:Event:getPosition.html.twig', {'pos':2}) }}
+                    <div>
+                        {% for s in service %}
+                            {% if s.type == 2 %}
 
-                            <div class="col3">
-                                <img src="{{ asset('uploads/services/'~s.path) }}">
+                                <div class="col3 center">
+                                    <img src="{{ asset('uploads/services/'~s.path) }}">
 
-                                <h3> {{ s.name }} </h3>
+                                    <h3> {{ s.name }} </h3>
 
-                                <p> {{ s.description }}</p>
-                                <a class="reserve button" href="" data-type="place"
-                                   data-price="{{ s.price }}" data-id="{{ s.id }}">
-                                    réserver
-                                </a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                    <a href="#music" class="pinklink">Passer cette étape ></a>
+                                    <p> {{ s.description }}</p>
+                                    <a class="reserve button" data-type="place"
+                                       data-price="{{ s.price }}" data-id="{{ s.id }}">
+                                        réserver
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="skip">
+                        <a href="#music" class="pinklink">Passer cette étape ></a>
+                    </div>
                 </div>
                 <div id="music" class="row">
-                    {% for s in service %}
-                        {% if s.type == 3 %}
+                    {{ include('ThirtyOneMemberBundle:Event:getPosition.html.twig', {'pos':3}) }}
+                    <div>
+                        {% for s in service %}
+                            {% if s.type == 3 %}
 
-                            <div class="col3">
-                                <img src="{{ asset('uploads/services/'~s.path) }}">
+                                <div class="col3 center">
+                                    <img src="{{ asset('uploads/services/'~s.path) }}">
 
-                                <h3> {{ s.name }} </h3>
+                                    <h3> {{ s.name }} </h3>
 
-                                <p> {{ s.description }}</p>
-                                <a class="reserve button" href="" data-type="place"
-                                   data-price="{{ s.price }}" data-id="{{ s.id }}">
-                                    réserver
-                                </a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                    <a href="#resume" class="pinklink">Passer cette étape ></a>
+                                    <p> {{ s.description }}</p>
+                                    <a class="reserve button" data-type="place"
+                                       data-price="{{ s.price }}" data-id="{{ s.id }}">
+                                        réserver
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="skip">
+                        <a href="#resume" class="pinklink">Passer cette étape ></a>
+                    </div>
                 </div>
 
 

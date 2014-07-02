@@ -227,3 +227,29 @@ a.button {
     padding: 100px 10px;
   }
 }
+
+// create rallye
+ol {
+  padding: 0;
+  text-align: center;
+  margin-bottom: 30px;
+  border-top: 1px solid #ccc;
+  li {
+    display: inline-block;
+    text-align: center;
+    margin-top: -25px;
+    width: 20%;
+    .pos {
+      margin: 10px auto;
+      background-color: $grey;
+      height: 25px;
+      width: 25px;
+      border-radius: 100%;
+      line-height: 25px;
+      color: $white;
+      &.active {
+        background-color: $pink;
+      }
+    }
+  }
+}
