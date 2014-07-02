@@ -92,6 +92,7 @@ nav {
   right: 0;
   li {
     display: inline-block;
+    cursor: pointer;
     & + li {
       margin-left: 40px;
     }

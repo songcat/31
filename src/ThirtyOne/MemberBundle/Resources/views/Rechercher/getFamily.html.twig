@@ -15,17 +15,36 @@
         {{ include('ThirtyOneMemberBundle:Rechercher:form.html.twig', {'family':1}) }}
     </div>
     <div class="contentBlock">
-    {% if error is defined %}
-        <p>{{ error }}</p>
+        {% if error is defined %}
+            <p>{{ error }}</p>
 
-    {% else %}
-        <ul>
-            {% for r in result %}
-                <li><a href="{{ path('thirtyone_member_default_profil', {'slug': r.slug}) }}">{{ r.username }}</a><br>
-                    {{ r.region }}</li>
-            {% endfor %}
-        </ul>
-        </div>
-    {% endif %}
+        {% else %}
+            <div class="familyTable">
+                {% for f in result %}
+                    <div class="row clearfix">
+                        <div class="col3">
+                            {% for info in f.informations %}
+                            <img src="{{ asset('uploads/documents/'~info.path|split('.').0~'-1.jpg') }}
+                    "/>
+                        </div>
+                        <div class="col6">
+                            <h3>{{ f.username }}</h3>
 
+                            <div class="description">
+
+                                <p>{{ info.history }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+                        <div class="col2">
+                            <a class="showMore" style="margin-top:15px;"
+                               href="{{ path('thirtyone_member_default_profil', {'slug': f.slug}) }}">Rencontrer</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

@@ -23,7 +23,7 @@
                 {% for e in result %}
                     <div class="row clearfix">
                         <div class="col3">
-                            <img src="http://placekitten.com/g/300/165">
+                            <img src="{{ asset('uploads/services/'~s.path) }}">
                         </div>
                         <div class="col6">
                             <h3>{{ e.name }}</h3>
