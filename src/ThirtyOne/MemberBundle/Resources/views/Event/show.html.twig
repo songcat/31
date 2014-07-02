@@ -1,4 +1,5 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+{% block title %}Voir rallye{% endblock %}
 {% block bodyClass %}class="showRallye"{% endblock %}
 {% block content %}
     {% if event.date|date("m/d/Y") > "now"|date("m/d/Y") %}

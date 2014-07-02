@@ -1,4 +1,5 @@
 {% extends "ThirtyOneMemberBundle::layout.html.twig" %}
+{% block title %}Créer un rallye{% endblock %}
 {% block bodyClass %}class="createRallye"{% endblock %}
 {% block content %}
     {{ include('ThirtyOneMemberBundle:Event:eventNav.html.twig', {'path':'null'}) }}
@@ -25,13 +26,19 @@
             {{ form_row(form.description) }}
 
             <div class="includes">
-                √ Reportage live
-                √ Bornes interactives
+                <span>
+                    Reportage live
+                </span>
+                <span>
+                    Bornes interactives
+                </span>
             </div>
 
 
             <div class="services">
+
                 <div id="place" class="row">
+                    {{ include('ThirtyOneMemberBundle:Event:getPosition.html.twig', {'pos':1}) }}
                     {% for s in service %}
                         {% if s.type == 1 %}
 
