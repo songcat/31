@@ -2,7 +2,7 @@
 {% block title %}Voir rallye{% endblock %}
 {% block bodyClass %}class="showRallye"{% endblock %}
 {% block content %}
-    {% if (event.date|date("Y") > "now"|date("Y")) or (event.date|date("m/d/Y") > "now"|date("m/d/Y")) %}
+    {% if (event.date|date("Ymd") > "now"|date("Ymd")) %}
         {{ include('ThirtyOneMemberBundle:Event:eventNav.html.twig', {'path':'avenir'}) }}
         <h2>Prochain rallye</h2>
     {% else %}
@@ -32,9 +32,23 @@
                 </div>
             </div>
 
-            {% if (event.date|date("Y") < "now"|date("Y")) and (event.date|date("m/d/Y") < "now"|date("m/d/Y")) %}
+            {% if (event.date|date("Ymd") <= "now"|date("Ymd")) %}
+
                 <div class="row reportage">
                     <h3>Reportage</h3>
+                    <video controls="controls" poster="{{ asset('uploads/video/'~'Reportage_soiree.jpg') }}"
+                           style="width:100%">
+                        <source src="{{ asset('uploads/video/'~'Reportage_soiree.m4v' ) }}" type="video/mp4"/>
+                        <source src="{{ asset('uploads/video/'~'Reportage_soiree.webm') }}" type="video/webm"/>
+
+                        <source src="{{ asset('uploads/video/'~'Reportage_soiree.ogv') }}" type="video/ogg"/>
+                        <source src="{{ asset('uploads/video/'~'Reportage_soiree.mp4') }}"/>
+                        <object type="application/x-shockwave-flash"
+                                data="{{ asset('uploads/video/'~'Reportage_soiree.swf') }}" width="1920" height="1080"
+                                style="position:relative;">
+
+                        </object>
+                    </video>
                 </div>
             {% endif %}
         </div>

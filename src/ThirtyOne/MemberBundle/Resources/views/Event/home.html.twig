@@ -12,7 +12,7 @@
             {% endif %}
             <div class="rallyeTable">
                 {% for e in events %}
-                    {% if (e.date|date("m/d/Y") > "now"|date("m/d/Y")) and (flag == 0) and (e.private == false) %}
+                    {% if (e.date|date("Ymd") > "now"|date("Ymd")) and (flag == 0) and (e.private == false) %}
                         <div class="row clearfix">
                             <div class="col3">
                                 <img src="{{ asset('uploads/documents/'~e.path) }}">
@@ -46,7 +46,7 @@
             {% endif %}
             <div class="rallyeTable">
                 {% for e in events %}
-                    {% if (e.date|date("m/d/Y") <= "now"|date("m/d/Y")) and (e.private == false) %}
+                    {% if (e.date|date("Ymd") <= "now"|date("Ymd")) and (e.private == false) %}
                         <div class="row clearfix">
                             <div class="col3">
                                 <img src="{{ asset('uploads/documents/'~e.path) }}">
